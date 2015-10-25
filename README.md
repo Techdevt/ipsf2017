@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # gnaas
 
 **Generated from HotTowel Angular**
@@ -266,3 +267,7 @@ The `blocks.router` module contains a routing helper module that assists in addi
 ## License
 
 MIT
+=======
+# gnaas2
+quick rebuild of gnaas frontend
+>>>>>>> 60f089c9230a597eef19a40a062e1c3c050bcae7
