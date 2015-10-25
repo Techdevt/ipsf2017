@@ -1,0 +1,104 @@
+<md-toolbar layout="row" class="md-toolbar-tools header" ng-class="vm.$blog() ? 'blog' : ''">
+    <md-button ng-click="toggleSidenav('left')" class="md-icon-button material-icons m-up-blog" ng-hide="vm.shrink">
+	    <md-icon md-svg-icon="{{vm.src + '/navigation/svg/production/ic_menu_24px.svg'}}" aria-label="Menu" size="24"></md-icon>
+	</md-button>
+	<div class="md-toolbar-tools" layout="row" layout-align="space-around center">
+      <a ui-sref="landing.home" class="brand" layout="row">
+      	<svg class="icon-gnaas" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 139 32">
+			<g class="icon-logo">
+				<path d="M30.008,17.425v-0.042c0-4.178,3.254-7.601,7.706-7.601
+					c2.226,0,3.695,0.504,5.018,1.428c0.315,0.231,0.672,0.672,0.672,1.302c0,0.882-0.714,1.596-1.596,1.596
+					c-0.462,0-0.756-0.168-0.987-0.336c-0.882-0.63-1.827-1.008-3.212-1.008c-2.352,0-4.22,2.079-4.22,4.577v0.042
+					c0,2.688,1.848,4.661,4.451,4.661c1.176,0,2.226-0.294,3.044-0.882v-2.1h-2.184c-0.777,0-1.407-0.609-1.407-1.386
+					c0-0.777,0.63-1.407,1.407-1.407h3.695c0.903,0,1.617,0.714,1.617,1.617v3.569c0,0.944-0.357,1.596-1.134,2.058
+					c-1.197,0.734-2.939,1.47-5.144,1.47C33.158,24.983,30.008,21.771,30.008,17.425z
+				M47.123,11.567c0-0.903,0.714-1.617,1.617-1.617h0.336
+					c0.777,0,1.239,0.378,1.68,0.945l6.236,8.189v-7.58c0-0.882,0.714-1.596,1.596-1.596s1.596,0.714,1.596,1.596v11.695
+					c0,0.902-0.714,1.616-1.617,1.616h-0.105c-0.777,0-1.239-0.378-1.68-0.944l-6.467-8.483v7.874c0,0.882-0.714,1.596-1.596,1.596
+					s-1.596-0.714-1.596-1.596V11.567z
+				M62.894,22.652l5.123-11.568c0.357-0.798,1.008-1.281,1.89-1.281h0.189
+					c0.882,0,1.512,0.483,1.869,1.281l5.123,11.568c0.104,0.231,0.168,0.441,0.168,0.651c0,0.86-0.672,1.554-1.533,1.554
+					c-0.756,0-1.26-0.441-1.554-1.113l-0.987-2.309h-6.466l-1.029,2.414c-0.273,0.63-0.819,1.008-1.491,1.008
+					c-0.84,0-1.491-0.672-1.491-1.512C62.705,23.115,62.789,22.884,62.894,22.652z M71.985,18.58l-2.037-4.851l-2.037,4.851H71.985z
+					
+				M78.875,22.652l5.123-11.568c0.357-0.798,1.008-1.281,1.89-1.281h0.188
+					c0.883,0,1.512,0.483,1.869,1.281l5.123,11.568c0.105,0.231,0.168,0.441,0.168,0.651c0,0.86-0.672,1.554-1.533,1.554
+					c-0.756,0-1.26-0.441-1.553-1.113l-0.987-2.309h-6.467l-1.028,2.414c-0.273,0.63-0.819,1.008-1.491,1.008
+					c-0.84,0-1.491-0.672-1.491-1.512C78.686,23.115,78.77,22.884,78.875,22.652z M87.967,18.58l-2.037-4.851l-2.037,4.851H87.967z
+				M95.381,23.178c-0.357-0.252-0.609-0.714-0.609-1.218
+					c0-0.84,0.672-1.491,1.512-1.491c0.42,0,0.715,0.147,0.924,0.295c1.113,0.818,2.331,1.322,3.759,1.322
+					c1.323,0,2.12-0.525,2.12-1.386v-0.042c0-0.818-0.504-1.238-2.96-1.869c-2.96-0.756-4.871-1.574-4.871-4.493v-0.042
+					c0-2.667,2.142-4.43,5.144-4.43c1.785,0,3.339,0.462,4.662,1.302c0.356,0.21,0.713,0.651,0.713,1.281
+					c0,0.84-0.672,1.491-1.512,1.491c-0.314,0-0.566-0.084-0.818-0.231c-1.07-0.63-2.078-0.987-3.086-0.987
+					c-1.239,0-1.891,0.567-1.891,1.281v0.042c0,0.966,0.631,1.281,3.171,1.932c2.981,0.777,4.661,1.847,4.661,4.41v0.041
+					c0,2.919-2.226,4.557-5.396,4.557C98.971,24.941,97.019,24.354,95.381,23.178z"/>
+			</g>
+		</svg>
+      </a>
+	  <div class="blog-heading">
+	  	<h1 style="transform: scale(0.75) translateZ(0px);">Blog</h1>
+	  </div>
+	  <ul layout="row" ng-show="vm.shrinkLinks">
+	      <li class="vanish-blog">
+	        <a ui-sref="landing.home" ui-sref-active="active">
+	          Home
+	        </a>
+	      </li>
+	      <li class="vanish-blog">
+	        <a ui-sref="landing.about" ui-sref-active="active">
+	          About
+	        </a>
+	      </li>
+	      <li class="vanish-blog">
+	        <a ui-sref="landing.contact" ui-sref-active="active">Contact</a>
+	      </li>
+	      <li class="vanish-blog">
+	        <a ui-sref="landing.blog" ui-sref-active="active">
+	          Blog
+	        </a>
+	      </li>
+	      <li class="m-up-blog">
+	        <form>
+	          <md-button ng-click="" class="md-icon-button material-icons">
+	            <md-icon md-svg-icon="{{vm.src + '/action/svg/production/ic_search_24px.svg'}}" aria-label="Search" size="24"></md-icon>
+	          </md-button>
+	        </form>
+	      </li>
+	      <li class="m-up-blog">
+	        <md-menu md-position-mode="target-right target">
+	          <md-button ng-click="$mdOpenMenu()" class="md-icon-button material-icons">
+	            <md-icon md-menu-origin md-svg-icon="{{vm.src + '/navigation/svg/production/ic_more_vert_24px.svg'}}" aria-label="More" size="24"></md-icon>
+	          </md-button>
+
+	          <md-menu-content width="3">
+	            <md-menu-item ng-show="!isAuthenticated()">
+	              <md-button ng-click="vm.goToUrl('login')">
+	                <md-icon md-menu-align-target md-svg-icon="{{vm.src + '/content/svg/production/ic_forward_24px.svg'}}" aria-label="More" size="24"></md-icon>
+	                Login
+	              </md-button>
+	            </md-menu-item>
+	            <md-menu-item ng-show="!isAuthenticated()">
+	              <md-button ng-click="vm.goToUrl('signup')">
+	                 <md-icon md-svg-icon="{{vm.src + '/social/svg/production/ic_person_add_24px.svg'}}" aria-label="More" size="24"></md-icon>
+	                Register
+	              </md-button>
+	            </md-menu-item>
+	            <md-menu-item ng-show="isAuthenticated()">
+	              <md-button ng-click="vm.goToUrl('dashboard')">
+	                <md-icon md-menu-align-target md-svg-icon="{{vm.src + '/action/svg/production/ic_dashboard_24px.svg'}}" aria-label="More" size="24"></md-icon>
+	                Dashboard
+	              </md-button>
+	            </md-menu-item>
+	            <md-menu-item ng-show="isAuthenticated()">
+	              <md-button ng-click="logout()">
+	                <md-icon md-menu-align-target md-svg-icon="{{vm.src + '/navigation/svg/production/ic_arrow_back_24px.svg'}}" aria-label="More" size="24"></md-icon>
+	                Logout
+	              </md-button>
+	            </md-menu-item>
+	          </md-menu-content>
+
+	        </md-menu>
+	      </li>
+	    </ul>
+	</div>
+</md-toolbar>

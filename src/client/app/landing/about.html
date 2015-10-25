@@ -1,0 +1,49 @@
+<section class="main" layout="column">
+    <section class="main-page about">
+        <div class="grid__col--2 sidenav" id="nav-1">
+            <header>
+                <ul class="title-area">
+                    <!--<li class="name">
+                        <a ui-sref="landing.home" class="icon-gnaas">
+                            <svg class="logo-icon" preserveAspectRatio="xMinYMin meet" viewBox="0 0 30 32">
+                                <g xmlns="http://www.w3.org/2000/svg" id="logo-icon">
+                                    <path d="M28.4,7.1c-0.4-0.2-1.3-0.6-2.3-1.2C25,5.3,23.3,6.3,22.2,8l-1.9,3.2c-0.7,1.4-0.6,2.9,0.3,4.2l0.1,0.1   c0.9,1.3,2.1,2.4,2.4,2.8c0.2,0.2,0.4,0.6,0.5,0.9c0.3,1.2-0.3,2.3-1.5,2.6c-1.1,0.3-2.3-0.4-2.7-1.5c-0.1-0.3-0.1-0.6-0.1-0.9   c0.1-0.5-0.1-1.3-0.8-1.9c-0.7-0.8-2.1,0.7-2.5,2.1v0.1c-0.4,1.5-0.7,2.7-0.6,2.8c0,0.1,0.1,0.2,0.1,0.2c0.6,1.2,0.2,2.6-1,3.2   s-2.7,0.2-3.3-1s-0.2-2.6,1-3.2c0.1,0,0.1-0.1,0.2-0.1c0.1,0,0.3-0.7,0.6-1.4c0.2-0.7,0.4-1.3,0.4-1.3c0-0.1,0-0.2,0.1-0.2l1.2-4.2   L13.5,17c-0.2-0.5-0.4-0.5-1-0.1c-0.3,0.2-0.9,0.7-1.1,0.9c-0.5,0.4-0.9,1.1-1.1,1.5c-0.1,0.3-0.3,0.5-0.5,0.7   c-0.9,0.8-2.3,0.6-3-0.3s-0.5-2.1,0.4-2.8c0.3-0.2,0.6-0.4,0.9-0.4c0.5-0.1,2.4-1.3,3.5-2c0.2-0.1,0.4-0.3,0.5-0.4L15,12l-2.6,1.4   c0,0-0.3,0-0.6,0c-0.8,0.1-1.8,0.2-2,0.5c-0.1,0.1-0.2,0.3-0.4,0.4c-0.8,0.4-2,0.2-2.7-0.6c-0.6-0.9-0.4-2,0.4-2.6   c0.5-0.3,0.9-0.4,1.3-0.4c0.7,0,2.5,0.4,4,0.1l0.4-0.1c1.5-0.3,3.3-1.5,4-2.9c0,0,0.7-1.3,1.6-2.7c0.9-1.5,0.8-3.1-0.1-3.7l-1.7-1   c-0.9-0.5-2.3-0.5-3.2,0L1.6,6.9C0.7,7.4,0,8.7,0,9.7v12.8c0,1,0.7,2.1,1.6,2.6l11.9,6.6c0.9,0.5,2.3,0.5,3.2,0L28.4,25   c0.9-0.5,1.6-1.6,1.6-2.6V9.7C30,8.7,29.3,7.6,28.4,7.1z" />
+                                </g>
+                            </svg>
+                        </a>
+                    </li>-->
+                </ul>
+                <nav>
+                    <ul>
+                        <li>
+                            <a ui-sref="landing.about.history" ui-sref-active="active">History</a>
+                        </li>
+                        <li>
+                            <a ui-sref="landing.about.aims" ui-sref-active="active">Aims</a>
+                        </li>
+                        <li>
+                            <a ui-sref="landing.about.operations" ui-sref-active="active">Operations</a>
+                        </li>
+                        <li>
+                            <a ui-sref="landing.about.executives" ui-sref-active="active">Executives</a>
+                        </li>
+                        <li>
+                            <a ui-sref="landing.about.nec" ui-sref-active="active">NEC</a>
+                        </li>
+                        <li>
+                            <a ui-sref="landing.about.structure" ui-sref-active="active">Structure</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="grid__col--10 ">
+            <div class="about-main">
+                <md-button ng-click="openNav(1)" class="md-icon-button material-icons drawer-about">
+                    <md-icon md-svg-icon="{{src + '/hardware/svg/production/ic_keyboard_backspace_24px.svg'}}" aria-label="Search" size="24"></md-icon>
+                </md-button>
+                <div ui-view class="shuffle-animation"></div>
+            </div>
+        </div>
+    </section>
+</section>

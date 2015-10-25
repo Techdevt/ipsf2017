@@ -1,0 +1,79 @@
+<section class="form_full background-01" layout="column">
+
+	<form class="form-signup" name="register" ng-submit="vm.submit()" novalidate>
+		<div class="form-heading">
+			<h1>
+				Register
+			</h1>
+		</div>
+		<md-content md-theme="form-dark" layout-padding layout="row" layout-sm="column">
+		    <md-input-container flex>
+		      <label>Title</label>
+		      <input ng-model="vm.formData.title" type="text">
+		    </md-input-container>
+		    <md-input-container class="md-icon-float" flex>
+		      <label>Email</label>
+		      <md-icon md-svg-icon="{{src + '/communication/svg/production/ic_email_24px.svg'}}"></md-icon>
+		      <input 
+				type="email" 
+				ng-model="vm.formData.email" 
+				ng-model-options="{updateOn:'blur'}"
+				required name="email">
+				<div ng-messages="register.email.$error">
+					<div ng-message="email">please enter a proper email</div>
+				</div>
+		    </md-input-container>
+		  </md-content>
+		  <md-content layout-padding>
+		      <div layout layout-sm="column">
+		        <md-input-container flex>
+		            <label>UserName</label>
+		            <input ng-model="vm.formData.username">
+		          </md-input-container>
+		      </div>
+		      <div layout layout-sm="column">
+		        <md-input-container class="md-icon-float" flex>
+		          <label>First name</label>
+		          <md-icon md-svg-icon="{{src + '/social/svg/production/ic_person_24px.svg'}}"></md-icon>
+		          <input ng-model="vm.formData.firstName" required>
+		        </md-input-container>
+		        <md-input-container flex>
+		          <label>Last Name</label>
+		          <input ng-model="vm.formData.lastName" required>
+		        </md-input-container>
+		      </div>
+		      <md-input-container flex>
+		        <label>Address</label>
+		        <input ng-model="vm.formData.address">
+		      </md-input-container>
+		        <md-input-container class="md-icon-float" flex>
+		          <label>City</label>
+		          <md-icon md-svg-icon="{{src + '/maps/svg/production/ic_place_24px.svg'}}"></md-icon>
+		          <input ng-model="vm.formData.city">
+		        </md-input-container>
+		       <div layout layout-sm="column">
+		      	<md-input-container flex>
+			      <label>Password</label>
+			      <input 
+					name="password" 
+					type="password"
+					ng-model="vm.formData.password"  
+					required>
+			    </md-input-container>
+			    <md-input-container flex>
+			      <label>Confirm Password</label>
+			      <input 
+					name="password_confirm" 
+					type="password"
+					ng-model="vm.formData.confirmPassword" 
+					validate-equals='vm.formData.password' 
+					required> 
+					<div ng-messages="register.password_confirm.$error">
+						<div ng-message="equal">passwords do not match</div>
+					</div>
+			    </md-input-container>
+		      </div>
+		  </md-content>
+		  <md-button class="md-button md-raised md-primary w-txt" type="submit">Submit</md-button>
+	</form>
+</section>

@@ -1,0 +1,42 @@
+<section ng-if="!isDashView()" data-ng-controller="Shell as vm"  ng-cloak>
+    <app-header ng-cloak></app-header>
+    
+    <section ui-view class="page-container ng-scope" layout-fill></section>              
+
+</section>
+
+<section ng-if="isDashView()" ng-cloak>
+    <div ui-view layout-fill></div>
+</section>
+
+
+<md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+    <md-toolbar>
+		<div class="md-toolbar-tools" layout="column" layout-align="center center">
+		  	<span>
+		  		<h1>Navigation</h1>
+		  	</span>
+		</div>    	
+    </md-toolbar>
+
+    <ul layout="column" ng-cloak>
+      <li>
+        <a href="#/" ui-sref="landing" ui-sref-active="active">
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="#" ui-sref-active="active">
+          About Us
+        </a>
+      </li>
+      <li>
+        <a href="#" ui-sref-active="active">Contact</a>
+      </li>
+      <li>
+        <a href="#" ui-sref-active="active">
+          Blog
+        </a>
+      </li>
+    </ul>
+</md-sidenav>

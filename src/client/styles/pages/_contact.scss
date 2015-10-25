@@ -1,0 +1,59 @@
+section.main.contact{
+	position: relative;
+	background: $color-primary;
+
+	.section-header{
+		margin: 0;
+		.heading-2{
+			color: $white;
+			text-transform: uppercase;
+			text-align: left !important;
+		}
+	}
+
+	div.contact-container{
+		padding-bottom: 64px;
+		.gps-location{
+			padding-bottom: 30%;
+			
+			@include media('<=768px'){
+				padding-bottom: calc(30vh);
+			}
+
+			@include media('>768px'){
+				padding-bottom: calc(45vh);
+			}
+		}
+
+
+		.contact-form-wrapper{
+			background: $white;
+			.contact-form{
+				width: auto;
+
+				@include media('<=768px'){
+					height: calc(30vh);
+					margin-top: 8px;
+				}
+
+				@include media('>768px'){
+					height: calc(45vh);
+				}
+
+				form > md-content{
+				 background: $white
+				}
+			}
+		}
+		
+
+		.gps-location{
+			background-size: cover !important;
+			background-color: $alabaster;
+		}
+	}
+}
+
+.one-full{
+	color: #FFF;
+}

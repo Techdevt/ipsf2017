@@ -1,0 +1,69 @@
+.dashboard.ng-scope {
+    min-height: 100% !important;
+    height: 100%;
+    position: relative;
+    overflow-x: hidden;
+}
+
+md-sidenav{
+    .face {
+      border-radius: 30px;
+      border: 1px solid #ddd;
+      display: inline-block;
+      margin: 4px 16px; 
+      vertical-align: middle;
+      width: 48px;
+    }
+}
+
+md-toolbar.tall{
+    height: 192px !important;
+    background: url('#{$path-img}/beach.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    position: fixed;
+}
+
+.appHeader .md-toolbar-tools{
+    max-height: 192px;
+    height: 192px;
+    min-height: 64px;
+}
+
+.dashMain{
+    margin-top: 192px;
+}
+
+.shuffle-animation.ng-enter,
+.shuffle-animation.ng-leave {
+    position: relative;
+}
+
+.shuffle-animation.ng-enter {
+    -moz-transition: ease-out all 0.3s 0.4s;
+    -o-transition: ease-out all 0.3s 0.4s;
+    -webkit-transition: ease-out all 0.3s 0.4s;
+    transition: ease-out all 0.3s 0.4s;
+    left: 2em;
+    opacity: 0;
+}
+
+.shuffle-animation.ng-enter.ng-enter-active {
+    left: 0;
+    opacity: 1;
+}
+
+.shuffle-animation.ng-leave {
+    -moz-transition: 0.3s ease-out all;
+    -o-transition: 0.3s ease-out all;
+    -webkit-transition: 0.3s ease-out all;
+    transition: 0.3s ease-out all;
+    left: 0;
+    opacity: 1;
+}
+
+.shuffle-animation.ng-leave.ng-leave-active {
+    left: 2em;
+    opacity: 0;
+}

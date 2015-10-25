@@ -1,0 +1,82 @@
+//Color Variables
+$white            : #FFF;
+$black            : #000;
+$grey             : #797e83;
+
+$persian-green    : #009688;
+$froly            : #F88379;
+$amber            : #e59a13;
+$aqua-haze        : #f6f9fa;
+$darker-aqua-haze : #EDEFF0;
+$lynch            : #637a91;
+$alabaster        : #fafafa;
+$iron             : #d3d9dd;
+$mine-shaft       : #212121;
+$dove-grey        : #727272;
+$nobel            : #B6B6B6;
+$mako             : #3e474f;
+$astral           : #3079AB;
+$light-wisteria   : #C38CD4;
+
+// Functional color variables
+$color-primary         :   $persian-green;
+$color-secondary       :   $froly;
+$color-accent          :   $amber;
+$color-shadow          :   rgba($black, .2);
+$color-dark            :   $mako;
+$text-color--primary   :   $mine-shaft;
+$text-color--secondary :   $dove-grey;
+$link-color--default   :   $text-color--secondary;
+$link-color--visited    :   desaturate($link-color--default, 30%);
+$border-color          :   darken($text-color--secondary, 10%);
+
+// Sizes
+$base__font-size   : 16px;
+$base__line        : 24px;
+$base__padding     : 5px;
+
+// Grid
+$g-col-width       : 65px;
+$g-gutter-width    : 20px;
+$g-col-count       : 12;
+$g-cont-max-w      : 1050px;
+
+// Font Weights
+$font-weight--thin           : 100;
+$font-weight--light          : 300;
+$font-weight--medium         : 400;
+$font-weight--bold           : 700;
+$font-weight--ultra-bold     : 900;
+// Type specific variables
+$standard-spacing: 30px;
+
+// Transitioins
+$trns-duration     :  .3s;
+
+// Shades and Tints
+$shd-light: 10%;
+$shd-dark: 20%;
+$tnt-dark: 10%;
+$tnt-light: 20%;
+
+
+%top-margin{
+	margin-top: 80px;
+    @include media('<=869px') {
+        margin-top: 56px;
+    }
+}
+
+//Font stacks
+$stack-sans-serif: Helvetica, Arial, sans-serif;
+$font-family--primary: "Gotham Rounded Medium", $stack-sans-serif;
+$font-family--secondary: "Helvetica Neue", $stack-sans-serif;
+
+//Border Radius
+$br--default: .4em;
+$br--round: 50%;
+
+//Asset Paths
+$path-img     : './assets/images';
+$path-svg     : './assets/svg';
+$path-fonts   : './assets/fonts';

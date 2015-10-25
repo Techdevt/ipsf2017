@@ -1,0 +1,108 @@
+.form_full {
+    @extend %top-margin;
+    position: relative;
+    width: 100%;
+    @include media('<=849px') {
+        min-height: calc(100vh - 56px);
+    }
+    @include media('>=850px') {
+        min-height: calc(100vh - 80px);
+    }
+}
+
+.background-01 {
+    background-color: $aqua-haze;
+}
+
+.form-login {
+    margin: 0 auto;
+    max-width: 500px;
+    @include media('<=768px') {
+        width: 100%;
+        max-width: 600px;
+    }
+    @include media('>768px', '<=1200px') {
+        width: 60%;
+    }
+    @include media('>1200px') {
+        width: 30%;
+    }
+    md-content {
+        background: #f7f7f7;
+    }
+    .md-input {
+        background-color: $white;
+        border-bottom: 2px solid $border-color;
+    }
+    .btn-login {
+        @include media('<600px') {
+            margin-top: 1.25em;
+        }
+        @include media('>=600px') {
+            margin-top: 2.5em;
+        }
+    }
+    .forgot {
+        @include text(75%, null, null, $color-primary);
+        margin-left: 36px;
+    }
+    .lgi {
+        color: #aaa;
+        text-align: center;
+        padding-bottom: 1.25em;
+        border-bottom: 1px solid $border-color;
+        a {
+            border-bottom: 2px solid $text-color--secondary;
+            color: $color-primary;
+        }
+    }
+}
+
+.form-heading {
+    font-family: $font-family--primary;
+    text-align: center;
+    line-height: 1.4;
+    h1 {
+        font-size: 150%;
+        font-weight: 600;
+        color: $text-color--secondary;
+        margin: 0.67em 0;
+    }
+}
+
+.form-signup {
+    margin: 0 auto;
+    @include media('<=768px') {
+        width: 90%;
+    }
+    @include media('>768px', '<=1044px') {
+        width: 50%;
+    }
+    @include media('>1044px') {
+        width: 30%;
+    }
+    md-content.md-form-dark-theme {
+        background: #424242;
+        padding-bottom: 20px;
+    }
+    .md-button {
+        padding: 0 40px;
+        display: block;
+        @include media('<=768px') {
+            margin: 10px auto;
+        }
+        @include media('>768px') {
+            margin: 20px auto;
+        }
+    }
+}
+
+.form-label {
+    @include text(85%, null, bold, $text-color--secondary);
+    display: block;
+    margin-bottom: 0.3125em;
+}
+
+.btn-login {
+    margin: 0 auto;
+}

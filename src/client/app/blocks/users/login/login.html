@@ -1,0 +1,33 @@
+<section class="form_full background-01" layout="column">
+	<form class="form-login" name="login" ng-submit="login.$valid && vm.login()" novalidate>
+		<div class="form-heading">
+			<h1>
+				Sign In
+			</h1>
+		</div>
+
+		<md-content layout-padding layout="column" class="padding">
+		    <md-input-container class="md-icon-float" >
+		      <label class="form-label">UserName</label>
+		      <md-icon md-svg-icon="img/icons/ic_person_24px.svg"></md-icon>
+		      <input ng-model="vm.loginData.userName" type="text" required>
+		    </md-input-container>
+		    <md-input-container class="md-icon-float">
+		      <label class="form-label">Password</label>
+		      <md-icon md-svg-src="img/icons/ic_phone_24px.svg"></md-icon>
+		      <input ng-model="vm.loginData.password" type="password" required>
+		    </md-input-container>
+
+		    <a ui-sref="forgot" class="forgot"><i class="fa fa-question-circle"></i>
+				<b>Forgot your password?</b>
+			</a>
+
+			<div class="btn-login">
+				<md-button class="md-button md-raised md-primary md-whiteframe-z5" type="submit">
+					Sign In
+				</md-button>
+			</div>
+			<p class="lgi">Don't have an account? <a ui-sref="signup">Create a free account</a></p>
+		</md-content>
+	</form>
+</section>

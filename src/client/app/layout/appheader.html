@@ -1,0 +1,50 @@
+<div class="md-toolbar-tools" data-ng-controller="Dashboard as vm" layout="row" layout-align="space-around center">
+  <div class="md-toolbar-tools" layout="row" layout-align="space-around center">
+    <!-- <a ui-sref="landing.home">
+      <img src="./assets/images/logo.png">
+      <h2>AppBar</h2>
+    </a> -->
+
+    <div class="blog-heading">
+	  	<h1 style="transform: scale(0.75) translateZ(0px); text-transform: capitalize;">{{vm.title()}}</h1>
+	</div>
+
+	<!-- Extract links to widget -->
+    <ul layout="row">
+    	<li></li>
+    	<li></li>
+    	<li></li>
+    	<li></li>
+    	<li class="m-up-blog">
+	        <form>
+	          <md-button ng-click="" class="md-icon-button material-icons">
+	            <md-icon md-svg-icon="{{vm.src + '/action/svg/production/ic_search_24px.svg'}}" aria-label="Search" size="24"></md-icon>
+	          </md-button>
+	        </form>
+	      </li>
+	      <li class="m-up-blog">
+	        <md-menu md-position-mode="target-right target">
+	          <md-button ng-click="$mdOpenMenu()" class="md-icon-button material-icons">
+	            <md-icon md-menu-origin md-svg-icon="{{vm.src + '/navigation/svg/production/ic_more_vert_24px.svg'}}" aria-label="More" size="24"></md-icon>
+	          </md-button>
+
+	          <md-menu-content width="3">
+	            <md-menu-item>
+	              <md-button ng-click="goToUrl('landing.home')">
+	                <md-icon md-menu-align-target md-svg-icon="{{vm.src + '/action/svg/production/ic_store_24px.svg'}}" aria-label="More" size="24"></md-icon>
+	                Home
+	              </md-button>
+	            </md-menu-item>
+	            <md-menu-item>
+	              <md-button ng-click="logout()">
+	                 <md-icon md-svg-icon="{{vm.src + '/navigation/svg/production/ic_arrow_back_24px.svg'}}" aria-label="More" size="24"></md-icon>
+	                Logout
+	              </md-button>
+	            </md-menu-item>
+	          </md-menu-content>
+
+	        </md-menu>
+	      </li>
+    </ul>
+  </div>
+</div>

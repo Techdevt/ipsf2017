@@ -1,0 +1,273 @@
+.main {
+    @extend %top-margin;
+    min-height: calc(100vh - 233px);
+    header {
+        &.hero {
+            -webkit-transition: background-color 200ms ease-in-out;
+            transition: background-color 200ms ease-in-out;
+            background: $color-primary;
+            overflow: hidden;
+            position: relative;
+            text-align: left;
+            padding: 0;
+            height: 622px;
+            border-bottom: solid 1px #e9f0f3;
+            #hero-initial {
+                height: 622px;
+                @include media('>=768px') {
+                    padding-top: 150px;
+                }
+                @include media('<768px') {
+                    padding-top: 40px;
+                }
+            }
+        }
+        h1 {
+            @include text(40px, 1.1);
+            margin-bottom: 30px;
+            @include media('<768px') {
+                @include text(36px);
+            }
+        }
+        h1,
+        .subheading {
+            opacity: 0;
+            -webkit-animation: opacity_change 500ms 1000ms ease-in forwards;
+            animation: opacity_change 500ms 1000ms ease-in forwards;
+            text-align: left;
+            color: $white !important;
+        }
+        h2.subheading {
+            @include text(18px, null, 400, $text-color--secondary);
+            margin-bottom: 13px;
+            font-family: $font-family--primary;
+        }
+        .headline {
+            @include media('>768px') {
+                padding-top: 74px;
+                padding-right: 30px;
+            }
+        }
+        .card {
+            padding: 0;
+            box-shadow: 0 1px 0px transparent;
+            @include media('<768px') {
+                margin-top: 40px;
+            }
+        }
+        .button.cta {
+            margin-top: 30px;
+        }
+    }
+}
+
+#page > div > section > md-toolbar > div > a {
+    position: relative;
+}
+
+#page > div > section > md-toolbar > div > a > svg.icon-gnaas {
+    width: 139px;
+    height: 32px;
+    fill: $color-primary;
+}
+
+svg.transparent-card {
+    @include media('<579px') {
+        display: none;
+    }
+    @include media('>=579px') {
+        width: 388px;
+        height: 249px;
+        opacity: 0;
+    }
+    &:nth-child(1) {
+        @include media('>=579px') {
+            -webkit-animation: load_trans_card_a 250ms 900ms ease-in forwards;
+            animation: load_trans_card_a 250ms 900ms ease-in forwards;
+            position: absolute;
+            top: -269px;
+            right: 55px;
+        }
+    }
+    &:nth-child(2) {
+        -webkit-animation: load_trans_card_a 250ms 1100ms ease-in forwards;
+        animation: load_trans_card_a 250ms 1100ms ease-in forwards;
+        position: absolute;
+        top: 324px;
+        right: 55px;
+    }
+    &:nth-child(3) {
+        -webkit-animation: load_trans_card_b 250ms 950ms ease-in forwards;
+        animation: load_trans_card_b 250ms 950ms ease-in forwards;
+        position: absolute;
+        top: -380px;
+        right: -353px;
+    }
+    &:nth-child(4) {
+        -webkit-animation: load_trans_card_b 250ms 1050ms ease-in forwards;
+        animation: load_trans_card_b 250ms 1050ms ease-in forwards;
+        position: absolute;
+        top: -111px;
+        right: -353px;
+    }
+    &:nth-child(5) {
+        -webkit-animation: load_trans_card_b 250ms 1150ms ease-in forwards;
+        animation: load_trans_card_b 250ms 1150ms ease-in forwards;
+        position: absolute;
+        top: 158px;
+        right: -353px;
+    }
+    &:nth-child(6) {
+        -webkit-animation: load_trans_card_b 250ms 1000ms ease-in forwards;
+        animation: load_trans_card_b 250ms 1000ms ease-in forwards;
+        position: absolute;
+        top: 427px;
+        right: -353px;
+    }
+}
+
+.main-page {
+    .content {
+        padding: 80px 0;
+        h3 {
+            font-weight: 500;
+        }
+        p {
+            font-weight: 300;
+        }
+        &.has-bg {
+            background-color: $aqua-haze;
+            border-top: solid 1px darken($aqua-haze, 10%);
+            border-bottom: solid 1px darken($aqua-haze, 10%)
+        }
+        &.has-bg p:last-child {
+            margin-bottom: 0
+        }
+    }
+}
+
+.callout-card {
+    border-radius: $br--default;
+    background-color: $aqua-haze;
+    min-height: 178px;
+    margin-bottom: 30px;
+    margin-top: 40px;
+    position: relative;
+    text-align: center;
+    &.structure {
+        overflow: hidden;
+        background: $lynch;
+        svg {
+            width: 274px;
+            margin: -5px 0 0 -5px;
+        }
+    }
+    svg {
+        position: absolute;
+        top: -26px;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    .button {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        border-color: $white;
+        color: $white;
+        span {
+            @include media('<=679px') {
+                display: none;
+            }
+        }
+    }
+}
+
+.congress {
+    .mega-quote {
+        background-image: url('#{$path-img}/mega-quote.jpg');
+        padding-bottom: 120px;
+        @include media('<=459px') {
+            background-position: -510px 0;
+        }
+        @include media('>=460px',
+        '<=540px') {
+            background-position: -380px 0
+        }
+        @include media('<=620px') {
+            padding-right: 40%
+        }
+        @include media('>=541px',
+        '<=739px') {
+            background-position: -240px 0;
+        }
+        @include media('>=740px',
+        '<=859px') {
+            background-position: -90px 0;
+        }
+        @include media('<=860px') {
+            background-position: right top;
+        }
+    }
+}
+
+.mega-quote {
+    border-radius: $br--default;
+    background: $aqua-haze top center no-repeat;
+    background-size: cover;
+    padding: 50px 50% 30px 30px;
+    position: relative;
+    margin: 30px 0;
+    blockquote {
+        @include text(18px, null, 400, $white);
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0 0 30px 0;
+        text-align: left;
+    }
+    &:before {
+        position: absolute;
+        top: -1px;
+        left: 30px;
+        width: 54px;
+        height: 21px;
+        background: url('#{$path-svg}/mega-quote.svg') 0 0 no-repeat;
+        content: " ";
+        display: block;
+        z-index: 2
+    }
+    @include media('<=340px') {
+        background-position: -1000px 0;
+        padding-right: 40%
+    }
+    @include media('>=341px',
+    '<=400px') {
+        background-position: -800px 0;
+        padding-right: 40%
+    }
+    @include media('>=401px',
+    '<=480px') {
+        background-position: -660px 0;
+        padding-right: 40%
+    }
+    @include media('>=481px',
+    '<=590px') {
+        background-position: 575px 0;
+    }
+    @include media('>=591px') {
+        background-position: right top
+    }
+    .button {
+        float: left;
+    }
+}
+
+header .card:hover .button.cta {
+    background-color: darken($color-secondary, 5%) !important;
+    border-color: darken($color-secondary, 5%) !important
+}

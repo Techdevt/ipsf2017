@@ -1,0 +1,57 @@
+.md-toolbar-tools {
+     &.header {
+        height: 80px;
+        left: 0;
+        position: fixed;
+        background: $white;
+        top: 0;
+        -webkit-transition: box-shadow .25s cubic-bezier(1, 0, 0, 1);
+        transition: box-shadow .25s cubic-bezier(1, 0, 0, 1);
+        width: 100%;
+        z-index: 11;
+        .md-icon-button {
+            svg {
+                fill: #757575;
+            }
+        }
+        .blog-heading {
+            display: none;
+        }
+        @include media('<=849px') {
+            -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, .35);
+            box-shadow: 0 1px 6px rgba(0, 0, 0, .35);
+            height: 56px;
+        }
+        @include media('>849px', '<=2500px') {
+            height: 80px;
+        }
+        &.box {
+            -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, .35);
+            box-shadow: 0 1px 6px rgba(0, 0, 0, .35);
+        }
+        ul {
+            li {
+                list-style: none;
+                margin: 0 1px;
+                a {
+                    @include text(14px,24px,500,$text-color--secondary);
+                    height: 80px;
+                    display: block;
+                    outline: none;
+                    text-transform: uppercase;
+                    border-bottom: 4px solid transparent;
+                    padding: 32px 16px 20px 16px;
+                    transition: all ease-in 0.15s;
+                    webkit-transition: all ease-in 0.15s;
+                    &:hover,
+                    &.active {
+                        color: $color-primary;
+                    }
+                }
+                .md-button {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}
