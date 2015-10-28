@@ -4,9 +4,9 @@
     angular.module('blocks.auth')
         .factory('auth', auth);
 
-    auth.$inject = ['logger', 'XHR', 'AuthToken', '$state', '$window', '$q', 'config', '$timeout', 'authorization', '$interval'];
+    auth.$inject = ['logger', 'XHR', 'AuthToken', '$state', '$window', '$q', 'config', '$timeout', 'authorization', '$interval', 'common'];
 
-    function auth(logger, XHR, AuthToken, $state, $window, $q, config, $timeout, authorization, $interval) {
+    function auth(logger, XHR, AuthToken, $state, $window, $q, config, $timeout, authorization, $interval, common) {
         var storage = $window.localStorage;
         var oauth_data = {};
         var requestEnd = '/oauth1/request';
@@ -30,11 +30,12 @@
         return service;
         //////////////
         function authenticate() {
+            var nonce = common.randomString(10);
             var httpMethod = 'POST',
                 url = config.backend + '/gnaas/oauth1/request',
                 parameters = {
                     oauth_consumer_key: config.consumerKey,
-                    oauth_nonce: myLocalized.nonce,
+                    oauth_nonce: nonce,
                     oauth_signature_method: 'HMAC-SHA1',
                     oauth_timestamp: oauth_timestamp
                 },
@@ -43,7 +44,7 @@
                     encodeSignature: false
                 });
 
-            var data = 'oauth_consumer_key=' + config.consumerKey + '&oauth_nonce=' + myLocalized.nonce + '&oauth_signature=' + signature + '&oauth_signature_method=HMAC-SHA1&oauth_timestamp=' + oauth_timestamp;
+            var data = 'oauth_consumer_key=' + config.consumerKey + '&oauth_nonce=' + nonce + '&oauth_signature=' + signature + '&oauth_signature_method=HMAC-SHA1&oauth_timestamp=' + oauth_timestamp;
             XHR
                 .postwww(requestEnd, data)
                 .then(function(result) {
@@ -80,11 +81,12 @@
                                             $interval.cancel(popupPromise);
                                             var url = win.document.URL;
                                             var oauth_values = form2json(url);
+                                            var nonce = common.randomString(10);
 
                                             oauth_data.wp_scope = decodeURIComponent(gup(url, 'wp_scope'));
                                             oauth_data.oauth_verifier = decodeURIComponent(gup(url, 'oauth_verifier'));
                                             win.close();
-                                            var access_query = 'oauth_consumer_key=' + config.consumerKey + '&oauth_timestamp=' + oauth_timestamp + '&oauth_nonce=' + myLocalized.nonce + '&oauth_signature=' + oauth_data.signature + '&oauth_signature_method=HMAC-SHA1&oauth_verifier=' + oauth_data.oauth_verifier + '&oauth_token=' + oauth_data.oauth_token;
+                                            var access_query = 'oauth_consumer_key=' + config.consumerKey + '&oauth_timestamp=' + oauth_timestamp + '&oauth_nonce=' + nonce + '&oauth_signature=' + oauth_data.signature + '&oauth_signature_method=HMAC-SHA1&oauth_verifier=' + oauth_data.oauth_verifier + '&oauth_token=' + oauth_data.oauth_token;
                                             XHR.postwww(accessTokenBackend, access_query)
                                                 .then(function(result) {
                                                     oauth_data.access_token = form2json(result);

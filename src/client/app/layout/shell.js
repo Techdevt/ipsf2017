@@ -4,12 +4,10 @@
 	angular.module('gnaas.layout')
 		   .controller('Shell', Shell);
 
-	Shell.$inject = ['$scope','$location','auth','$mdSidenav','$mdMedia','morlock','$window','$state','routehelper'];
-	function Shell($scope,$location,auth,$mdSidenav,$mdMedia,morlock,$window,$state,routehelper){
+	Shell.$inject = ['$scope','$location','auth','$mdSidenav','$mdMedia','morlock','$window','$state'];
+	function Shell($scope,$location,auth,$mdSidenav,$mdMedia,morlock,$window,$state){
 		$scope.$location = $location.path();
 	    $scope.shrink = $mdMedia('(min-width: 850px)');
-	    
-	    $scope.src = './bower_components/material-design-icons';
 
 	    $scope.toggleSidenav = function(menuId) {
 		    $mdSidenav(menuId).toggle();

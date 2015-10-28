@@ -1,31 +1,27 @@
-(function(){
-	'use strict';
+(function() {
+    'use strict';
 
-	angular
-		.module('blocks.router.404')
-		.run(routeConfig);
+    angular
+        .module('blocks.router.404')
+        .run(routeConfig);
 
-	routeConfig.$inject = ['routerHelper'];
-	/* @ngInject */
+    routeConfig.$inject = ['routerHelper'];
+    /* @ngInject */
 
-	function routeConfig(routehelper){
-		routehelper.configureRoutes(getRoutes());
-	}
+    function routeConfig(routerHelper) {
+        var otherwise = '/404';
+        routerHelper.configureStates(getStates(), otherwise);
+    }
 
-	function getRoutes(){
-		return [{
-			name : '404',
-			id : 0,
-			url : '/404',
-			title: 'Page Not Found',
-			config : {
-				//add route resolve properties if any on resolve
-				views:{
-					'' : {
-							templateUrl : myLocalized.blocks + 'router/404/404.html'
-					}
-				}
-			}
-		}];
-	}
+    function getStates() {
+        return [{
+            state: '404',
+            config: {
+                url: '/404',
+                title: 'Page Not Found',
+       			templateUrl: 'app/blocks/router/404/404.html'
+            }
+
+        }];
+    }
 })();

@@ -6,6 +6,7 @@
         .module('gnaas.core')
         .constant('toastr', toastr)
         .constant('moment', moment)
-        .constant('_', lodash)
-        .constant('$', jQuery);
+        .constant('_', _)
+        .constant('$', jQuery)
+        .constant('morlock', morlock);
 })();

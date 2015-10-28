@@ -1,35 +1,27 @@
-(function(){
-	'use strict';
+(function() {
+    'use strict';
 
-	angular
-		.module('blocks.users')
-		.run(routeConfig);
+    angular
+        .module('blocks.users')
+        .run(routeConfig);
 
-	routeConfig.$inject = ['routehelper'];
-	/* @ngInject */
+    routeConfig.$inject = ['routerHelper'];
+    /* @ngInject */
 
-	function routeConfig(routehelper){
-		routehelper.configureRoutes(getRoutes());
-	}
+    function routeConfig(routerHelper) {
+        routerHelper.configureStates(getStates());
+    }
 
-	function getRoutes(){
-		return [{
-			name : 'signup',
-			url : '/signup',
-			title : 'Signup',
-			config : {
-				//add route resolve properties if any on resolve
-				views:{
-					'' : {
-							templateUrl : myLocalized.blocks + 'users/signup/signup.html',
-							controller: 'Signup',
-							controllerAs: 'vm'
-					}
-				},
-				resolve: {
-					
-				}
-			}
-		}];
-	}
+    function getStates() {
+        return [{
+            state: 'signup',
+            config: {
+                url: '/signup',
+                title: 'Signup',
+                templateUrl: 'app/blocks/users/signup/signup.html',
+                controller: 'Signup',
+                controllerAs: 'vm'
+            }
+        }];
+    }
 })();

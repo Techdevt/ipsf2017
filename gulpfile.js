@@ -66,7 +66,7 @@ gulp.task('plato', function(done) {
 gulp.task('styles', ['clean-styles'], function() {
     log('Compiling Sass --> CSS');
 
-    var sassOptions = {
+    var sassOptions = { 
         style: 'expanded'
     };
 

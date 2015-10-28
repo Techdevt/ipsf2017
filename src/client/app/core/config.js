@@ -14,6 +14,7 @@
 
     var config = {
         appErrorPrefix: 'GNAAS Error - ',
+        appTitle: 'GNAAS',
         backend: 'http://localhost:8080/gnaas',
         consumerId: 29,
         consumerKey: 'WIAvrQRSeIDS',
@@ -26,9 +27,9 @@
 
     core.config(configure);
 
-    configure.$inject = ['$logProvider', 'routerHelperProvider', 'exceptionHandlerProvider', '$mdThemingProvider'];
+    configure.$inject = ['$logProvider', 'routerHelperProvider', 'exceptionHandlerProvider', '$mdThemingProvider', '$httpProvider'];
     /* @ngInject */
-    function configure($logProvider, routerHelperProvider, exceptionHandlerProvider, $mdThemingProvider) {
+    function configure($logProvider, routerHelperProvider, exceptionHandlerProvider, $mdThemingProvider, $httpProvider) {
         if ($logProvider.debugEnabled) {
             $logProvider.debugEnabled(true);
         }

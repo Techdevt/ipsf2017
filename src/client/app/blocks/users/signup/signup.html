@@ -13,7 +13,7 @@
 		    </md-input-container>
 		    <md-input-container class="md-icon-float" flex>
 		      <label>Email</label>
-		      <md-icon md-svg-icon="{{src + '/communication/svg/production/ic_email_24px.svg'}}"></md-icon>
+		      <ng-md-icon icon="email" aria-label="Email" size="24"></ng-md-icon> 
 		      <input 
 				type="email" 
 				ng-model="vm.formData.email" 
@@ -34,7 +34,7 @@
 		      <div layout layout-sm="column">
 		        <md-input-container class="md-icon-float" flex>
 		          <label>First name</label>
-		          <md-icon md-svg-icon="{{src + '/social/svg/production/ic_person_24px.svg'}}"></md-icon>
+		          <ng-md-icon icon="person" aria-label="First Name" size="24"></ng-md-icon> 
 		          <input ng-model="vm.formData.firstName" required>
 		        </md-input-container>
 		        <md-input-container flex>
@@ -48,7 +48,7 @@
 		      </md-input-container>
 		        <md-input-container class="md-icon-float" flex>
 		          <label>City</label>
-		          <md-icon md-svg-icon="{{src + '/maps/svg/production/ic_place_24px.svg'}}"></md-icon>
+		          <ng-md-icon icon="place" aria-label="city" size="24"></ng-md-icon> 
 		          <input ng-model="vm.formData.city">
 		        </md-input-container>
 		       <div layout layout-sm="column">

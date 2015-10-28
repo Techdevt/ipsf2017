@@ -32,7 +32,6 @@
             $('.drawer-about').toggleClass('flip');
         };
 
-        $scope.src = './bower_components/material-design-icons'; 
     }
 
 })();

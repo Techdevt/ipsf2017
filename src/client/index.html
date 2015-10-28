@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html ng-app="gnaas">
 <head>
     <style>
         /* This helps the ng-show/ng-hide animations start at the right place. */
@@ -14,13 +14,17 @@
 
     <!-- build:css styles/lib.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/bower_components/toastr/toastr.css" />
+    <link rel="stylesheet" href="/bower_components/angular-socialshare/angular-socialshare.css" />
     <link rel="stylesheet" href="/bower_components/angular-material-icons/angular-material-icons.css" />
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:css styles/app.css -->
     <!-- inject:css -->
+    <link rel="stylesheet" href="/.tmp/index.css">
     <!-- endinject -->
     <!-- endbuild -->
 </head>
@@ -43,6 +47,13 @@
     <script src="/bower_components/angularUtils-disqus/dirDisqus.js"></script>
     <script src="/bower_components/angularUtils-pagination/dirPagination.js"></script>
     <script src="/bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+    <script src="/bower_components/lodash/lodash.js"></script>
+    <script src="/bower_components/angular-aria/angular-aria.js"></script>
+    <script src="/bower_components/angular-material/angular-material.js"></script>
+    <script src="/bower_components/angular-messages/angular-messages.js"></script>
+    <script src="/bower_components/angular-touch/angular-touch.js"></script>
+    <script src="/bower_components/oauth-signature/dist/oauth-signature.js"></script>
+    <script src="/bower_components/morlock/dist/morlock.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -81,15 +92,16 @@
     <script src="/src/client/app/blocks/users/signup/matchpass.js"></script>
     <script src="/src/client/app/blocks/users/signup/signup.js"></script>
     <script src="/src/client/app/Chat/chat.js"></script>
+    <script src="/src/client/app/core/common.js"></script>
     <script src="/src/client/app/core/config.js"></script>
     <script src="/src/client/app/core/constants.js"></script>
-    <script src="/src/client/app/core/core.route.js"></script>
+    <script src="/src/client/app/core/xhr.js"></script>
     <script src="/src/client/app/data/datacontext.js"></script>
     <script src="/src/client/app/directives/sticky-nav.js"></script>
+    <script src="/src/client/app/features/BlogService.js"></script>
     <script src="/src/client/app/filters/unique.js"></script>
     <script src="/src/client/app/gnaas.js"></script>
     <script src="/src/client/app/landing/blog.js"></script>
-    <script src="/src/client/app/landing/BlogService.js"></script>
     <script src="/src/client/app/landing/config.routes.js"></script>
     <script src="/src/client/app/landing/landing.js"></script>
     <script src="/src/client/app/layout/shell.js"></script>

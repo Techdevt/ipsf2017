@@ -1,165 +1,101 @@
-(function(){
-	'use strict';
+(function() {
+    'use strict';
 
-	angular
-		.module('gnaas.landing')
-		.run(routeConfig);
+    angular
+        .module('gnaas.landing')
+        .run(routeConfig);
 
-	routeConfig.$inject = ['routehelper'];
-	/* @ngInject */
+    routeConfig.$inject = ['routerHelper'];
+    /* @ngInject */
 
-	function routeConfig(routehelper){
-		routehelper.configureRoutes(getRoutes());
-	}
+    function routeConfig(routerHelper) {
+        routerHelper.configureStates(getStates());
+    }
 
-	function getRoutes(){
-		return [{
-			name : 'landing',
-			abstract: true,
-			url : '/',
-			title : 'Landing Page',
-			config : {
-				//add route resolve properties if any on resolve
-				views:{
-					'' : {
-							template : '<div ui-view class="page-wrap fade-in-animation"></div>',
-							controller : 'Landing',
-							controllerAs : 'vm'
-					}
-				}
-			}
-		},
-		{
-			name : 'landing.home',
-			url : '',
-			title : 'Home',
-			config : {
-				//add route resolve properties if any on resolve
-				views:{
-					'' : {
-							templateUrl : myLocalized.landing + 'home.html'
-					}
-				}
-			}
-		},{
-			name : 'landing.about',
-			url : '^/about',
-			title : 'About Us',
-			config : {
-				//add route resolve properties if any on resolve
-				views:{
-					'' : {
-							templateUrl : myLocalized.landing + 'about.html'
-					}
-				}
-			}
-		},
-		,{
-			name : 'landing.about.history',
-			url : '^/about/',
-			title : 'History',
-			config : {
-				//add route resolve properties if any on resolve
-				views:{
-					'' : {
-							templateUrl : myLocalized.landing + '/about/history.html'
-					}
-				}
-			}
-		},
-		{
-			name : 'landing.about.executives',
-			url : '^/about/executives',
-			title : 'Executives',
-			config : {
-				//add route resolve properties if any on resolve
-				views:{
-					'' : {
-							templateUrl : myLocalized.landing + '/about/executives.html'
-					}
-				}
-			}
-		},
-		{
-			name : 'landing.about.nec',
-			url : '^/about/NEC',
-			title : 'NEC',
-			config : {
-				//add route resolve properties if any on resolve
-				views:{
-					'' : {
-							templateUrl : myLocalized.landing + '/about/nec.html'
-					}
-				}
-			}
-		},
-		{
-			name : 'landing.about.aims',
-			url : '^/about/aims',
-			title : 'Aims',
-			config : {
-				//add route resolve properties if any on resolve
-				views:{
-					'' : {
-							templateUrl : myLocalized.landing + '/about/aims.html'
-					}
-				}
-			}
-		},
-		{
-			name : 'landing.about.operations',
-			url : '^/about/operations',
-			title : 'Operations',
-			config : {
-				//add route resolve properties if any on resolve
-				views:{
-					'' : {
-							templateUrl : myLocalized.landing + '/about/operations.html'
-					}
-				}
-			}
-		},
-		{
-			name : 'landing.about.structure',
-			url : '^/about/structure',
-			title : 'Structure',
-			config : {
-				//add route resolve properties if any on resolve
-				views:{
-					'' : {
-							templateUrl : myLocalized.landing + '/about/structure.html'
-					}
-				}
-			}
-		},
-		{
-			name : 'landing.contact',
-			url : '^/contact',
-			title : 'Contact Us',
-			config : {
-				//add route resolve properties if any on resolve
-				views:{
-					'' : {
-							templateUrl : myLocalized.landing + 'contact.html'
-					}
-				}
-			}
-		},
-		{
-			name : 'landing.blog',
-			url : '^/blog',
-			title : 'Blog',
-			config : {
-				//add route resolve properties if any on resolve
-				views:{
-					'' : {
-							templateUrl : myLocalized.landing + 'blog.html',
-							controller: 'Blog',
-							controllerAs: 'vm'
-					}
-				}
-			}
-		}];
-	}
+    function getStates() {
+        return [{
+            state: 'landing',
+            config: {
+                abstract: true,
+                url: '/',
+                title: 'Landing Page',
+                template: '<div ui-view class="page-wrap fade-in-animation"></div>',
+                controller: 'Landing',
+                controllerAs: 'vm'
+            }
+        }, {
+            state: 'landing.home',
+            config: {
+                url: '',
+                title: 'Home',
+                templateUrl: 'app/landing/home.html'
+            }
+        }, {
+            state: 'landing.about',
+            config: {
+                url: '^/about',
+                title: 'About Us',
+                templateUrl: 'app/landing/about.html'
+            }
+        }, {
+            state: 'landing.about.history',
+            config: {
+                url: '^/about/',
+                title: 'History',
+                templateUrl: 'app/landing/about/history.html'
+            }
+        }, {
+            state: 'landing.about.executives',
+            config: {
+                url: '^/about/executives',
+                title: 'Executives',
+                templateUrl: 'app/landing/about/executives.html'
+            }
+        }, {
+            state: 'landing.about.nec',
+            config: {
+                url: '^/about/NEC',
+                title: 'NEC',
+                templateUrl: 'app/landing/about/nec.html'
+            }
+        }, {
+            state: 'landing.about.aims',
+            config: {
+                url: '^/about/aims',
+                title: 'Aims',
+                templateUrl: 'app/landing/about/aims.html'
+            }
+        }, {
+            state: 'landing.about.operations',
+            config: {
+                url: '^/about/operations',
+                title: 'Operations',
+                templateUrl: 'app/landing/about/operations.html'
+            }
+        }, {
+            state: 'landing.about.structure',
+            config: {
+                url: '^/about/structure',
+                title: 'Structure',
+                templateUrl: 'app/landing/about/structure.html'
+            }
+        }, {
+            state: 'landing.contact',
+            config: {
+                url: '^/contact',
+                title: 'Contact Us',
+                templateUrl: 'app/landing/contact.html'
+            }
+        }, {
+            state: 'landing.blog',
+            config: {
+                url: '^/blog',
+                title: 'Blog',
+                templateUrl: 'app/landing/blog.html',
+                controller: 'Blog',
+                controllerAs: 'vm'
+            }
+        }];
+    }
 
 })();

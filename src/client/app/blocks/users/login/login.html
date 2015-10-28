@@ -9,12 +9,12 @@
 		<md-content layout-padding layout="column" class="padding">
 		    <md-input-container class="md-icon-float" >
 		      <label class="form-label">UserName</label>
-		      <md-icon md-svg-icon="img/icons/ic_person_24px.svg"></md-icon>
+		      <ng-md-icon icon="person_outline" aria-label="user" size="24"></ng-md-icon> 
 		      <input ng-model="vm.loginData.userName" type="text" required>
 		    </md-input-container>
 		    <md-input-container class="md-icon-float">
 		      <label class="form-label">Password</label>
-		      <md-icon md-svg-src="img/icons/ic_phone_24px.svg"></md-icon>
+		      <ng-md-icon icon="lock_outline" aria-label="password" size="24"></ng-md-icon> 
 		      <input ng-model="vm.loginData.password" type="password" required>
 		    </md-input-container>
 

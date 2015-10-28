@@ -7,6 +7,7 @@
 
     stickyNav.$inject = ['$'];
 
+    /* @ngInject */
     function stickyNav($) {
         var templateString = [
             '<div class="sticky-subnav">',

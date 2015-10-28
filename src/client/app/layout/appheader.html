@@ -18,26 +18,26 @@
     	<li class="m-up-blog">
 	        <form>
 	          <md-button ng-click="" class="md-icon-button material-icons">
-	            <md-icon md-svg-icon="{{vm.src + '/action/svg/production/ic_search_24px.svg'}}" aria-label="Search" size="24"></md-icon>
+	            <ng-md-icon icon="search" aria-label="search" size="24"></ng-md-icon> 
 	          </md-button>
 	        </form>
 	      </li>
 	      <li class="m-up-blog">
 	        <md-menu md-position-mode="target-right target">
 	          <md-button ng-click="$mdOpenMenu()" class="md-icon-button material-icons">
-	            <md-icon md-menu-origin md-svg-icon="{{vm.src + '/navigation/svg/production/ic_more_vert_24px.svg'}}" aria-label="More" size="24"></md-icon>
+	            <ng-md-icon icon="more_vert" aria-label="More" size="24"></ng-md-icon> 
 	          </md-button>
 
 	          <md-menu-content width="3">
 	            <md-menu-item>
 	              <md-button ng-click="goToUrl('landing.home')">
-	                <md-icon md-menu-align-target md-svg-icon="{{vm.src + '/action/svg/production/ic_store_24px.svg'}}" aria-label="More" size="24"></md-icon>
+	                <ng-md-icon icon="home" aria-label="home" size="24"></ng-md-icon> 
 	                Home
 	              </md-button>
 	            </md-menu-item>
 	            <md-menu-item>
 	              <md-button ng-click="logout()">
-	                 <md-icon md-svg-icon="{{vm.src + '/navigation/svg/production/ic_arrow_back_24px.svg'}}" aria-label="More" size="24"></md-icon>
+	                 <ng-md-icon icon="arrow_back" aria-label="logout" size="24"></ng-md-icon> 
 	                Logout
 	              </md-button>
 	            </md-menu-item>

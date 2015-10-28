@@ -10,7 +10,7 @@
         return {
             restrict: 'E',
             replace: true,
-            templateUrl: myLocalized.widgets +'header.html',
+            templateUrl: 'app/widgets/header.html',
             controller: HeaderCtrl,
             controllerAs: 'vm',
             bindToController: true

@@ -25,8 +25,7 @@
 		*/
 		'ngplus',
 		'ui.router',
-		'ngMdIcons',
-		'FBAngular'
+		'ngMdIcons'
 		]);
 
 })();

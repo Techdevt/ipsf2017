@@ -5,8 +5,8 @@
 		.module('gnaas.landing')
 		.controller('Landing', Landing);
 
-	Landing.$inject = ['$scope','$timeout','routehelper'];
-	function Landing($scope,$timeout,routehelper){
+	Landing.$inject = ['$scope','$timeout'];
+	function Landing($scope,$timeout){
 		
 	}
 	
