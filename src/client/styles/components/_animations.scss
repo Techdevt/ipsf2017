@@ -1,4 +1,4 @@
-[ui-view].ng-enter,
+/*[ui-view].ng-enter,
 [ui-view].ng-leave {
     position: absolute;
     -webkit-transition: all .25s ease-in-out;
@@ -29,7 +29,7 @@
 
 [ui-view].ng-leave-active {
     opacity: 0;
-}
+}*/
 
 @keyframes opacity_change {
     0% {

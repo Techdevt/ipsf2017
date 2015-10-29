@@ -19,7 +19,7 @@
                 abstract: true,
                 url: '/',
                 title: 'Landing Page',
-                template: '<div ui-view class="page-wrap fade-in-animation"></div>',
+                template: '<div ui-view class="page-wrap"></div>',
                 controller: 'Landing',
                 controllerAs: 'vm'
             }
