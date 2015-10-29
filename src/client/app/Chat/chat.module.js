@@ -1,7 +1,7 @@
-(function(){
-	'use strict';
+(function() {
+    'use strict';
 
-	angular
-		.module('gnaas.chat', []);
+    angular
+        .module('gnaas.chat', []);
 
 })();

@@ -1,6 +1,6 @@
-(function(){
-	'use strict';
+(function() {
+    'use strict';
 
-	angular
-		.module('blocks.auth', []);
+    angular
+        .module('blocks.auth', []);
 })();

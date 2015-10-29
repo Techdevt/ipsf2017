@@ -1,63 +1,71 @@
-(function(){
-	'use strict';
+(function() {
+    'use strict';
+    // jscs:disable requireCamelCaseOrUpperCaseIdentifiers
 
-	angular
-		.module('blocks.auth')
-		.factory('AuthToken', AuthToken);
+    angular
+        .module('blocks.auth')
+        .factory('AuthToken', AuthToken);
 
-	AuthToken.$inject = ['$window','$q'];
-	function AuthToken($window,$q){
-		var storage = $window.localStorage;
-		var cachedToken = JSON.parse(storage.getItem('userToken')) || {oauth_token: '', oauth_token_secret: ''};
+    AuthToken.$inject = ['$window', '$q'];
 
-		var service = {
-			setToken: setToken,
-			getToken: getToken,
-			isAuthenticated: isAuthenticated,
-			removeToken: removeToken
-		};
+    function AuthToken($window, $q) {
+        var storage = $window.localStorage;
+        var cachedToken = JSON.parse(storage.getItem('userToken')) || {
+            oauth_token: '',
+            oauth_token_secret: ''
+        };
 
-		return service;
-		///////////////
+        var service = {
+            setToken: setToken,
+            getToken: getToken,
+            isAuthenticated: isAuthenticated,
+            removeToken: removeToken
+        };
 
-		function setToken(tokenObject){
+        return service;
+        ///////////////
 
-			if(typeof tokenObject !== 'undefined'){
-				storage.setItem('userToken', JSON.stringify(tokenObject));
-				cachedToken = tokenObject;
-				return true;
-			}
-			
-			return false;
-		}
+        function setToken(tokenObject) {
 
-		function getToken(){
-			if(typeof cachedToken === 'object'){
-				return cachedToken;
-			}else{
-				return JSON.parse(cachedToken);
-			}
-		}
+            if (typeof tokenObject !== 'undefined') {
+                storage.setItem('userToken', JSON.stringify(tokenObject));
+                cachedToken = tokenObject;
+                return true;
+            }
 
-		function isAuthenticated(){
-			var deferred = $q.defer();			
-			return !!(JSON.parse(storage.getItem('userToken')) || cachedToken.oauth_token);
-		}
+            return false;
+        }
 
-		function removeToken(){
-			var deferred = $q.defer();
+        function getToken() {
+            if (typeof cachedToken === 'object') {
+                return cachedToken;
+            } else {
+                return JSON.parse(cachedToken);
+            }
+        }
 
-			cachedToken = {oauth_token: '', oauth_token_secret: ''};
-			storage.removeItem('userToken');
+        function isAuthenticated() {
+            var deferred = $q.defer();
+            return !!(JSON.parse(storage.getItem('userToken')) || cachedToken.oauth_token);
+        }
 
-			if(!cachedToken.token){
-				deferred.resolve(true);
-			}else{
-				deferred.reject(false);
-			}
+        function removeToken() {
+            var deferred = $q.defer();
 
-			return deferred.promise;
-		}
-	}
+            cachedToken = {
+                oauth_token: '',
+                oauth_token_secret: ''
+            };
+            storage.removeItem('userToken');
+
+            if (!cachedToken.token) {
+                deferred.resolve(true);
+            } else {
+                deferred.reject(false);
+            }
+
+            return deferred.promise;
+        }
+    }
 
 })();

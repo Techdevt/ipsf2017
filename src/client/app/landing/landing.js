@@ -1,13 +1,12 @@
-(function(){
-	'use strict';
+(function() {
+    'use strict';
 
-	angular
-		.module('gnaas.landing')
-		.controller('Landing', Landing);
+    angular
+        .module('gnaas.landing')
+        .controller('Landing', Landing);
 
-	Landing.$inject = ['$scope','$timeout'];
-	function Landing($scope,$timeout){
-		
-	}
-	
+    Landing.$inject = ['$scope', '$timeout'];
+
+    function Landing($scope, $timeout) {}
+
 })();

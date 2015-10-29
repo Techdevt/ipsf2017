@@ -91,7 +91,7 @@
             config: {
                 url: '^/blog',
                 title: 'Blog',
-                templateUrl: 'app/landing/blog.html',
+                templateUrl: 'app/landing/sblog.html',
                 controller: 'Blog',
                 controllerAs: 'vm'
             }

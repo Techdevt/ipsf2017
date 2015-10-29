@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     var core = angular.module('gnaas.core');
@@ -27,14 +27,24 @@
 
     core.config(configure);
 
-    configure.$inject = ['$logProvider', 'routerHelperProvider', 'exceptionHandlerProvider', '$mdThemingProvider', '$httpProvider'];
+    configure.$inject = ['$logProvider', 'routerHelperProvider',
+        'exceptionHandlerProvider', '$mdThemingProvider', '$httpProvider'
+    ];
     /* @ngInject */
-    function configure($logProvider, routerHelperProvider, exceptionHandlerProvider, $mdThemingProvider, $httpProvider) {
+    function configure(
+        $logProvider,
+        routerHelperProvider,
+        exceptionHandlerProvider,
+        $mdThemingProvider,
+        $httpProvider
+    ) {
         if ($logProvider.debugEnabled) {
             $logProvider.debugEnabled(true);
         }
         exceptionHandlerProvider.configure(config.appErrorPrefix);
-        routerHelperProvider.configure({docTitle: config.appTitle + ': '});
+        routerHelperProvider.configure({
+            docTitle: config.appTitle + ': '
+        });
 
         configureMdTheme();
         configureWithCredentials();
@@ -59,15 +69,20 @@
                 'A200': 'E0F6E6',
                 'A400': 'D0F1DA',
                 'A700': 'C0ECCD',
-                'contrastDefaultColor': 'light',    // whether, by default, text (contrast)
-                                                   // on this palette should be dark or light
+                'contrastDefaultColor': 'light', // whether, by default, text (contrast)
+                // on this palette should be dark or light
                 'contrastDarkColors': ['50', '100', //hues which contrast should be 'dark' by default
-                 '200', '300', '400', 'A100'],
+                    '200', '300', '400', 'A100'
+                ],
                 'contrastLightColors': undefined
             });
             $mdThemingProvider.theme('default')
-            .primaryPalette('myCustomPalette', {'default': '400'})
-            .accentPalette('pink', {'default': '300'});
+                .primaryPalette('myCustomPalette', {
+                    'default': '400'
+                })
+                .accentPalette('pink', {
+                    'default': '300'
+                });
 
             $mdThemingProvider
                 .theme('form-dark', 'default')
@@ -84,5 +99,3 @@
     }
 
 })();
-
-

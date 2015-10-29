@@ -8,7 +8,9 @@ module.exports = function() {
     var temp = './.tmp/';
     var wiredep = require('wiredep');
     var gutil = require('gulp-util');
-    var bowerFiles = wiredep({devDependencies: true})['js'];
+    var bowerFiles = wiredep({
+        devDependencies: true
+    })['js'];
     var bower = {
         json: require('./bower.json'),
         directory: './bower_components/',
@@ -54,13 +56,13 @@ module.exports = function() {
             client + 'stubs/**/*.js'
         ],
         temp: temp,
-        errorHandler : function(title) {
-          'use strict';
+        errorHandler: function(title) {
+            'use strict';
 
-          return function(err) {
-            gutil.log(gutil.colors.red('[' + title + ']'), err.toString());
-            this.emit('end');
-          };
+            return function(err) {
+                gutil.log(gutil.colors.red('[' + title + ']'), err.toString());
+                this.emit('end');
+            };
         },
 
         /**
@@ -74,7 +76,9 @@ module.exports = function() {
         /**
          * plato
          */
-        plato: {js: clientApp + '**/*.js'},
+        plato: {
+            js: clientApp + '**/*.js'
+        },
 
         /**
          * browser sync
@@ -87,7 +91,7 @@ module.exports = function() {
         templateCache: {
             file: 'templates.js',
             options: {
-                module: 'app.core',
+                module: 'gnaas.core',
                 root: 'app/',
                 standalone: false
             }
@@ -170,9 +174,15 @@ module.exports = function() {
                 dir: report + 'coverage',
                 reporters: [
                     // reporters not supporting the `file` property
-                    {type: 'html', subdir: 'report-html'},
-                    {type: 'lcov', subdir: 'report-lcov'},
-                    {type: 'text-summary'} //, subdir: '.', file: 'text-summary.txt'}
+                    {
+                        type: 'html',
+                        subdir: 'report-html'
+                    }, {
+                        type: 'lcov',
+                        subdir: 'report-lcov'
+                    }, {
+                        type: 'text-summary'
+                    } //, subdir: '.', file: 'text-summary.txt'}
                 ]
             },
             preprocessors: {}

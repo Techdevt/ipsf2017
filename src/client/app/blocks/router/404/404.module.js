@@ -1,6 +1,6 @@
-(function(){
-	'use strict';
+(function() {
+    'use strict';
 
-	angular
-		.module('blocks.router.404', []);
+    angular
+        .module('blocks.router.404', []);
 })();

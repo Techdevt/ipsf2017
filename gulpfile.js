@@ -1,3 +1,4 @@
+/* jshint -W079 */
 var args = require('yargs').argv;
 var browserSync = require('browser-sync');
 var config = require('./gulp.config')();
@@ -66,7 +67,7 @@ gulp.task('plato', function(done) {
 gulp.task('styles', ['clean-styles'], function() {
     log('Compiling Sass --> CSS');
 
-    var sassOptions = { 
+    var sassOptions = {
         style: 'expanded'
     };
 
@@ -100,12 +101,8 @@ gulp.task('styles', ['clean-styles'], function() {
         .pipe($.sass(sassOptions)).on('error', config.errorHandler('Sass'))
         .pipe($.autoprefixer()).on('error', config.errorHandler('Autoprefixer'))
         .pipe($.sourcemaps.write())
-        .pipe(gulp.dest(config.temp))
-        .pipe(browserSync.reload({
-            stream: true
-        }));
+        .pipe(gulp.dest(config.temp));
 });
-
 
 /**
  * Copy fonts
@@ -135,7 +132,7 @@ gulp.task('images', ['clean-images'], function() {
 });
 
 gulp.task('sass-watcher', function() {
-    gulp.watch([config.sass], ['styles']);
+    gulp.watch([config.sass], ['styles', 'inject']);
 });
 
 /**
@@ -194,7 +191,7 @@ gulp.task('inject', ['wiredep', 'styles', 'templatecache'], function() {
  */
 gulp.task('serve-specs', ['build-specs'], function(done) {
     log('run the spec runner');
-    serve(true /* isDev */ , true /* specRunner */ );
+    serve(true /* isDev */ , true /* specRunner */);
     done();
 });
 
@@ -370,7 +367,7 @@ gulp.task('autotest', function(done) {
  * --nosync
  */
 gulp.task('serve-dev', ['inject'], function() {
-    serve(true /*isDev*/ );
+    serve(true /*isDev*/);
 });
 
 /**
@@ -379,7 +376,7 @@ gulp.task('serve-dev', ['inject'], function() {
  * --nosync
  */
 gulp.task('serve-build', ['build'], function() {
-    serve(false /*isDev*/ );
+    serve(false /*isDev*/);
 });
 
 /**

@@ -1,6 +1,6 @@
-(function(){
-	'use strict';
+(function() {
+    'use strict';
 
-	angular
-		.module('gnaas.landing',[]);
+    angular
+        .module('gnaas.landing', []);
 })();

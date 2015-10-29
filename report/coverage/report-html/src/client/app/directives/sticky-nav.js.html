@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ./src/client/app/directives/sticky-nav.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../../prettify.css">
+    <link rel="stylesheet" href="../../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">./src/client/app/directives/sticky-nav.js</span></h1>
+    <h2>
+        Statements: <span class="metric">30.77% <small>(4 / 13)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">20% <small>(1 / 5)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">30.77% <small>(4 / 13)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">./src/client/app/directives/</a> &#187; sticky-nav.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function() {
+    'use strict';
+&nbsp;
+    angular
+        .module('gnaas.directives')
+        .directive('stickyNav', stickyNav);
+&nbsp;
+    stickyNav.$inject = ['$'];
+&nbsp;
+    /* @ngInject */
+<span class="fstat-no" title="function not covered" >    function stickyNav($) {</span>
+<span class="cstat-no" title="statement not covered" >        var templateString = [</span>
+            '&lt;div class="sticky-subnav"&gt;',
+            '&lt;div class="grid"&gt;',
+            '&lt;div class="grid__col--12"&gt;',
+            '&lt;ul class="sticky-subnav-list"&gt;',
+            '&lt;li class="sticky-subnav-item"&gt;&lt;a href="http://blog.teamtreehouse.com/category/learn"&gt;All&lt;/a&gt;&lt;/li&gt;',
+            '&lt;li class="sticky-subnav-item"&gt;&lt;a href="http://blog.teamtreehouse.com/category/community"&gt;Events&lt;/a&gt;&lt;/li&gt;',
+            '&lt;li class="sticky-subnav-item"&gt;&lt;a href="http://blog.teamtreehouse.com/category/industry"&gt;Articles&lt;/a&gt;&lt;/li&gt;',
+            '&lt;li class="sticky-subnav-item"&gt;&lt;a href="http://blog.teamtreehouse.com/category/industry"&gt;News&lt;/a&gt;&lt;/li&gt;',
+            '&lt;li class="sticky-subnav-item"&gt;&lt;a href="http://blog.teamtreehouse.com/category/news"&gt;Videos&lt;/a&gt;&lt;/li&gt;',
+            '&lt;/ul&gt;',
+            '&lt;/div&gt;',
+            '&lt;/div&gt;',
+            '&lt;/div&gt;'
+        ].join('\n');
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            restrict: 'E',
+            replace: true,
+            template: templateString,
+            link: <span class="fstat-no" title="function not covered" >function(scope, elem, attrs) {</span>
+<span class="cstat-no" title="statement not covered" >                $(window).resize(<span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >                    var windowHeight = $(window).height();</span>
+<span class="cstat-no" title="statement not covered" >                    $(document).scroll(<span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >                        var y = $(this).scrollTop();</span>
+<span class="cstat-no" title="statement not covered" >                        if (y &gt; 320) {</span>
+<span class="cstat-no" title="statement not covered" >                            $('html').addClass('sticky');</span>
+                        } else {
+<span class="cstat-no" title="statement not covered" >                            $('html').removeClass('sticky');</span>
+                        }
+                    });
+                }).resize();
+            }
+        };
+    }
+})();
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Oct 29 2015 06:03:13 GMT+0000 (GMT Standard Time)</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

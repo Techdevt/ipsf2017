@@ -1,11 +1,11 @@
 {
     "bitwise": true,
-    "camelcase": true,
+    "camelcase": false,
     "curly": true,
     "eqeqeq": true,
     "es3": false,
     "forin": true,
-    "freeze": true,
+    "freeze": false,
     "immed": true,
     "indent": 4,
     "latedef": "nofunc",
@@ -19,11 +19,11 @@
     "undef": true,
     "unused": false,
     "strict": false,
-    "maxparams": 10,
+    "maxparams": 20,
     "maxdepth": 5,
     "maxstatements": 40,
     "maxcomplexity": 8,
-    "maxlen": 120,
+    "maxlen": 200,
 
     "asi": false,
     "boss": false,
@@ -55,6 +55,10 @@
     "node": true,
 
     "globals": {
-        "angular": false
+        "angular": false,
+        "jQuery": false,
+        "_": false,
+        "morlock": false,
+        "oauthSignature": false
     }
 }

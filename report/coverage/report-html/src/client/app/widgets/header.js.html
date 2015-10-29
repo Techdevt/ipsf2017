@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ./src/client/app/widgets/header.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../../prettify.css">
+    <link rel="stylesheet" href="../../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">./src/client/app/widgets/header.js</span></h1>
+    <h2>
+        Statements: <span class="metric">32.26% <small>(10 / 31)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 4)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">10% <small>(1 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">32.26% <small>(10 / 31)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">./src/client/app/widgets/</a> &#187; header.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function() {
+    'use strict';
+    angular
+        .module('gnaas.widgets')
+        .directive('appHeader', appHeader);
+&nbsp;
+    appHeader.$inject = ['$compile', '$templateRequest', '$timeout', '$location', '$mdMedia', '$mdSidenav', '$window', '$state', 'auth'];
+    /* @ngInject */
+<span class="fstat-no" title="function not covered" >    function appHeader($compile, $templateRequest, $timeout, $location, $mdMedia, $mdSidenav, $window, $state, auth) {</span>
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            restrict: 'E',
+            replace: true,
+            templateUrl: 'app/widgets/header.html',
+            controller: HeaderCtrl,
+            controllerAs: 'vm',
+            bindToController: true
+        };
+&nbsp;
+<span class="fstat-no" title="function not covered" >        function HeaderCtrl() {</span>
+<span class="cstat-no" title="statement not covered" >            var vm = this;</span>
+<span class="cstat-no" title="statement not covered" >            vm.src = './bower_components/material-design-icons';</span>
+<span class="cstat-no" title="statement not covered" >            vm.shrink = $mdMedia('(min-width: 850px)');</span>
+<span class="cstat-no" title="statement not covered" >            vm.shrinkLinks = updateShrink;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            vm.$blog = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >                return $location.path() === '/blog';</span>
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            vm.toggleSidenav = <span class="fstat-no" title="function not covered" >function(menuId) {</span></span>
+<span class="cstat-no" title="statement not covered" >                $mdSidenav(menuId).toggle();</span>
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            vm.authenticate = auth.authenticate;</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >            function updateShrink() {</span>
+<span class="cstat-no" title="statement not covered" >                vm.shrink = $mdMedia('(min-width: 850px)');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                if (!vm.$blog()) {</span>
+<span class="cstat-no" title="statement not covered" >                    vm.shrinkLinks = $mdMedia('(min-width: 850px)');</span>
+                }
+            }
+&nbsp;
+<span class="fstat-no" title="function not covered" >            function setShadow(pageYOffset, pageXOffset) {</span>
+<span class="cstat-no" title="statement not covered" >                return (pageYOffset &gt; 0) ? addShadow() : removeShadow();</span>
+            }
+&nbsp;
+<span class="fstat-no" title="function not covered" >            function addShadow() {</span>
+<span class="cstat-no" title="statement not covered" >                angular.element('.header').addClass('box');</span>
+            }
+&nbsp;
+<span class="fstat-no" title="function not covered" >            function removeShadow() {</span>
+<span class="cstat-no" title="statement not covered" >                angular.element('.header').removeClass('box');</span>
+            }
+&nbsp;
+<span class="fstat-no" title="function not covered" >            function goToUrl(url, params) {</span>
+<span class="cstat-no" title="statement not covered" >                $state.go(url, params);</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            morlock.onResizeEnd(updateShrink);</span>
+<span class="cstat-no" title="statement not covered" >            morlock.onScroll(setShadow);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            $window.addEventListener('resize', updateShrink);</span>
+<span class="cstat-no" title="statement not covered" >            vm.goToUrl = goToUrl;</span>
+        }
+    }
+&nbsp;
+})();
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Oct 29 2015 06:03:13 GMT+0000 (GMT Standard Time)</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

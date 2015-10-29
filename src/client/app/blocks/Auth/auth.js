@@ -1,12 +1,19 @@
 (function() {
     'use strict';
+    // jscs:disable requireCamelCaseOrUpperCaseIdentifiers
 
     angular.module('blocks.auth')
         .factory('auth', auth);
 
-    auth.$inject = ['logger', 'XHR', 'AuthToken', '$state', '$window', '$q', 'config', '$timeout', 'authorization', '$interval', 'common'];
+    auth.$inject = ['logger', 'XHR', 'AuthToken', '$state', '$window',
+        '$q', 'config', '$timeout', 'authorization',
+        '$interval', 'common'
+    ];
 
-    function auth(logger, XHR, AuthToken, $state, $window, $q, config, $timeout, authorization, $interval, common) {
+    function auth(
+        logger, XHR, AuthToken, $state,
+        $window, $q, config, $timeout,
+        authorization, $interval, common) {
         var storage = $window.localStorage;
         var oauth_data = {};
         var requestEnd = '/oauth1/request';
@@ -44,7 +51,9 @@
                     encodeSignature: false
                 });
 
-            var data = 'oauth_consumer_key=' + config.consumerKey + '&oauth_nonce=' + nonce + '&oauth_signature=' + signature + '&oauth_signature_method=HMAC-SHA1&oauth_timestamp=' + oauth_timestamp;
+            var data = 'oauth_consumer_key=' + config.consumerKey + '&oauth_nonce=' +
+                nonce + '&oauth_signature=' + signature + '&oauth_signature_method=HMAC-SHA1&oauth_timestamp=' +
+                oauth_timestamp;
             XHR
                 .postwww(requestEnd, data)
                 .then(function(result) {
@@ -57,8 +66,9 @@
         }
 
         function login(loginData) {
-            if (!oauth_data.hasOwnProperty('oauth_token'))
+            if (!oauth_data.hasOwnProperty('oauth_token')) {
                 return;
+            }
             var data = 'log=' + loginData.userName + '&pwd=' + loginData.password;
 
             XHR.postwww('/wp-login.php', data)
@@ -66,17 +76,18 @@
                     //get access token
                     XHR.postwww('/wp-login.php?action=oauth1_authorize', 'oauth_token=' + oauth_data.oauth_token)
                         .then(function(result) {
-                            var _url = config.backend + '/wp-login.php?action=oauth1_authorize&oauth_token=' + oauth_data.oauth_token + '&oauth_callback=' + callback;
+                            var _url = config.backend + '/wp-login.php?action=oauth1_authorize&oauth_token=' +
+                                oauth_data.oauth_token + '&oauth_callback=' + callback;
                             var win = $window.open(_url, 'Authorize', 500, 500);
                             win.focus();
                             win.onload = function() {
                                 var popupPromise = $interval(function() {
                                     try {
-                                        if (typeof String.prototype.startsWith != 'function') {
+                                        if (typeof String.prototype.startsWith !== 'function') {
                                             String.prototype.startsWith = function(str) {
                                                 return str.length > 0 && this.substring(0, str.length) === str;
-                                            }
-                                        };
+                                            };
+                                        }
                                         if (win.document.URL.startsWith(callback)) {
                                             $interval.cancel(popupPromise);
                                             var url = win.document.URL;
@@ -86,7 +97,10 @@
                                             oauth_data.wp_scope = decodeURIComponent(gup(url, 'wp_scope'));
                                             oauth_data.oauth_verifier = decodeURIComponent(gup(url, 'oauth_verifier'));
                                             win.close();
-                                            var access_query = 'oauth_consumer_key=' + config.consumerKey + '&oauth_timestamp=' + oauth_timestamp + '&oauth_nonce=' + nonce + '&oauth_signature=' + oauth_data.signature + '&oauth_signature_method=HMAC-SHA1&oauth_verifier=' + oauth_data.oauth_verifier + '&oauth_token=' + oauth_data.oauth_token;
+                                            var access_query = 'oauth_consumer_key=' + config.consumerKey + '&oauth_timestamp=' +
+                                                oauth_timestamp + '&oauth_nonce=' + nonce + '&oauth_signature=' +
+                                                oauth_data.signature + '&oauth_signature_method=HMAC-SHA1&oauth_verifier=' +
+                                                oauth_data.oauth_verifier + '&oauth_token=' + oauth_data.oauth_token;
                                             XHR.postwww(accessTokenBackend, access_query)
                                                 .then(function(result) {
                                                     oauth_data.access_token = form2json(result);
@@ -106,7 +120,7 @@
 
                                     }
                                 }, 100);
-                            }
+                            };
                         });
                 }, function(error) {
                     console.log(error);
@@ -129,7 +143,6 @@
                 });
         }
 
-
         function register(data, userType) {
             var url = '/api/account/register/' + userType;
             var successMsg = 'You Have Successfully Registered, You will be redirected to Login Page in 3 Seconds...';
@@ -145,8 +158,10 @@
                     if (response.modelState) {
                         var errors = [];
                         for (var key in response.modelState) {
-                            for (var i = 0; i < response.modelState[key].length; i++) {
-                                errors.push(response.modelState[key][i]);
+                            if (response.modelState.length) {
+                                for (var i = 0; i < response.modelState[key].length; i++) {
+                                    errors.push(response.modelState[key][i]);
+                                }
                             }
                         }
 
@@ -179,7 +194,7 @@
                 tmp = keyValuePairs[i].split('=');
                 key = decodeURIComponent(tmp[0]);
                 value = decodeURIComponent(tmp[1]);
-                if (key.search(/\[\]$/) != -1) {
+                if (key.search(/\[\]$/) !== -1) {
                     tmp = key.replace(/\[\]$/, '');
                     json[tmp] = json[tmp] || [];
                     json[tmp].push(value);
@@ -191,14 +206,15 @@
         }
 
         function gup(url, name) {
-            name = name.replace(/[[]/, "\[").replace(/[]]/, "\]");
-            var regexS = "[\?&]" + name + "=([^&#]*)";
+            name = name.replace(/[[]/, '\[').replace(/[]]/, '\]');
+            var regexS = '[\?&]' + name + '=([^&#]*)';
             var regex = new RegExp(regexS);
             var results = regex.exec(url);
-            if (results == null)
-                return "";
-            else
+            if (results == null) {
+                return '';
+            } else {
                 return results[1];
+            }
         }
     }
 })();

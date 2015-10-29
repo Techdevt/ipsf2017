@@ -1,5 +1,6 @@
 (function() {
     'use strict';
+    // jscs:disable requireCamelCaseOrUpperCaseIdentifiers
 
     angular
         .module('blocks.auth')
@@ -37,18 +38,17 @@
                 signature = oauthSignature.generate(httpMethod, url, parameters, consumerSecret, null, {
                     encodeSignature: false
                 });
-            
+
             if (authData.oauth_token) {
-                config.headers.Authorization = 'OAuth oauth_consumer_key=' + c.consumerKey + ' oauth_nonce =' + nonce + ' oauth_signature=' + signature + ' oauth_signature_method=' + parameters.oauth_signature_method + ' oauth_timestamp=' + oauth_timestamp + ' oauth_token=' + authData.oauth_token;
+                config.headers.Authorization = 'OAuth oauth_consumer_key=' + c.consumerKey + ' oauth_nonce =' +
+                    nonce + ' oauth_signature=' + signature + ' oauth_signature_method=' +
+                    parameters.oauth_signature_method + ' oauth_timestamp=' + oauth_timestamp +
+                    ' oauth_token=' + authData.oauth_token;
             }
             return config;
         }
 
         function responseError(rejection) {
-            if (rejection.status === 401) {
-                auth.logout();
-                $location.path('/login');
-            }
             return $q.reject(rejection);
         }
     }

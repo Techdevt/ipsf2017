@@ -1,11 +1,9 @@
-(function(){
-	'use strict';
+(function() {
+    'use strict';
 
-	angular
-		.module('gnaas.chat')
-		.controller('Chat', Chat);
+    angular
+        .module('gnaas.chat')
+        .controller('Chat', Chat);
 
-	function Chat(){
-		
-	}
+    function Chat() {}
 })();

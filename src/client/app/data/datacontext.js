@@ -1,21 +1,20 @@
-(function(){
-	'use strict';
+(function() {
+    'use strict';
 
-	angular.module('gnaas.data')
-		   .factory('datacontext', datacontext);
+    angular.module('gnaas.data')
+        .factory('datacontext', datacontext);
 
+    datacontext.$inject = [];
+    function datacontext() {
+        var service = {
+            ready: ready
+        };
 
-	datacontext.$inject = [];
-    function datacontext(){
-    	var service = {
-    		ready: ready
-    	};	
+        return service;
 
-    	return service;
-
-    	function ready(){
-    		return true;
-    	}
+        function ready() {
+            return true;
+        }
     }
 
 })();

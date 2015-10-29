@@ -6,7 +6,6 @@
         .factory('BlogService', BlogService);
 
     BlogService.$inject = ['XHR', '$q', 'logger'];
-
     /* @ngInject */
     function BlogService(XHR, $q, logger) {
         var service = {
@@ -15,7 +14,6 @@
         };
         return service;
         //////////////
-
 
         function getSingle(context) {
             return true;

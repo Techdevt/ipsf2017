@@ -1,5 +1,5 @@
-(function(){
-	'use strict';
+(function() {
+    'use strict';
 
-	angular.module('gnaas.layout',[]);
+    angular.module('gnaas.layout', []);
 })();

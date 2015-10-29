@@ -4,9 +4,9 @@
         .module('gnaas.widgets')
         .directive('appHeader', appHeader);
 
-    appHeader.$inject = ['$compile','$templateRequest','$timeout','$location', '$mdMedia', '$mdSidenav', '$window', '$state', 'auth'];
+    appHeader.$inject = ['$compile', '$templateRequest', '$timeout', '$location', '$mdMedia', '$mdSidenav', '$window', '$state', 'auth'];
     /* @ngInject */
-    function appHeader($compile,$templateRequest,$timeout,$location, $mdMedia, $mdSidenav, $window, $state, auth) {
+    function appHeader($compile, $templateRequest, $timeout, $location, $mdMedia, $mdSidenav, $window, $state, auth) {
         return {
             restrict: 'E',
             replace: true,
@@ -22,7 +22,7 @@
             vm.shrink = $mdMedia('(min-width: 850px)');
             vm.shrinkLinks = updateShrink;
 
-            vm.$blog = function (){
+            vm.$blog = function() {
                 return $location.path() === '/blog';
             };
 
@@ -35,18 +35,20 @@
             function updateShrink() {
                 vm.shrink = $mdMedia('(min-width: 850px)');
 
-                if(!vm.$blog()) {vm.shrinkLinks = $mdMedia('(min-width: 850px)');}
+                if (!vm.$blog()) {
+                    vm.shrinkLinks = $mdMedia('(min-width: 850px)');
+                }
             }
 
-            function setShadow(pageYOffset,pageXOffset){
+            function setShadow(pageYOffset, pageXOffset) {
                 return (pageYOffset > 0) ? addShadow() : removeShadow();
             }
 
-            function addShadow(){
+            function addShadow() {
                 angular.element('.header').addClass('box');
             }
 
-            function removeShadow(){
+            function removeShadow() {
                 angular.element('.header').removeClass('box');
             }
 

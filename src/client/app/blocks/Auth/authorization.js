@@ -5,9 +5,12 @@
         .module('blocks.auth')
         .factory('authorization', Authorization);
 
-    Authorization.$inject = ['AuthToken', '$q', '$rootScope', '$location', 'config', '$window', 'logger', '$state'];
+    Authorization.$inject = ['AuthToken', '$q', '$rootScope', '$location',
+        'config', '$window', 'logger', '$state', 'XHR'
+    ];
 
-    function Authorization(AuthToken, $q, $rootScope, $location, config, $window, logger, $state) {
+    function Authorization(AuthToken, $q, $rootScope, $location,
+        config, $window, logger, $state, XHR) {
         var permissionModel = {
             permission: {},
             isPermissionLoaded: false
@@ -32,12 +35,12 @@
                 var storage = $window.localStorage;
                 var userObject = XHR.post(config.backend + '/wp-json/v2/users/me');
                 console.log(userObject);
-                if(userObject.hasOwnProperty('roles')){
+                if (userObject.hasOwnProperty('roles')) {
                     permissionModel.isPermissionLoaded = true;
                     permissionModel.permission = userObject.roles;
 
                     getPermission(permissionModel, roleCollection, deferred);
-                }else{
+                } else {
                     permissionModel.permission = [];
                     getPermission(permissionModel, roleCollection, deferred);
                 }
@@ -49,7 +52,7 @@
             var ifPermissionPassed = false;
             var falseCheck = -1;
             angular.forEach(roleCollection, function(role) {
-                if(permissionModel.permission.indexOf(role) !== falseCheck){
+                if (permissionModel.permission.indexOf(role) !== falseCheck) {
                     ifPermissionPassed = true;
                 }
             });
@@ -64,20 +67,18 @@
             }
         }
 
-        function resetPermissions(){
+        function resetPermissions() {
             var deferred = $q.defer();
 
             permissionModel.permission = {};
             permissionModel.isPermissionLoaded = false;
 
-            if(!permissionModel.isPermissionLoaded){
+            if (!permissionModel.isPermissionLoaded) {
                 deferred.resolve();
-            }else{
+            } else {
                 deferred.reject();
             }
             return deferred.promise;
         }
-}
-
-
+    }
 })();

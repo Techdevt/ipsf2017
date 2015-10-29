@@ -19,7 +19,7 @@
             config: {
                 url: '/404',
                 title: 'Page Not Found',
-       			templateUrl: 'app/blocks/router/404/404.html'
+                templateUrl: 'app/blocks/router/404/404.html'
             }
 
         }];

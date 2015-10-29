@@ -5,21 +5,22 @@
         .module('gnaas')
         .controller('Gnaas', Gnaas);
 
-    Gnaas.$inject = ['$scope','$location','AuthToken','auth', '$state', '$'];
-    function Gnaas($scope,$location,AuthToken,auth, $state, $) {
+    Gnaas.$inject = ['$scope', '$location', 'AuthToken', 'auth', '$state', '$'];
+
+    function Gnaas($scope, $location, AuthToken, auth, $state, $) {
         $scope.Date = new Date();
         $scope.isAuthenticated = AuthToken.isAuthenticated;
 
-    	$scope.isDashView = function(){
+        $scope.isDashView = function() {
             var current = $state.current.name;
             var sub = '';
-            if(current !== ''){
-              sub = current.substr(0, 4);
+            if (current !== '') {
+                sub = current.substr(0, 4);
             }
             return sub === 'home';
         };
 
-        $scope.logout = function(){
+        $scope.logout = function() {
             auth.logout();
         };
 
@@ -27,7 +28,7 @@
             $state.go(url, params);
         };
 
-        $scope.openNav = function(){
+        $scope.openNav = function() {
             $('html').toggleClass('nav-expanded');
             $('.drawer-about').toggleClass('flip');
         };
@@ -35,4 +36,3 @@
     }
 
 })();
-
