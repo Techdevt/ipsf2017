@@ -17,8 +17,10 @@
         	vm.Blog.Articles = $filter('filter')(all, {'type': 'article'});
         	vm.Blog.Videos = $filter('filter')(all, {'type': 'video'});
         	vm.Blog.Events = $filter('filter')(all, {'type': 'event'});
+        	vm.Blog.try = $filter('filter')(all, {'featured': true});
         }
 
-        vm.Blog.Featured = featured;
+        vm.Blog.Featured = $filter('filter')(all, {'featured': true})[0];
+        console.log(vm.Blog.Featured);
     }
 })();

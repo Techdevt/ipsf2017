@@ -12,3 +12,29 @@
         color: $white;
     }
 }
+
+.btn{
+    display: inline-block;
+    background: $color-primary;
+    color: $white;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 11px 20px 13px;
+    min-width: 117px;
+    text-align: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-transition: background 150ms ease-out;
+    -moz-transition: background 150ms ease-out;
+    -o-transition: background 150ms ease-out;
+    transition: background 150ms ease-out;
+
+    .featured-post & {
+        a{
+            color: $white;
+        }
+    }
+}

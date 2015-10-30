@@ -161,7 +161,14 @@
                 title: 'News',
                 templateUrl: 'app/landing/blog/news.html'
             }
-        }];
+        }, {
+            state: 'landing.single',
+            config: {
+                url: '^/blog/post/:slug',
+                title: 'Blog Post',
+                templateUrl: 'app/landing/blog/single.html'
+            }
+        }, ];
     }
 
 })();

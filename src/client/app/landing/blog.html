@@ -1,16 +1,16 @@
 <section class="main" layout="column">
     <section class="main-page blog">
-        <section style="background-image: url('./assets/images/open-hero-2b.jpg')" class="featured-post has-bg-img">
+        <section style="background-image: url({{vm.Blog.Featured.featured_image}})" class="featured-post has-bg-img">
             <div class="featured-content">
                 <h3 class="secondary-heading">Featured Post</h3>
                 <h1 class="featured-title">
-                    <a href="#">Post title Post title</a>
+                    <a ui-sref="landing.single({slug: vm.Blog.Featured.slug})" ng-bind-html="vm.Blog.Featured.title.rendered"></a>
                 </h1>
                 <cite class="post-author desktop-only">
-                    <span class="name">Breezy Bounce</span>, <span class="title">Web Administrator at GNAAS</span>
+                    <span class="name">{{vm.Blog.Featured.author.name}}</span>, <span class="title">{{vm.Blog.Featured.author.role + ' at GNAAS'}}</span>
                 </cite>
-                <p class="copy desktop-only">Developing a unified body of Seventh-Day Adventist students with an unsleeping consciousness for spiritual, moral, and academic excellence; and one in which every student is a missionary.</p>
-                <md-button class="md-primary raised material-icons"><a href="#">Read More</a></md-button>
+                <p class="copy desktop-only" ng-bind-html="vm.Blog.Featured.excerpt.rendered"></p>
+                <md-button class="md-primary raised material-icons btn"><a href="#">Read More</a></md-button>
             </div>
         </section>
         <sticky-nav></sticky-nav>
