@@ -54,6 +54,9 @@
                     hasOtherwise = true;
                     $urlRouterProvider.otherwise(otherwisePath);
                 }
+                //custom re-routes
+                $urlRouterProvider.when('/blog', '/blog/all');
+                $urlRouterProvider.when('/about', '/about/history');
             }
 
             function handleRoutingErrors() {

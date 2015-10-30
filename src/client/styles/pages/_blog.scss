@@ -167,12 +167,12 @@
         .current {
             border-color: #f1f3f4;
         }
-        a {
+        li {
             @include media('<600px') {
                 padding: 6px;
             }
         }
-        a,
+        li,
         &.current {
             border: 2px solid #d3d9dd;
             margin: 0 2px;
@@ -243,8 +243,8 @@
                 width: 100%;
                 color: #fff;
                 background: #5fcf80;
-                &:hover{
-                	background: darken(#5fcf80, 5%);
+                &:hover {
+                    background: darken(#5fcf80, 5%);
                 }
             }
         }
@@ -253,7 +253,7 @@
 
 .post-card {
     transition: .3s ease all;
-    background: #FFF;
+    background: #fafafa;
     border: none;
     border-radius: 5px;
     padding: 0;
@@ -319,12 +319,40 @@
         a {
             color: #BBB;
         }
+        .meta-icon {
+            background: transparent;
+            color: #BBB;
+            border-color: #333;
+        }
+        .ion-ios-play {
+            display: inline-block;
+            font-family: Ionicons;
+            speak: none;
+            font-style: normal;
+            font-weight: 400;
+            font-variant: normal;
+            text-transform: none;
+            text-rendering: auto;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
     }
     .meta-box {
         margin-right: 20px;
         &:last-child {
             margin-right: 0;
         }
+    }
+    .meta-icon {
+        right: 10px;
+        font-size: 22px;
+        line-height: 1;
+        padding-top: 6px;
+        padding-left: 7px;
+        text-align: center;
+        color: #888;
+        margin-right: 0;
     }
     .meta-tags {
         opacity: .5;
@@ -344,13 +372,21 @@
                 border-top-left-radius: 5px;
             }
             //change to others later
-            &.tag-javascript {
-                background: #FAC552;
-                color: #ae7905;
+            &.tag-news {
+                background: $color-primary;
+                color: $white;
             }
-            &.tag-node-js {
-                background: #80BD01;
-                color: #d9fe8c;
+            &.tag-article {
+                background: $color-accent;
+                color: $white;
+            }
+            &.tag-video {
+                background: $color-secondary;
+                color: $white;
+            }
+            &.tag-event {
+                background: $color-dark;
+                color: $white;
             }
         }
     }

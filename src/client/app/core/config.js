@@ -47,7 +47,7 @@
         });
 
         configureMdTheme();
-        configureWithCredentials();
+        //configureWithCredentials();
 
         function configureMdTheme() {
             var tealCustom = $mdThemingProvider.extendPalette('teal', {

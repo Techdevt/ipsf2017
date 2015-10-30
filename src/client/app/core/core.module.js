@@ -25,7 +25,8 @@
         */
         'ngplus',
         'ui.router',
-        'ngMdIcons'
+        'ngMdIcons', 
+        'angularUtils.directives.dirPagination'
     ]);
 
 })();

@@ -38,6 +38,13 @@
                 templateUrl: 'app/landing/about.html'
             }
         }, {
+            state: 'landing.gallery',
+            config: {
+                url: '^/gallery',
+                title: 'Gallery',
+                templateUrl: 'app/landing/gallery.html'
+            }
+        }, {
             state: 'landing.about.history',
             config: {
                 url: '^/about/',
@@ -91,9 +98,68 @@
             config: {
                 url: '^/blog',
                 title: 'Blog',
-                templateUrl: 'app/landing/sblog.html',
+                templateUrl: 'app/landing/blog.html',
                 controller: 'Blog',
-                controllerAs: 'vm'
+                controllerAs: 'vm',
+                resolve: {
+                    all: ['BlogService', '$q', function(BlogService, $q) {
+                        var deferred = $q.defer();
+                        BlogService.getAll().then(function(result) {
+                            deferred.resolve(result);
+                        }, function(error) {
+                            deferred.reject(error);
+                        });
+                        return deferred.promise;
+                    }],
+                    featured: ['BlogService', '$q', function(BlogService, $q) {
+                        var deferred = $q.defer();
+                        BlogService.getFeatured().then(function(result) {
+                            if (result.length > 1) {
+                                deferred.resolve(result[0]);
+                            } else {
+                                deferred.resolve(result);
+                            }
+                        }, function(error) {
+                            deferred.reject(error);
+                        });
+                        return deferred.promise;
+                    }]
+                }
+            }
+        }, {
+            state: 'landing.blog.all',
+            config: {
+                url: '^/blog/all',
+                title: 'All Posts',
+                templateUrl: 'app/landing/blog/all.html'
+            }
+        }, {
+            state: 'landing.blog.events',
+            config: {
+                url: '^/blog/events',
+                title: 'Events',
+                templateUrl: 'app/landing/blog/events.html'
+            }
+        }, {
+            state: 'landing.blog.articles',
+            config: {
+                url: '^/blog/articles',
+                title: 'Articles',
+                templateUrl: 'app/landing/blog/articles.html'
+            }
+        }, {
+            state: 'landing.blog.videos',
+            config: {
+                url: '^/blog/videos',
+                title: 'Videos',
+                templateUrl: 'app/landing/blog/videos.html'
+            }
+        }, {
+            state: 'landing.blog.news',
+            config: {
+                url: '^/blog/news',
+                title: 'News',
+                templateUrl: 'app/landing/blog/news.html'
             }
         }];
     }

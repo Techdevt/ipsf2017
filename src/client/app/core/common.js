@@ -12,7 +12,8 @@
             $q: $q,
             $timeout: $timeout,
             form2json: form2Json,
-            randomString: randomString
+            randomString: randomString,
+            getYoutubeId: getYoutubeId
         };
 
         return service;
@@ -67,6 +68,16 @@
                 text += possible.charAt(Math.floor(Math.random() * possible.length));
             }
             return text;
+        }
+
+        function getYoutubeId(url) {
+            var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+            var match = url.match(regExp);
+            if (match && match[2].length == 11) {
+                return match[2];
+            } else {
+                //error
+            }
         }
     }
 
