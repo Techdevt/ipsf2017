@@ -5,9 +5,9 @@
         .module('gnaas.directives')
         .directive('singlePost', singlePost);
 
-    singlePost.$inject = ['$compile', 'common'];
+    singlePost.$inject = ['$compile', 'common', '$location', 'config'];
     /* @ngInject */
-    function singlePost($compile, common) {
+    function singlePost($compile, common, $location, config) {
         var eventTemplate = '<div class="single-view single-view-event"> \n' +
             '<div class="single-view-content"> \n' +
             '<div class="single-hero"> \n' +
@@ -56,14 +56,21 @@
             '</aside> \n' +
             '<aside class="single-shares"> \n' +
             '<h3 class="small-title">Share This Post</h3> \n' +
-            '<div class="social-buttons"></div> \n' +
+            '<div class="social-buttons"> \n' +
+            '<a facebook-feed-share class="facebookShare" data-url=\'http://gnaas.org\' data-picture="{{post.featured_image}}" \n' + 
+            'data-shares=\'shares\' data-caption="{{post.title.rendered | htmlToPlaintext}}" data-description="{{post.excerpt.rendered | htmlToPlaintext}}" \n' +
+            ' data-properties="{\'text\': {{post.content.rendered | htmlToPlaintext}}, \'href\': {{location}}}">{{ shares }} \n' +
+            '</a> \n' +
+            '<a twitter  data-lang="en" data-count="horizontal" data-url={{location}} \n' +
+             'data-via="GNAAS" data-size="medium" data-text="{{post.title.rendered | htmlToPlaintext | limitTo: 80 }}" ></a>'
+            '</div> \n' +
             '</aside> \n' +
             '</section> \n' +
             '<aside class="single-disqus"> \n' +
             '<h3 class="small-title">Comment on this {{post.type}}</h3> \n' +
-            '<div id="disqus_thread"> \n' +
-            ' insert disqus \n' +
-            '</div> \n' +
+            '<dir-disqus disqus-shortname="gnaas" disqus-identifier="{{ post.id }}" disqus-title="{{ post.title.rendered | htmlToPlaintext }}" \n' +
+            'disqus-url="{{ location }}" disqus-disable-mobile="false" disqus-config-language="en" ready-to-bind="{{ loaded }}"> \n' +
+            '</dir-disqus> \n' +
             '</aside> \n' +
             '</div> \n' +
             '</div>';
@@ -100,17 +107,25 @@
             '</aside> \n' +
             '<aside class="single-shares"> \n' +
             '<h3 class="small-title">Share This Post</h3> \n' +
-            '<div class="social-buttons"></div> \n' +
+            '<div class="social-buttons"> \n' +
+            '<a facebook-feed-share class="facebookShare" data-url=\'http://gnaas.org\' data-picture="{{post.featured_image}}" \n' + 
+            'data-shares=\'shares\' data-caption="{{post.title.rendered | htmlToPlaintext}}" data-description="{{post.excerpt.rendered | htmlToPlaintext}}" \n' +
+            ' data-properties="{\'text\': {{post.content.rendered | htmlToPlaintext}}, \'href\': {{location}}}">{{ shares }} \n' +
+            '</a> \n' +
+            '<a twitter  data-lang="en" data-count="horizontal" data-url={{location}} \n' +
+             'data-via="GNAAS" data-size="medium" data-text="{{post.title.rendered | htmlToPlaintext | limitTo: 80 }}" ></a>'
+            '</div> \n' +
             '</aside> \n' +
             '</section> \n' +
             '<aside class="single-disqus"> \n' +
             '<h3 class="small-title">Comment on this {{post.type}}</h3> \n' +
-            '<div id="disqus_thread"> \n' +
-            ' insert disqus \n' +
-            '</div> \n' +
+            '<dir-disqus disqus-shortname="gnaas" disqus-identifier="{{ post.id }}" disqus-title="{{ post.title.rendered | htmlToPlaintext }}" \n' +
+            'disqus-url="{{ location }}" disqus-disable-mobile="false" disqus-config-language="en" ready-to-bind="{{ loaded }}"> \n' +
+            '</dir-disqus> \n' +
             '</aside> \n' +
             '</div> \n' +
             '</div>';
+
         var articleTemplate = '<div class="single-view single-view-event"> \n' +
             '<div class="single-view-content"> \n' +
             '<div class="single-hero"> \n' +
@@ -143,14 +158,21 @@
             '</aside> \n' +
             '<aside class="single-shares"> \n' +
             '<h3 class="small-title">Share This Post</h3> \n' +
-            '<div class="social-buttons"></div> \n' +
+            '<div class="social-buttons"> \n' +
+            '<a facebook-feed-share class="facebookShare" data-url=\'http://gnaas.org\' data-picture="{{post.featured_image}}" \n' + 
+            'data-shares=\'shares\' data-caption="{{post.title.rendered | htmlToPlaintext}}" data-description="{{post.excerpt.rendered | htmlToPlaintext}}" \n' +
+            ' data-properties="{\'text\': {{post.content.rendered | htmlToPlaintext}}, \'href\': {{location}}}">{{ shares }} \n' +
+            '</a> \n' +
+            '<a twitter  data-lang="en" data-count="horizontal" data-url={{location}} \n' +
+             'data-via="GNAAS" data-size="medium" data-text="{{post.title.rendered | htmlToPlaintext | limitTo: 80 }}" ></a>'
+            '</div> \n' +
             '</aside> \n' +
             '</section> \n' +
             '<aside class="single-disqus"> \n' +
             '<h3 class="small-title">Comment on this {{post.type}}</h3> \n' +
-            '<div id="disqus_thread"> \n' +
-            ' insert disqus \n' +
-            '</div> \n' +
+            '<dir-disqus disqus-shortname="gnaas" disqus-identifier="{{ post.id }}" disqus-title="{{ post.title.rendered | htmlToPlaintext }}" \n' +
+            'disqus-url="{{ location }}" disqus-disable-mobile="false" disqus-config-language="en" ready-to-bind="{{ loaded }}"> \n' +
+            '</dir-disqus> \n' +
             '</aside> \n' +
             '</div> \n' +
             '</div>';
@@ -173,10 +195,12 @@
         return {
             restrict: 'E',
             scope: {
-                post: '='
+                post: '=',
+                loaded: '='
             },
             link: function(scope, element, attrs) {
-                if(scope.post.type === 'video'){
+                scope.location = config.frontEnd + $location.path();
+                if (scope.post.type === 'video') {
                     scope.post.youtubeId = common.getYoutubeId(scope.post.acf['youtube_embed']);
                 }
                 element.html(getTemplate(scope.post.type)).show();

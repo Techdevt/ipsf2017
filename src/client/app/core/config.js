@@ -4,6 +4,7 @@
     var core = angular.module('gnaas.core');
 
     core.config(toastrConfig);
+    core.run(run);
 
     toastrConfig.$inject = ['toastr'];
     /* @ngInject */
@@ -16,8 +17,10 @@
         appErrorPrefix: 'GNAAS Error - ',
         appTitle: 'GNAAS',
         backend: 'http://localhost:8080/gnaas',
+        frontEnd: 'http://localhost:3000',
         consumerId: 29,
         consumerKey: 'WIAvrQRSeIDS',
+        fbId: '966464646745638',
         consumerSecret: 'VPzvJv2iyrxrHxXTuc7IXQxzGLhuiK8JlM3yMKHrrbeTcaqb',
         routeForUnauthorizedAccess: 'login',
         version: '0.0.1'
@@ -106,6 +109,12 @@
             ]);
         }
 
+    }
+
+    run.$inject = ['$FB', 'config'];
+    /* @ngInject */
+    function run($FB, config) {
+        $FB.init(config.fbId);
     }
 
 })();

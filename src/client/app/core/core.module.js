@@ -26,7 +26,9 @@
         'ngplus',
         'ui.router',
         'ngMdIcons', 
-        'angularUtils.directives.dirPagination'
+        'angularUtils.directives.dirPagination',
+        'djds4rce.angular-socialshare',
+        'angularUtils.directives.dirDisqus'
     ]);
 
 })();
