@@ -5,9 +5,9 @@
         .module('gnaas.services')
         .factory('BlogService', BlogService);
 
-    BlogService.$inject = ['XHR', '$q', 'logger'];
+    BlogService.$inject = ['XHR', '$q', 'logger', '$filter'];
     /* @ngInject */
-    function BlogService(XHR, $q, logger) {
+    function BlogService(XHR, $q, logger, $filter) {
         var Blog = {};
         var service = {
             getSingle: getSingle,
@@ -17,8 +17,29 @@
         return service;
         //////////////
 
-        function getSingle(context) {
-            return true;
+        function getSingle(slug) {
+            var deferred = $q.defer();
+            var result;
+            if (!angular.isDefined(Blog.All)) {
+                getAll().then(function() {
+                    result = filter(Blog.All, {
+                        'slug': slug
+                    });
+                    deferred.resolve(result[0]);
+                }, function(error) {
+                    deferred.reject(error);
+                });
+            } else {
+                result = filter(Blog.All, {
+                    'slug': slug
+                });
+                deferred.resolve(result[0]);
+            }
+            return deferred.promise;
+        }
+
+        function filter(item, on) {
+            return $filter('filter')(item, on);
         }
 
         function getAll() {

@@ -21,6 +21,5 @@
         }
 
         vm.Blog.Featured = $filter('filter')(all, {'featured': true})[0];
-        console.log(vm.Blog.Featured);
     }
 })();

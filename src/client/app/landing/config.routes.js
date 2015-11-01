@@ -166,7 +166,22 @@
             config: {
                 url: '^/blog/post/:slug',
                 title: 'Blog Post',
-                templateUrl: 'app/landing/blog/single.html'
+                templateUrl: 'app/landing/blog/single.html',
+                controller: 'Single',
+                controllerAs: 'vm',
+                resolve: {
+                    post: ['BlogService', '$q', '$stateParams', function(BlogService, $q, $stateParams) {
+                        var deferred = $q.defer();
+                        BlogService.getSingle($stateParams.slug)
+                            .then(function(result) {
+                                deferred.resolve(result);
+                            }, function(error) {
+                                console.log(error);
+                                deferred.reject(error);
+                            });
+                        return deferred.promise;
+                    }]
+                }
             }
         }, ];
     }

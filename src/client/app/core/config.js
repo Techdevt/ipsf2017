@@ -27,13 +27,14 @@
 
     core.config(configure);
 
-    configure.$inject = ['$logProvider', 'routerHelperProvider',
+    configure.$inject = ['$logProvider', 'routerHelperProvider', '$sceDelegateProvider',
         'exceptionHandlerProvider', '$mdThemingProvider', '$httpProvider'
     ];
     /* @ngInject */
     function configure(
         $logProvider,
         routerHelperProvider,
+        $sceDelegateProvider,
         exceptionHandlerProvider,
         $mdThemingProvider,
         $httpProvider
@@ -48,6 +49,7 @@
 
         configureMdTheme();
         //configureWithCredentials();
+        configureSCEWhitelist();
 
         function configureMdTheme() {
             var tealCustom = $mdThemingProvider.extendPalette('teal', {
@@ -94,6 +96,14 @@
         function configureWithCredentials() {
             $httpProvider
                 .defaults.withCredentials = true;
+        }
+
+        function configureSCEWhitelist() {
+            $sceDelegateProvider.resourceUrlWhitelist([
+                // Allow same origin resource loads.
+                'self',
+                'https://www.youtube.com/embed/**'
+            ]);
         }
 
     }
