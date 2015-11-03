@@ -47,7 +47,7 @@
         }, {
             state: 'landing.about.history',
             config: {
-                url: '^/about/',
+                url: '^/about/history',
                 title: 'History',
                 templateUrl: 'app/landing/about/history.html'
             }
@@ -185,5 +185,5 @@
             }
         }, ];
     }
-
+ 
 })();

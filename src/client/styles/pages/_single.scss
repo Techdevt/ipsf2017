@@ -4,8 +4,7 @@
         position: relative;
         padding: 70px 20px 20px;
         color: white;
-        background: #5298fc url("images/blue-pattern.jpg") center center;
-        background-size: 1325px auto;
+        background: #5298fc url('#{$path-img}/ocean-back-pattern.png') center center;
         @include media('>=850px') {
             padding-top: 132px;
         }
@@ -384,7 +383,7 @@
             opacity: 1;
             text-align: center;
         }
-        #disqus-thread {
+        dir-disqus #disqus_thread {
             margin: 24px auto;
             max-width: 330px;
             @include media('>=850px') {

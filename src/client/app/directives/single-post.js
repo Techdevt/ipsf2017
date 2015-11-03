@@ -62,7 +62,7 @@
             ' data-properties="{\'text\': {{post.content.rendered | htmlToPlaintext}}, \'href\': {{location}}}">{{ shares }} \n' +
             '</a> \n' +
             '<a twitter  data-lang="en" data-count="horizontal" data-url={{location}} \n' +
-             'data-via="GNAAS" data-size="medium" data-text="{{post.title.rendered | htmlToPlaintext | limitTo: 80 }}" ></a>'
+             'data-via="GNAAS" data-size="medium" data-text="{{post.title.rendered | htmlToPlaintext | limitTo: 80 }}" ></a> \n' +
             '</div> \n' +
             '</aside> \n' +
             '</section> \n' +
@@ -113,7 +113,7 @@
             ' data-properties="{\'text\': {{post.content.rendered | htmlToPlaintext}}, \'href\': {{location}}}">{{ shares }} \n' +
             '</a> \n' +
             '<a twitter  data-lang="en" data-count="horizontal" data-url={{location}} \n' +
-             'data-via="GNAAS" data-size="medium" data-text="{{post.title.rendered | htmlToPlaintext | limitTo: 80 }}" ></a>'
+             'data-via="GNAAS" data-size="medium" data-text="{{post.title.rendered | htmlToPlaintext | limitTo: 80 }}" ></a> \n' +
             '</div> \n' +
             '</aside> \n' +
             '</section> \n' +
@@ -164,7 +164,7 @@
             ' data-properties="{\'text\': {{post.content.rendered | htmlToPlaintext}}, \'href\': {{location}}}">{{ shares }} \n' +
             '</a> \n' +
             '<a twitter  data-lang="en" data-count="horizontal" data-url={{location}} \n' +
-             'data-via="GNAAS" data-size="medium" data-text="{{post.title.rendered | htmlToPlaintext | limitTo: 80 }}" ></a>'
+             'data-via="GNAAS" data-size="medium" data-text="{{post.title.rendered | htmlToPlaintext | limitTo: 80 }}" ></a> \n' +
             '</div> \n' +
             '</aside> \n' +
             '</section> \n' +
@@ -196,7 +196,8 @@
             restrict: 'E',
             scope: {
                 post: '=',
-                loaded: '='
+                loaded: '@',
+                defaults: '='
             },
             link: function(scope, element, attrs) {
                 scope.location = config.frontEnd + $location.path();
