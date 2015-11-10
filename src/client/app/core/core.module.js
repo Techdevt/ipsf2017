@@ -25,10 +25,12 @@
         */
         'ngplus',
         'ui.router',
-        'ngMdIcons', 
+        'ngMdIcons',
         'angularUtils.directives.dirPagination',
         'djds4rce.angular-socialshare',
-        'angularUtils.directives.dirDisqus'
+        'angularUtils.directives.dirDisqus',
+        'angular.filter',
+        'jkuri.gallery'
     ]);
 
 })();

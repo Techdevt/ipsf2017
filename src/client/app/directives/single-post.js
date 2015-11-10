@@ -191,7 +191,8 @@
                     break;
             }
             return template;
-        }
+        };
+        
         return {
             restrict: 'E',
             scope: {

@@ -31,7 +31,6 @@
             '<a ui-sref="landing.blog.news" title="news Tag" class="tag-{{post.type}}">news</a> \n' +
             '</span>';
 
-
         var videoTemplate = '<div class="card-img-container"> \n' +
             '<a ui-sref="landing.single({slug: post.slug})" style="background-image:url({{post.youtube_embed}})" class="card-img"></a> \n' +
             '<div class="card-favorite"> \n' +
@@ -94,7 +93,8 @@
                     break;
             }
             return template;
-        }
+        };
+        
         return {
             restrict: 'A',
             scope: {

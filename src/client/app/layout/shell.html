@@ -12,30 +12,35 @@
 
 <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
     <md-toolbar>
-		<div class="md-toolbar-tools" layout="column" layout-align="center center">
+		<div class="md-toolbar-tools" layout="column" layout-align="center center" style="padding-top: 80px;">
 		  	<span>
-		  		<h1>Navigation</h1>
+		  		<h1 style="color: #fff;">Navigation</h1>
 		  	</span>
 		</div>    	
     </md-toolbar>
 
     <ul layout="column" ng-cloak>
       <li>
-        <a href="#/" ui-sref="landing" ui-sref-active="active">
+        <a ui-sref="landing.home" ui-sref-active="active">
           Home
         </a>
       </li>
       <li>
-        <a href="#" ui-sref-active="active">
-          About Us
+        <a ui-sref="landing.about" ui-sref-active="active">
+          About
         </a>
       </li>
       <li>
-        <a href="#" ui-sref-active="active">Contact</a>
+        <a ui-sref="landing.contact" ui-sref-active="active">Contact</a>
       </li>
       <li>
-        <a href="#" ui-sref-active="active">
+        <a ui-sref="landing.blog" ui-sref-active="active">
           Blog
+        </a>
+      </li>
+      <li>
+        <a ui-sref="landing.gallery" ui-sref-active="active">
+          Gallery
         </a>
       </li>
     </ul>

@@ -1,0 +1,14 @@
+.gallery {
+    header {
+        .main-nav {
+            a {
+            	text-transform: capitalize;
+            	cursor: pointer;
+            }
+        }
+    }
+
+    .gallery-main{
+    	padding: 30px;
+    }
+}

@@ -42,7 +42,22 @@
             config: {
                 url: '^/gallery',
                 title: 'Gallery',
-                templateUrl: 'app/landing/gallery.html'
+                templateUrl: 'app/landing/gallery.html',
+                controller: 'Gallery',
+                controllerAs: 'vm',
+                resolve: {
+                    albums: ['XHR', '$q', '$filter', function(XHR, $q, $filter) {
+                        var deferred = $q.defer();
+                        XHR.get('/wp-json/wp/v2/media?filter[per_page]=-1').then(function(result) {
+                            var ordered = $filter('orderBy')(result.data, 'album');
+                            var grouped = $filter('groupBy')(ordered, 'album');
+                            deferred.resolve(grouped);
+                        }, function(error) {
+                            deferred.reject(error);
+                        });
+                        return deferred.promise;
+                    }]
+                }
             }
         }, {
             state: 'landing.about.history',
@@ -185,5 +200,5 @@
             }
         }, ];
     }
- 
+
 })();

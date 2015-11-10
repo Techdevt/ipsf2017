@@ -60,6 +60,7 @@
             morlock.onScroll(setShadow);
 
             $window.addEventListener('resize', updateShrink);
+            window.onload = updateShrink();
             vm.goToUrl = goToUrl;
         }
     }

@@ -16,7 +16,7 @@
     var config = {
         appErrorPrefix: 'GNAAS Error - ',
         appTitle: 'GNAAS',
-        backend: 'http://localhost:8080/gnaas',
+        backend: 'http://localhost/gnaas',
         frontEnd: 'http://localhost:3000',
         consumerId: 29,
         consumerKey: 'WIAvrQRSeIDS',
