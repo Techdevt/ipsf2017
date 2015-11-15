@@ -1,5 +1,6 @@
 (function() {
     'use strict';
+    // jscs:disable requireCamelCaseOrUpperCaseIdentifiers
 
     angular
         .module('gnaas.directives')
@@ -44,8 +45,8 @@
             '<div class="card-content"> \n' +
             '<div class="card-meta"> \n' +
             '<div class="meta-icon meta-box"> \n' +
-				'<ng-md-icon aria-label="play" icon="play_circle_fill" size="24"></ng-md-icon> \n' +
-			'</div> \n' +
+            '<ng-md-icon aria-label="play" icon="play_circle_fill" size="24"></ng-md-icon> \n' +
+            '</div> \n' +
             '<span class="meta-date meta-box">{{post.modified | date: \'medium\'}}</span> \n' +
             '</div> \n' +
             '<h2><a ui-sref="landing.single({slug: post.slug})" ng-bind-html="post.title.rendered"> \n' +
@@ -94,16 +95,16 @@
             }
             return template;
         };
-        
+
         return {
             restrict: 'A',
             scope: {
                 post: '='
             },
             link: function(scope, element, attrs) {
-            	if(scope.post.type === 'video'){
-            		scope.post.youtube_embed = 'http://img.youtube.com/vi/' + common.getYoutubeId(scope.post.acf['youtube_embed']) + '/maxresdefault.jpg';
-            	}
+                if (scope.post.type === 'video') {
+                    scope.post.youtube_embed = 'http://img.youtube.com/vi/' + common.getYoutubeId(scope.post.acf['youtube_embed']) + '/maxresdefault.jpg';
+                }
                 element.html(getTemplate(scope.post.type)).show();
                 $compile(element.contents())(scope);
             }

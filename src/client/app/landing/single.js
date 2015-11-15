@@ -8,8 +8,7 @@
     Single.$inject = ['post'];
     /* @ngInject */
     function Single(post) {
-    	var vm = this;
-    	console.log(post);
-    	vm.post = post;
+        var vm = this;
+        vm.post = post;
     }
 })();

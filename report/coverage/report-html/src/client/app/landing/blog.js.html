@@ -12,13 +12,13 @@
     </style>
 </head>
 <body>
-<div class="header high">
+<div class="header low">
     <h1>Code coverage report for <span class="entity">./src/client/app/landing/blog.js</span></h1>
     <h2>
-        Statements: <span class="metric">80% <small>(4 / 5)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">28.57% <small>(4 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Functions: <span class="metric">50% <small>(1 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">80% <small>(4 / 5)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">28.57% <small>(4 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">./src/client/app/landing/</a> &#187; blog.js</div>
@@ -38,7 +38,31 @@
 11
 12
 13
-14</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
@@ -49,6 +73,30 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function() {
@@ -58,10 +106,34 @@
         .module('gnaas.landing')
         .controller('Blog', Blog);
 &nbsp;
-    Blog.$inject = ['$scope', '$mdDialog', 'BlogService', '_'];
+    Blog.$inject = ['$scope', '$mdDialog', 'BlogService', '_', 'all', 'featured', '$filter'];
 &nbsp;
-<span class="fstat-no" title="function not covered" >    function Blog($scope, $mdDialog, BlogService, _) {</span>
+<span class="fstat-no" title="function not covered" >    function Blog($scope, $mdDialog, BlogService, _, all, featured, $filter) {</span>
 <span class="cstat-no" title="statement not covered" >        var vm = this;</span>
+<span class="cstat-no" title="statement not covered" >        vm.Blog = {};</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (all.length) {</span>
+<span class="cstat-no" title="statement not covered" >            vm.Blog.All = all;</span>
+<span class="cstat-no" title="statement not covered" >            vm.Blog.News = $filter('filter')(all, {</span>
+                'type': 'news'
+            });
+<span class="cstat-no" title="statement not covered" >            vm.Blog.Articles = $filter('filter')(all, {</span>
+                'type': 'article'
+            });
+<span class="cstat-no" title="statement not covered" >            vm.Blog.Videos = $filter('filter')(all, {</span>
+                'type': 'video'
+            });
+<span class="cstat-no" title="statement not covered" >            vm.Blog.Events = $filter('filter')(all, {</span>
+                'type': 'event'
+            });
+<span class="cstat-no" title="statement not covered" >            vm.Blog.try = $filter('filter')(all, {</span>
+                'featured': true
+            });
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        vm.Blog.Featured = $filter('filter')(all, {</span>
+            'featured': true
+        })[0];
     }
 })();
 &nbsp;</pre></td></tr>
@@ -69,7 +141,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Oct 29 2015 06:10:45 GMT+0000 (GMT Standard Time)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Nov 15 2015 13:12:07 GMT+0000 (GMT Standard Time)</div>
 </div>
 <script src="../../../../prettify.js"></script>
 <script>

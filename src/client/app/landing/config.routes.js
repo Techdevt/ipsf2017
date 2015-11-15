@@ -67,6 +67,13 @@
                 templateUrl: 'app/landing/about/history.html'
             }
         }, {
+            state: 'landing.about.congress',
+            config: {
+                url: '^/about/congress',
+                title: 'Congress Registration',
+                templateUrl: 'app/landing/about/congress.html'
+            }
+        }, {
             state: 'landing.about.executives',
             config: {
                 url: '^/about/executives',
@@ -198,7 +205,7 @@
                     }]
                 }
             }
-        }, ];
+        }];
     }
 
 })();

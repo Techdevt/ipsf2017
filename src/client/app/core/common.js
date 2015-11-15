@@ -17,7 +17,7 @@
         };
 
         return service;
-        ////////////// 
+        //////////////
         function $broadcast() {
             return $rootScope.$broadcast.apply($rootScope, arguments);
         }

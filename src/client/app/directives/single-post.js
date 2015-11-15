@@ -57,12 +57,12 @@
             '<aside class="single-shares"> \n' +
             '<h3 class="small-title">Share This Post</h3> \n' +
             '<div class="social-buttons"> \n' +
-            '<a facebook-feed-share class="facebookShare" data-url=\'http://gnaas.org\' data-picture="{{post.featured_image}}" \n' + 
+            '<a facebook-feed-share class="facebookShare" data-url=\'http://gnaas.org\' data-picture="{{post.featured_image}}" \n' +
             'data-shares=\'shares\' data-caption="{{post.title.rendered | htmlToPlaintext}}" data-description="{{post.excerpt.rendered | htmlToPlaintext}}" \n' +
             ' data-properties="{\'text\': {{post.content.rendered | htmlToPlaintext}}, \'href\': {{location}}}">{{ shares }} \n' +
             '</a> \n' +
             '<a twitter  data-lang="en" data-count="horizontal" data-url={{location}} \n' +
-             'data-via="GNAAS" data-size="medium" data-text="{{post.title.rendered | htmlToPlaintext | limitTo: 80 }}" ></a> \n' +
+            'data-via="GNAAS" data-size="medium" data-text="{{post.title.rendered | htmlToPlaintext | limitTo: 80 }}" ></a> \n' +
             '</div> \n' +
             '</aside> \n' +
             '</section> \n' +
@@ -108,12 +108,12 @@
             '<aside class="single-shares"> \n' +
             '<h3 class="small-title">Share This Post</h3> \n' +
             '<div class="social-buttons"> \n' +
-            '<a facebook-feed-share class="facebookShare" data-url=\'http://gnaas.org\' data-picture="{{post.featured_image}}" \n' + 
+            '<a facebook-feed-share class="facebookShare" data-url=\'http://gnaas.org\' data-picture="{{post.featured_image}}" \n' +
             'data-shares=\'shares\' data-caption="{{post.title.rendered | htmlToPlaintext}}" data-description="{{post.excerpt.rendered | htmlToPlaintext}}" \n' +
             ' data-properties="{\'text\': {{post.content.rendered | htmlToPlaintext}}, \'href\': {{location}}}">{{ shares }} \n' +
             '</a> \n' +
             '<a twitter  data-lang="en" data-count="horizontal" data-url={{location}} \n' +
-             'data-via="GNAAS" data-size="medium" data-text="{{post.title.rendered | htmlToPlaintext | limitTo: 80 }}" ></a> \n' +
+            'data-via="GNAAS" data-size="medium" data-text="{{post.title.rendered | htmlToPlaintext | limitTo: 80 }}" ></a> \n' +
             '</div> \n' +
             '</aside> \n' +
             '</section> \n' +
@@ -159,12 +159,12 @@
             '<aside class="single-shares"> \n' +
             '<h3 class="small-title">Share This Post</h3> \n' +
             '<div class="social-buttons"> \n' +
-            '<a facebook-feed-share class="facebookShare" data-url=\'http://gnaas.org\' data-picture="{{post.featured_image}}" \n' + 
+            '<a facebook-feed-share class="facebookShare" data-url=\'http://gnaas.org\' data-picture="{{post.featured_image}}" \n' +
             'data-shares=\'shares\' data-caption="{{post.title.rendered | htmlToPlaintext}}" data-description="{{post.excerpt.rendered | htmlToPlaintext}}" \n' +
             ' data-properties="{\'text\': {{post.content.rendered | htmlToPlaintext}}, \'href\': {{location}}}">{{ shares }} \n' +
             '</a> \n' +
             '<a twitter  data-lang="en" data-count="horizontal" data-url={{location}} \n' +
-             'data-via="GNAAS" data-size="medium" data-text="{{post.title.rendered | htmlToPlaintext | limitTo: 80 }}" ></a> \n' +
+            'data-via="GNAAS" data-size="medium" data-text="{{post.title.rendered | htmlToPlaintext | limitTo: 80 }}" ></a> \n' +
             '</div> \n' +
             '</aside> \n' +
             '</section> \n' +
@@ -192,7 +192,7 @@
             }
             return template;
         };
-        
+
         return {
             restrict: 'E',
             scope: {
