@@ -1,0 +1,88 @@
+<div class="grid">
+    <div class="grid__col--12">
+        <sound-manager></sound-manager>
+        <div class="md-media-player" layout layout-align="center center">
+            <md-card class="md-default-theme" layout="row">
+                <div layout="column">
+                    <md-toolbar class="now-playing-toolbar md-default-theme">
+                        <md-progress-linear seek-track class="seekBase md-accent md-default-theme" md-mode="buffer" value="{{progress}}" aria-valuemin="0" aria-valuemax="100" role="progressbar" aria-valuenow="69">
+                            <div class="md-container md-ready">
+                                <div class="md-dashed"></div>
+                                <div class="md-bar md-bar1" style="transform: translateX(-15%) scale(0.7, 1);"></div>
+                                <div class="md-bar md-bar2" style="transform: translateX(-15.5%) scale(0.69, 1);"></div>
+                            </div>
+                        </md-progress-linear>
+                        <div layout="row" layout-align="space-between center">
+                            <div class="md-subhead ng-binding">{{currentPlaying.media_details.title || 'No track playing'}}</div>
+                            <div class="track-duration ng-binding">{{currentPostion || '0:00'}}</div>
+                        </div>
+                        <div layout="row" layout-align="space-between">
+                            <div layout="row">
+                                <button class="md-icon-button md-button md-default-theme" prev-track>
+                                    <ng-md-icon icon="skip_previous" size="24" aria-label="Previous"></ng-md-icon>
+                                </button>
+                                <button class="md-icon-button md-button md-default-theme" play-pause-toggle>
+                                    <ng-md-icon icon="play_arrow" size="24" aria-label="Play"></ng-md-icon>
+                                </button>
+                                <button class="md-icon-button md-button md-default-theme" next-track>
+                                    <ng-md-icon icon="skip_next" size="24" aria-label="Next"></ng-md-icon>
+                                </button>
+                            </div>
+                            <div layout="row">
+                            	<button class="md-icon-button md-button md-default-theme" repeat-music>
+                                    <ng-md-icon icon="loop" size="24" aria-label="Repeat"></ng-md-icon>
+                                </button>
+                                <button class="md-icon-button md-button md-default-theme" mute-music>
+                                    <ng-md-icon icon="volume_off" size="24" aria-label="Mute"></ng-md-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </md-toolbar>
+                </div>
+                <div layout="column">
+                    <md-toolbar>
+                        <div class="md-toolbar-tools" layout-align="space-between">
+                            <div layout="column">
+                                <div class="md-title ng-binding">{{'Playlist(' + vm.playlist().length + ') tracks'}}</div>
+                                <div class="md-subhead ng-binding">{{currentTrack}}</div>
+                            </div>
+                        </div>
+                    </md-toolbar>
+                    <md-content layout="column" class="md-default-theme" aria-hidden="true">
+                        <div class="track-list" layout="column">
+                            <div class="md-track" layout="row" ng-repeat="track in vm.playlist()" ng-click="vm.setCurrentTrack(track.id)" layout-align="start center"  class="ng-scope" role="button" tabindex="0">
+                                <div class="track-number ng-binding">{{track.media_details.track_number}}</div>
+                                <div class="track-title ng-binding">{{track.media_details.title}}</div>
+                                <div class="track-duration ng-binding">{{track.media_details.length_formatted}}</div>
+                            </div>
+                        </div>
+                    </md-content>
+                </div>
+            </md-card>
+        </div>
+        <md-list ng-repeat="(album,content) in vm.audio">
+            <h3>{{album}}  
+            <md-button play-all="content" class="md-raised">
+                Play all <ng-md-icon icon="play_arrow" aria-label="play album" size="24"></ng-md-icon>
+            </md-button>
+            </h3>
+            <md-list-item ng-repeat="item in content" class="audio-item" style="background-image: url({{vm.audioImage}}">
+                <div class="audio-item-inner">
+                    <h2>{{item.media_details.title}}</h2>
+                    <!-- <span>{{item.source_url}}</span> -->
+                    <md-button music-player add-song="item">
+                        Add to playlist
+                        <ng-md-icon icon="add" aria-label="add to playlist" size="24"></ng-md-icon>
+                    </md-button>
+                    <md-button ng-click="vm.tryRemoveSong(item)">
+                        Remove from playlist
+                        <ng-md-icon icon="cancel" aria-label="remove from playlist" size="24"></ng-md-icon>
+                    </md-button>
+                </div>
+                <md-divider ng-if="!$last"></md-divider>
+            </md-list-item>
+            <br>
+            <md-divider ng-if="!$last"></md-divider>
+        </md-list>
+    </div>
+</div>

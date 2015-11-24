@@ -58,8 +58,9 @@
             '</span>';
 
         var defaultTemplate = '<div class="card-img-container"> \n' +
-            '<a ui-sref="landing.single({slug: post.slug})" style="background-image:url({{post.featured_image.url}})" class="card-img"></a> \n' +
-            '<div class="card-favorite"> \n' +
+            '<a ui-sref="landing.single({slug: post.slug})" \n' +
+            'style="background-image:url({{post.featured_image.url || post.type == \'event\' ? defaults.event : defaults.article}})" \n' +
+            'class="card-img"></a><div class="card-favorite"> \n' +
             '<span class="wpfp-span"> \n' +
             '<a class="wpfp-link" href="#"> \n' +
             '<span class="icon ion-android-star-outline"></span> Favorite \n' +
@@ -99,7 +100,8 @@
         return {
             restrict: 'A',
             scope: {
-                post: '='
+                post: '=',
+                defaults: '='
             },
             link: function(scope, element, attrs) {
                 if (scope.post.type === 'video') {

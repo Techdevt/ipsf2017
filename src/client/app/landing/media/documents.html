@@ -1,0 +1,24 @@
+<div class="grid">
+    <div class="grid__col--12">
+        <md-list ng-repeat="(folder,content) in vm.documents">
+            <h3>{{folder}}</h3>
+            <md-list-item ng-repeat="item in content" class="document-item" style="background-image: url({{vm.documentImage}}">
+                <div class="document-item-inner">
+                    <h2>{{item.title}}</h2>
+                    <!-- <span>{{item.source_url}}</span> -->
+                    <md-button ng-click="vm.viewPDF(item)" ng-show="item.media_details.dataformat === 'pdf' ">
+                        View / Download
+                        <ng-md-icon icon="pageview" aria-label="view" size="24"></ng-md-icon>
+                    </md-button>
+                    <!-- <md-button>
+                        Download
+                        <ng-md-icon icon="file_download" aria-label="Download" size="24"></ng-md-icon>
+                    </md-button> -->
+                </div>
+                <md-divider ng-if="!$last"></md-divider>
+            </md-list-item>
+            <br>
+            <md-divider ng-if="!$last"></md-divider>
+        </md-list>
+    </div>
+</div>

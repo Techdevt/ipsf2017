@@ -10,7 +10,7 @@
                     <span class="name">{{vm.Blog.Featured.author.name}}</span>, <span class="title">{{vm.Blog.Featured.author.role + ' at GNAAS'}}</span>
                 </cite>
                 <p class="copy desktop-only" ng-bind-html="vm.Blog.Featured.excerpt.rendered"></p>
-                <md-button class="md-primary raised material-icons btn"><a href="#">Read More</a></md-button>
+                <md-button class="md-primary raised material-icons btn"><a ui-sref="landing.single({slug: vm.Blog.Featured.slug})">Read More</a></md-button>
             </div>
         </section>
         <sticky-nav></sticky-nav>
@@ -20,7 +20,7 @@
         <!-- Change to directive -->
         <section class="pagination">
             <div class="grid">
-                <dir-pagination-controls max-size="5" boundary-links="true">
+                <dir-pagination-controls max-size="5" boundary-links="true" on-page-change="vm.scrollToTop(newPageNumber)">
                 </dir-pagination-controls>
             </div>
         </section>

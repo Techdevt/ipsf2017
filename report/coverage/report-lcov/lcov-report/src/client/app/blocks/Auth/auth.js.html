@@ -15,10 +15,10 @@
 <div class="header low">
     <h1>Code coverage report for <span class="entity">./src/client/app/blocks/Auth/auth.js</span></h1>
     <h2>
-        Statements: <span class="metric">9.91% <small>(11 / 111)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Branches: <span class="metric">0% <small>(0 / 24)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">3.7% <small>(1 / 27)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">9.91% <small>(11 / 111)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">10.58% <small>(11 / 104)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">3.85% <small>(1 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">10.58% <small>(11 / 104)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../../../../index.html">All files</a> &#187; <a href="index.html">./src/client/app/blocks/Auth/</a> &#187; auth.js</div>
@@ -237,15 +237,7 @@
 210
 211
 212
-213
-214
-215
-216
-217
-218
-219
-220
-221</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+213</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -392,22 +384,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -415,9 +393,15 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -496,7 +480,7 @@
             authenticate: authenticate,
             oauth_data: oauth_data,
             login: login,
-            registerClient: register,
+            registerUser: register,
             logout: logout,
             user: getUser
         };
@@ -610,34 +594,26 @@
                 });
         }
 &nbsp;
-<span class="fstat-no" title="function not covered" >        function register(data, userType) {</span>
-<span class="cstat-no" title="statement not covered" >            var url = '/api/account/register/' + userType;</span>
+<span class="fstat-no" title="function not covered" >        function register(data) {</span>
+<span class="cstat-no" title="statement not covered" >            var wwwEncodedURL = '/wp-json/wp/v2/users/?birthdate=' + data.birthdate + '&amp;title=' + data.title +</span>
+                '&amp;phone=' + data.phone + '&amp;institution=' + data.institution + '&amp;church=' +
+                data.church + '&amp;country=' + data.country + '&amp;position=' + data.position +
+                '&amp;sex=' + data.sex + '&amp;alumni=' + data.alumni + '&amp;email=' + data.email +
+                '&amp;username=' + data.username + '&amp;first_name=' + data.firstName + '&amp;last_name=' + data.lastName +
+                '&amp;role=' + 'contributor' + '&amp;password=' + data.password;
+&nbsp;
 <span class="cstat-no" title="statement not covered" >            var successMsg = 'You Have Successfully Registered, You will be redirected to Login Page in 3 Seconds...';</span>
 <span class="cstat-no" title="statement not covered" >            var errorMsg = 'Registration Failed';</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            XHR.post(url, data)</span>
+<span class="cstat-no" title="statement not covered" >            XHR.postwww(wwwEncodedURL)</span>
                 .then(<span class="fstat-no" title="function not covered" >function(result) {</span>
 <span class="cstat-no" title="statement not covered" >                    logger.success(successMsg, null, 'Congratulations!');</span>
 <span class="cstat-no" title="statement not covered" >                    $timeout(<span class="fstat-no" title="function not covered" >function() {</span></span>
 <span class="cstat-no" title="statement not covered" >                        $state.go('login');</span>
                     }, 3000);
-                }, <span class="fstat-no" title="function not covered" >function(response) {</span>
-<span class="cstat-no" title="statement not covered" >                    if (response.modelState) {</span>
-<span class="cstat-no" title="statement not covered" >                        var errors = [];</span>
-<span class="cstat-no" title="statement not covered" >                        for (var key in response.modelState) {</span>
-<span class="cstat-no" title="statement not covered" >                            if (response.modelState.length) {</span>
-<span class="cstat-no" title="statement not covered" >                                for (var i = 0; i &lt; response.modelState[key].length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >                                    errors.push(response.modelState[key][i]);</span>
-                                }
-                            }
-                        }
-&nbsp;
-<span class="cstat-no" title="statement not covered" >                        angular.forEach(errors, <span class="fstat-no" title="function not covered" >function(error) {</span></span>
-<span class="cstat-no" title="statement not covered" >                            logger.error(error, null, response.message);</span>
-                        });
-                    } else {
-<span class="cstat-no" title="statement not covered" >                        logger.error(response.exceptionMessage, null, response.message);</span>
-                    }
+                }, <span class="fstat-no" title="function not covered" >function(error) {</span>
+<span class="cstat-no" title="statement not covered" >                    console.log(error);</span>
+<span class="cstat-no" title="statement not covered" >                    logger.error(error, null, errorMsg);</span>
                 });
         }
 &nbsp;
@@ -690,7 +666,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Nov 15 2015 13:05:18 GMT+0000 (GMT Standard Time)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Nov 23 2015 14:24:27 GMT+0000 (GMT Standard Time)</div>
 </div>
 <script src="../../../../../prettify.js"></script>
 <script>

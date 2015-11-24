@@ -57,6 +57,7 @@
                 //custom re-routes
                 $urlRouterProvider.when('/blog', '/blog/all');
                 $urlRouterProvider.when('/about', '/about/history');
+                $urlRouterProvider.when('/media', '/media/gallery');
             }
 
             function handleRoutingErrors() {

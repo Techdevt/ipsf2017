@@ -1,6 +1,6 @@
 $sidebar-width: sidebar-width(2);
 .about,
-.gallery {
+.media {
     position: relative;
     background: $aqua-haze;
     overflow: hidden;
@@ -40,9 +40,12 @@ $sidebar-width: sidebar-width(2);
             .main-nav {
                 margin: 0 0 20px 0;
                 padding-left: 15px;
+                @include media('<=880px'){
+                    padding-left: 0;
+                }
                 a {
                     display: block;
-                    font-size: 18px;
+                    font-size: 16px;
                     position: relative;
                     padding: 20px 5px 20px 15px;
                     font-weight: 200;
@@ -80,6 +83,9 @@ $sidebar-width: sidebar-width(2);
                             }
                         }
                     }
+                    @include media('<=880px'){
+                        font-size: 14px;
+                    }
                 }
             }
         }
@@ -93,7 +99,7 @@ $sidebar-width: sidebar-width(2);
         }
     }
     .about-main,
-    .gallery-main {
+    .media-main {
         height: auto;
         display: block;
         padding: 40px 0;
@@ -212,7 +218,7 @@ section.page-container {
         opacity: 0.5;
 
         &.theme{
-            color: lighten($text-color--secondary, 10%);
+            color: #3b4345;
             opacity: 1;
         }
     }
@@ -256,13 +262,12 @@ section.page-container {
             list-style-type: none;
             small {
                 display: block;
-                padding: 20px 30px 20px 110px;
+                padding: 20px 30px 20px 20px;
                 border-bottom: 1px solid #edeff0;
                 overflow: hidden;
                 -webkit-transition-duration: 0.2s;
                 transition-duration: 0.2s;
                 p {
-                    float: right;
                     font-size: 14px;
                     margin-left: 10px;
                     margin-bottom: 0;

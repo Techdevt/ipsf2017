@@ -1,79 +1,90 @@
 <section class="form_full background-01" layout="column">
-
-	<form class="form-signup" name="register" ng-submit="vm.submit()" novalidate>
-		<div class="form-heading">
-			<h1>
+    <form class="form-signup" name="register" ng-submit="vm.submit()" novalidate>
+        <div class="form-heading">
+            <h1>
 				Register
 			</h1>
-		</div>
-		<md-content md-theme="form-dark" layout-padding layout="row" layout-sm="column">
-		    <md-input-container flex>
-		      <label>Title</label>
-		      <input ng-model="vm.formData.title" type="text">
-		    </md-input-container>
-		    <md-input-container class="md-icon-float" flex>
-		      <label>Email</label>
-		      <ng-md-icon icon="email" aria-label="Email" size="24"></ng-md-icon> 
-		      <input 
-				type="email" 
-				ng-model="vm.formData.email" 
-				ng-model-options="{updateOn:'blur'}"
-				required name="email">
-				<div ng-messages="register.email.$error">
-					<div ng-message="email">please enter a proper email</div>
-				</div>
-		    </md-input-container>
-		  </md-content>
-		  <md-content layout-padding>
-		      <div layout layout-sm="column">
-		        <md-input-container flex>
-		            <label>UserName</label>
-		            <input ng-model="vm.formData.username">
-		          </md-input-container>
-		      </div>
-		      <div layout layout-sm="column">
-		        <md-input-container class="md-icon-float" flex>
-		          <label>First name</label>
-		          <ng-md-icon icon="person" aria-label="First Name" size="24"></ng-md-icon> 
-		          <input ng-model="vm.formData.firstName" required>
-		        </md-input-container>
-		        <md-input-container flex>
-		          <label>Last Name</label>
-		          <input ng-model="vm.formData.lastName" required>
-		        </md-input-container>
-		      </div>
-		      <md-input-container flex>
-		        <label>Address</label>
-		        <input ng-model="vm.formData.address">
-		      </md-input-container>
-		        <md-input-container class="md-icon-float" flex>
-		          <label>City</label>
-		          <ng-md-icon icon="place" aria-label="city" size="24"></ng-md-icon> 
-		          <input ng-model="vm.formData.city">
-		        </md-input-container>
-		       <div layout layout-sm="column">
-		      	<md-input-container flex>
-			      <label>Password</label>
-			      <input 
-					name="password" 
-					type="password"
-					ng-model="vm.formData.password"  
-					required>
-			    </md-input-container>
-			    <md-input-container flex>
-			      <label>Confirm Password</label>
-			      <input 
-					name="password_confirm" 
-					type="password"
-					ng-model="vm.formData.confirmPassword" 
-					validate-equals='vm.formData.password' 
-					required> 
-					<div ng-messages="register.password_confirm.$error">
-						<div ng-message="equal">passwords do not match</div>
-					</div>
-			    </md-input-container>
-		      </div>
-		  </md-content>
-		  <md-button class="md-button md-raised md-primary w-txt" type="submit">Submit</md-button>
-	</form>
+        </div>
+        <md-content md-theme="form-dark" layout-padding layout="row" layout-sm="column">
+            <md-input-container class="md-icon-float" flex>
+                <label>Title</label>
+                <input ng-model="vm.formData.title" type="text">
+            </md-input-container>
+            <md-input-container class="md-icon-float" flex>
+                <label>Email</label>
+                <ng-md-icon icon="email" aria-label="Email" size="24"></ng-md-icon>
+                <input type="email" ng-model="vm.formData.email" ng-model-options="{updateOn:'blur'}" required name="email">
+                <div ng-messages="register.email.$error">
+                    <div ng-message="email">please enter a proper email</div>
+                </div>
+            </md-input-container>
+        </md-content>
+        <md-content layout-padding>
+            <div layout layout-sm="column">
+                <md-input-container flex>
+                    <label>UserName</label>
+                    <input ng-model="vm.formData.username">
+                </md-input-container>
+                <md-datepicker ng-model="vm.formData.birthdate" flex></md-datepicker>
+                <md-select ng-model="vm.formData.sex" placeholder="Gender" flex>
+                    <md-option ng-value="Male">Male</md-option>
+                    <md-option ng-value="Female">Female</md-option>
+                </md-select>
+            </div>
+            <div layout layout-sm="column">
+                <md-input-container class="md-icon-float" flex>
+                    <label>First name</label>
+                    <ng-md-icon icon="person" aria-label="First Name" size="24"></ng-md-icon>
+                    <input ng-model="vm.formData.firstName" required>
+                </md-input-container>
+                <md-input-container class="md-icon-float" flex>
+                    <label>Last Name</label>
+                    <input ng-model="vm.formData.lastName" required>
+                </md-input-container>
+            </div>
+            <md-input-container flex>
+                <label>Institution</label>
+                <input ng-model="vm.formData.institution">
+            </md-input-container>
+            <div layout layout-sm="column">
+                <md-checkbox ng-model="vm.formData.isExecutive" aria-label="executive?" flex>
+                    Executive
+                </md-checkbox>
+                <md-checkbox ng-model="vm.formData.alumni" aria-label="alumni?" flex>
+                    Alumni
+                </md-checkbox>
+            </div>
+            <md-input-container class="md-icon-float" flex ng-show="vm.formData.alumni">
+                <label>Country</label>
+                <ng-md-icon icon="place" aria-label="country" size="24"></ng-md-icon>
+                <input ng-model="vm.formData.country">
+            </md-input-container>
+            <md-input-container flex ng-show="vm.formData.isExecutive">
+                <label>Position</label>
+                <input ng-model="vm.formData.position">
+            </md-input-container>
+            <md-input-container flex>
+                <label>Local Church</label>
+                <input ng-model="vm.formData.church">
+            </md-input-container>
+            <md-input-container flex>
+                <label>Phone</label>
+                <input ng-model="vm.formData.phone" phone-input>
+            </md-input-container>
+            <div layout layout-sm="column">
+                <md-input-container flex>
+                    <label>Password</label>
+                    <input name="password" type="password" ng-model="vm.formData.password" required>
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Confirm Password</label>
+                    <input name="password_confirm" type="password" ng-model="vm.formData.confirmPassword" validate-equals='vm.formData.password' required>
+                    <div ng-messages="register.password_confirm.$error">
+                        <div ng-message="equal">passwords do not match</div>
+                    </div>
+                </md-input-container>
+            </div>
+        </md-content>
+        <md-button class="md-button md-raised md-primary w-txt" type="submit">Submit</md-button>
+    </form>
 </section>

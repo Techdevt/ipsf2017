@@ -14,11 +14,15 @@
 
 //  Column styles
 [class^="grid__col--"]{
-    @extend %clearfix;
+    @extend %clearfix; 
     position: relative;
     @media (min-width: 1px) and (max-width: 768px){
         margin-top: px2em(12px);
         margin-bottom: px2em(12px);
+        .sticky-subnav & {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
     }
 
     @media (min-width: 768px){

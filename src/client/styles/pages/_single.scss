@@ -4,7 +4,7 @@
         position: relative;
         padding: 70px 20px 20px;
         color: white;
-        background: #5298fc url('#{$path-img}/ocean-back-pattern.png') center center;
+        background: #5298fc url('#{$path-img}/back-pattern.png') center center;
         @include media('>=850px') {
             padding-top: 132px;
         }

@@ -17,6 +17,7 @@ $nobel            : #B6B6B6;
 $mako             : #3e474f;
 $astral           : #3079AB;
 $light-wisteria   : #C38CD4;
+$cape-cod         :   #3b4345;
 
 // Functional color variables
 $color-primary         :   $persian-green;
@@ -24,7 +25,7 @@ $color-secondary       :   $froly;
 $color-accent          :   $amber;
 $color-shadow          :   rgba($black, .2);
 $color-dark            :   $mako;
-$text-color--primary   :   $mine-shaft;
+$text-color--primary   :   $cape-cod;
 $text-color--secondary :   $dove-grey;
 $link-color--default   :   $text-color--secondary;
 $link-color--visited    :   desaturate($link-color--default, 30%);

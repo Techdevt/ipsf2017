@@ -28,7 +28,7 @@
             @include media('<768px') {
                 @include text(36px);
             }
-        }
+        } 
         h1,
         .subheading {
             opacity: 0;
@@ -189,7 +189,7 @@ svg.transparent-card {
 
 .congress {
     .mega-quote {
-        background-image: url('#{$path-img}/mega-quote.jpg');
+        background-image: url('#{$path-img}/beach.jpg');
         padding-bottom: 120px;
         @include media('<=459px') {
             background-position: -510px 0;
@@ -230,7 +230,7 @@ svg.transparent-card {
         margin: 0 0 30px 0;
         text-align: left;
     }
-    &:before {
+    /*&:before {
         position: absolute;
         top: -1px;
         left: 30px;
@@ -240,7 +240,7 @@ svg.transparent-card {
         content: " ";
         display: block;
         z-index: 2
-    }
+    }*/
     @include media('<=340px') {
         background-position: -1000px 0;
         padding-right: 40%
@@ -264,6 +264,8 @@ svg.transparent-card {
     }
     .button {
         float: left;
+        border-radius: 4px;
+        border: 2px solid;
     }
 }
 

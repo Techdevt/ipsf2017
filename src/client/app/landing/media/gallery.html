@@ -1,0 +1,9 @@
+<div layout="column" layout-align="center center" ng-cloak>
+    <div layout="column" layout-align="center center" style="height: 100px;">
+        <md-select placeholder="Select album" ng-model="vm.selectedAlbum" style="min-width: 200px;">
+            <md-option ng-repeat="(album,albumContent) in vm.gallery" ng-value="{{albumContent}}">{{album}}</md-option>
+        </md-select>
+    </div>
+</div>
+<ng-gallery images="vm.selectedAlbum">
+</ng-gallery>

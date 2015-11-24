@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ./src/client/app/landing/media.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../../prettify.css">
+    <link rel="stylesheet" href="../../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">./src/client/app/landing/media.js</span></h1>
+    <h2>
+        Statements: <span class="metric">15.15% <small>(5 / 33)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">12.5% <small>(1 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">15.15% <small>(5 / 33)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">./src/client/app/landing/</a> &#187; media.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function() {
+    'use strict';
+&nbsp;
+    angular
+        .module('gnaas.landing')
+        .controller('Media', Media);
+&nbsp;
+    Media.$inject = ['$scope', 'albums', '_', 'config', 'angularPlayer', '$mdDialog', '$timeout'];
+    /* @ngInject */
+<span class="fstat-no" title="function not covered" >    function Media($scope, albums, _, config, angularPlayer, $mdDialog, $timeout) {</span>
+<span class="cstat-no" title="statement not covered" >        var vm = this;</span>
+<span class="cstat-no" title="statement not covered" >        vm.media = albums;</span>
+<span class="cstat-no" title="statement not covered" >        vm.audioImage = '/images/audio-spectrum.svg';</span>
+<span class="cstat-no" title="statement not covered" >        vm.documentImage = '/images/document.svg';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        vm.playlist = angularPlayer.getPlaylist;</span>
+<span class="cstat-no" title="statement not covered" >        vm.current = angularPlayer.getCurrentTrack();</span>
+<span class="cstat-no" title="statement not covered" >        vm.setCurrentTrack = angularPlayer.setCurrentTrack;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        vm.gallery = albums.gallery;</span>
+<span class="cstat-no" title="statement not covered" >        vm.selectedAlbum = _.toArray(vm.gallery)[0];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        vm.audio = albums.audio;</span>
+<span class="cstat-no" title="statement not covered" >        vm.documents = albums.documents;</span>
+<span class="cstat-no" title="statement not covered" >        vm.items = [1, 2, 3];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        vm.viewPDF = <span class="fstat-no" title="function not covered" >function(file) {</span></span>
+<span class="cstat-no" title="statement not covered" >            var parentEl = angular.element(document.body);</span>
+<span class="cstat-no" title="statement not covered" >            $mdDialog.show({</span>
+                parent: parentEl,
+                template: '&lt;md-dialog aria-label="List dialog"&gt;' +
+                    '  &lt;md-dialog-content flex="66"&gt;' +
+                    '&lt;pdf-viewer delegate-handle="{{vm.pdf.title || $index}}" ' +
+                    'url="vm.pdf.url" scale="1" show-toolbar="true" headers="{\'Access-Control-Allow-Origin\': \'*\'}"&gt;' +
+                    '&lt;/pdf-viewer&gt;' +
+                    '  &lt;/md-dialog-content&gt;' +
+                    '  &lt;md-dialog-actions layout layout-align="center center"&gt;' +
+                    '    &lt;md-button ng-click="vm.closeDialog()" class="md-primary"&gt;' +
+                    '      Close' +
+                    '    &lt;/md-button&gt;' +
+                    '  &lt;/md-dialog-actions&gt;' +
+                    '&lt;/md-dialog&gt;',
+                locals: {
+                    pdf: file
+                },
+                controller: DialogController,
+                controllerAs: 'vm'
+            });
+&nbsp;
+<span class="fstat-no" title="function not covered" >            function DialogController($mdDialog, pdf) {</span>
+<span class="cstat-no" title="statement not covered" >                var vm = this;</span>
+<span class="cstat-no" title="statement not covered" >                vm.pdf = pdf;</span>
+<span class="cstat-no" title="statement not covered" >                vm.closeDialog = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >                    $mdDialog.hide();</span>
+                };
+            }
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        vm.tryRemoveSong = <span class="fstat-no" title="function not covered" >function(song) {</span></span>
+<span class="cstat-no" title="statement not covered" >            var playlist = vm.playlist();</span>
+<span class="cstat-no" title="statement not covered" >            _.each(playlist, <span class="fstat-no" title="function not covered" >function(track, index) {</span></span>
+<span class="cstat-no" title="statement not covered" >                if (track.id === song.id &amp;&amp; track.title === song.title) {</span>
+<span class="cstat-no" title="statement not covered" >                    $timeout(<span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >                        var currentTrackId = angularPlayer.getCurrentTrack();</span>
+<span class="cstat-no" title="statement not covered" >                        if (currentTrackId === song.id) {</span>
+<span class="cstat-no" title="statement not covered" >                            angularPlayer.stop();</span>
+                        }
+<span class="cstat-no" title="statement not covered" >                        angularPlayer.removeSong(song, index);</span>
+                    });
+                }
+            });
+        };
+    }
+&nbsp;
+})();
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Nov 23 2015 14:24:27 GMT+0000 (GMT Standard Time)</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

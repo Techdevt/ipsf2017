@@ -30,7 +30,10 @@
         'djds4rce.angular-socialshare',
         'angularUtils.directives.dirDisqus',
         'angular.filter',
-        'jkuri.gallery'
+        'jkuri.gallery',
+        'angularSoundManager',
+        'pdf',
+        'smoothScroll'
     ]);
 
 })();

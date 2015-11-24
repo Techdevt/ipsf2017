@@ -7,7 +7,10 @@ section.main.contact{
 		.heading-2{
 			color: $white;
 			text-transform: uppercase;
-			text-align: left !important;
+			text-align: left;
+			@include media('<=600px'){
+				text-align: center;
+			}
 		}
 	}
 
@@ -15,12 +18,13 @@ section.main.contact{
 		padding-bottom: 64px;
 		.gps-location{
 			padding-bottom: 30%;
+			background: url('#{$path-img}/material.png');
 			
-			@include media('<=768px'){
-				padding-bottom: calc(30vh);
+			@include media('<=600px'){
+				display: none;
 			}
 
-			@include media('>768px'){
+			@include media('>600px'){
 				padding-bottom: calc(45vh);
 			}
 		}
@@ -30,15 +34,7 @@ section.main.contact{
 			background: $white;
 			.contact-form{
 				width: auto;
-
-				@include media('<=768px'){
-					height: calc(30vh);
-					margin-top: 8px;
-				}
-
-				@include media('>768px'){
-					height: calc(45vh);
-				}
+				height: calc(45vh);
 
 				form > md-content{
 				 background: $white
@@ -56,4 +52,7 @@ section.main.contact{
 
 .one-full{
 	color: #FFF;
+	@include media('<=600px'){
+		text-align: center;
+	}
 }

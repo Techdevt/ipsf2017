@@ -76,10 +76,16 @@
         width: 90%;
     }
     @include media('>768px', '<=1044px') {
-        width: 50%;
+        width: 60%;
     }
     @include media('>1044px') {
-        width: 30%;
+        width: 45%;
+    }
+    @include media('>1400px') {
+        width: 40%;
+    }
+    @include media('>1600px') {
+        width: 35%;
     }
     md-content.md-form-dark-theme {
         background: #424242;
@@ -88,6 +94,10 @@
     .md-button {
         padding: 0 40px;
         display: block;
+        &.md-datepicker-button {
+            display: inline-block;
+            padding: 0;
+        }
         @include media('<=768px') {
             margin: 10px auto;
         }

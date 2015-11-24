@@ -10,7 +10,7 @@
     /* @ngInject */
     function stickyNav($) {
         var templateString = [
-            '<div class="sticky-subnav">',
+            '<div class="sticky-subnav" id="sticky-subnav">',
             '<div class="grid">',
             '<div class="grid__col--12">',
             '<ul class="sticky-subnav-list">',

@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ./src/client/app/directives/phone-input.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../../prettify.css">
+    <link rel="stylesheet" href="../../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">./src/client/app/directives/phone-input.js</span></h1>
+    <h2>
+        Statements: <span class="metric">20% <small>(4 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 7)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">12.5% <small>(1 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">20% <small>(4 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">./src/client/app/directives/</a> &#187; phone-input.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function() {
+    'use strict';
+&nbsp;
+    angular
+        .module('gnaas.directives')
+        .directive('phoneInput', phoneInput);
+&nbsp;
+    phoneInput.$inject = ['$filter', '$browser'];
+    /* @ngInject */
+<span class="fstat-no" title="function not covered" >    function phoneInput($filter, $browser) {</span>
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            require: 'ngModel',
+            link: <span class="fstat-no" title="function not covered" >function($scope, $element, $attrs, ngModelCtrl) {</span>
+<span class="cstat-no" title="statement not covered" >                var listener = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >                    var value = $element.val().replace(/[^0-9]/g, '');</span>
+<span class="cstat-no" title="statement not covered" >                    $element.val($filter('tel')(value, false));</span>
+                };
+&nbsp;
+                // This runs when we update the text field
+<span class="cstat-no" title="statement not covered" >                ngModelCtrl.$parsers.push(<span class="fstat-no" title="function not covered" >function(viewValue) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return viewValue.replace(/[^0-9]/g, '').slice(0, 10);</span>
+                });
+&nbsp;
+                // This runs when the model gets updated on the scope directly and keeps our view in sync
+<span class="cstat-no" title="statement not covered" >                ngModelCtrl.$render = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >                    $element.val($filter('tel')(ngModelCtrl.$viewValue, false));</span>
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                $element.bind('change', listener);</span>
+<span class="cstat-no" title="statement not covered" >                $element.bind('keydown', <span class="fstat-no" title="function not covered" >function(event) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    var key = event.keyCode;</span>
+                    // If the keys include the CTRL, SHIFT, ALT, or META keys, or the arrow keys, do nothing.
+                    // This lets us support copy and paste too
+<span class="cstat-no" title="statement not covered" >                    if (key === 91 || (15 &lt; key &amp;&amp; key &lt; 19) || (37 &lt;= key &amp;&amp; key &lt;= 40)) {</span>
+<span class="cstat-no" title="statement not covered" >                        return;</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    $browser.defer(listener); </span>// Have to do this or changes don't get picked up properly
+                });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                $element.bind('paste cut', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >                    $browser.defer(listener);</span>
+                });
+            }
+        };
+    }
+})();
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Nov 23 2015 14:24:27 GMT+0000 (GMT Standard Time)</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

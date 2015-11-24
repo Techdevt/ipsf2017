@@ -243,9 +243,9 @@
                 border-radius: 0 0 5px 5px;
                 width: 100%;
                 color: #fff;
-                background: #5fcf80;
+                background: $color-primary;
                 &:hover {
-                    background: darken(#5fcf80, 5%);
+                    background: darken($color-primary, 5%);
                 }
             }
         }

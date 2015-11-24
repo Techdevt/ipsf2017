@@ -200,8 +200,9 @@ img {
     width: auto;
 }
 
-img.ng-thumb{
-    height: 150px !important;
+img.ng-thumb {
+    height: 200px !important;
+    border-radius: 5px;
 }
 
 [layout-fill] {
@@ -240,12 +241,16 @@ svg {
     transition: fill 300ms ease, transform 300ms ease, opacity 300ms ease;
 }
 
+a img {
+    border: none;
+}
+
 md-sidenav {
-    width: px2em(256px) !important;
-    min-width: px2em(256px) !important;
-    max-width: px2em(256px) !important;
+    width: px2em(192px) !important;
+    min-width: px2em(192px) !important;
+    max-width: px2em(192px) !important;
     md-content {
-        margin-top: px2em(192px);
+        margin-top: px2em(112px);
         overflow: hidden;
     }
 }
@@ -276,7 +281,7 @@ md-sidenav {
             a {
                 text-decoration: none;
                 display: block;
-                padding: px2em(30px);
+                padding: px2em(20px);
                 text-transform: uppercase;
                 color: $text-color--secondary;
                 &:hover {
@@ -367,4 +372,55 @@ md-menu-item > .md-button {
     @include media('>=850px') {
         display: block;
     }
+}
+
+.ngplus-overlay-background {
+    top: 0px;
+    left: 0px;
+    padding-left: 100px;
+    position: absolute;
+    z-index: 10000;
+    height: 100%;
+    width: 100%;
+    background-color: #808080;
+    opacity: 0.2;
+}
+
+.ngplus-overlay-content {
+    position: absolute;
+    font-weight: bold;
+    height: 100px;
+    width: 300px;
+    height: 15em;
+    width: 20em;
+    z-index: 10000;
+    text-align: center;
+}
+
+
+/*Optional Animations*/
+
+.dissolve-animation.ng-hide-remove,
+.dissolve-animation.ng-hide-add {
+    display: inline !important;
+    -webkit-transition: 0.5s linear all;
+    -moz-transition: 0.5s linear all;
+    -o-transition: 0.5s linear all;
+    transition: 0.5s linear all;
+}
+
+.dissolve-animation.ng-hide-remove.ng-hide-remove-active,
+.dissolve-animation.ng-hide-add {
+    opacity: 1;
+}
+
+.dissolve-animation.ng-hide-add.ng-hide-add-active,
+.dissolve-animation.ng-hide-remove {
+    opacity: 0;
+}
+
+iframe,
+object,
+embed {
+    max-width: 100%;
 }

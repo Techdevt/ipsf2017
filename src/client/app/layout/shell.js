@@ -24,9 +24,17 @@
             $state.go(url, params);
         }
 
+        function closeSideNav(event) {
+            event.preventDefault();
+            if ($mdSidenav('left').isOpen()) {
+                $mdSidenav('left').close();
+            }
+        }
+
         morlock.onResizeEnd(updateShrink);
 
         $window.addEventListener('resize', updateShrink);
+        $window.addEventListener('scroll', closeSideNav);
         $scope.goToUrl = goToUrl;
     }
 

@@ -4,7 +4,7 @@ footer.footer {
         display: block;
         background: $white;
         padding-top: 32px;
-        border-top: 1px solid darken($aqua-haze,5%);
+        border-top: 1px solid darken($aqua-haze, 5%);
         .links {
             padding-bottom: 30px;
             ul {
@@ -18,7 +18,14 @@ footer.footer {
                             font-weight: 800;
                         }
                     }
+                    @include media('<=600px') {
+                        text-align: center;
+                        padding: 3px 0;
+                    }
                 }
+            }
+            @include media('<=600px') {
+                padding-top: 10px;
             }
             @include media('>=768px') {
                 padding-left: 10%;

@@ -5,14 +5,13 @@
         .controller('Signup', Signup);
 
     Signup.$inject = ['auth'];
-
+    /* @ngInject */
     function Signup(auth) {
         var vm = this;
         vm.formData = {};
 
         vm.submit = function() {
-            auth.registerClient(vm.formData, 'client');
+            auth.registerUser(vm.formData);
         };
     }
-
 })();

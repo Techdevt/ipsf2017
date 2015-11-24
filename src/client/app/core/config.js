@@ -97,8 +97,7 @@
         }
 
         function configureWithCredentials() {
-            $httpProvider
-                .defaults.withCredentials = true;
+            $httpProvider.defaults.withCredentials = true;
         }
 
         function configureSCEWhitelist() {

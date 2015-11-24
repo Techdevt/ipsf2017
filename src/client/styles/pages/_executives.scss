@@ -1,0 +1,118 @@
+.executives {
+    .student-card-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        width: 100%;
+        margin: 30px -15px 0;
+        width: auto;
+        max-width: none;
+        text-align: center;
+    }
+    .student-card-list-initial {
+        .student-card-list-item {
+            &:nth-child(1),
+            &:nth-child(2) {
+                width: 50%;
+                clear: none;
+                @include media('<=620px') {
+                    width: 100%;
+                }
+                .student-card {
+                    height: 298px;
+                    background-size: cover;
+                    @include media('<=621px', '>=879px') {
+                        background-position: -85px 0;
+                    }
+                }
+                .student-card-name {
+                    color: #fff;
+                }
+                .student-card-location {
+                    color: #fff;
+                }
+                .student-card-avatar{
+                	display: none;
+                }
+            }
+
+            &:nth-child(3){
+            	clear: both;
+            }
+        }
+    }
+    ul {
+        color: #576366;
+        font-size: inherit;
+        line-height: 1.6;
+        list-style-position: outside;
+        margin: 0 0 30px 20px;
+        padding: 0;
+    }
+    .student-card-list-item {
+        padding: 0 15px;
+        text-align: left;
+        @include media('<=620px') {
+            display: inline-block;
+            float: none;
+            width: 100%;
+        }
+        @include media('<=621px', '>=879px') {
+            display: block;
+            float: left;
+            width: 50%;
+            /*&:nth-child(2n+1) {
+                clear: both;
+            }*/
+        }
+        @include media('>=880px') {
+            display: block;
+            float: left;
+            width: 33.33333%;
+            /*&:nth-child(3n+1) {
+                clear: both;
+            }*/
+        }
+    }
+    .student-card {
+        webkit-transition: background-color 200ms ease-in-out, opacity 200ms ease-in-out;
+        transition: background-color 200ms ease-in-out, opacity 200ms ease-in-out;
+        border-radius: 5px;
+        background-color: #f6f9fa;
+        display: block;
+        height: 100px;
+        margin-bottom: 30px;
+        padding: 28px 20px;
+        position: relative;
+    }
+    .student-card-name {
+        display: block;
+        width: 80%;
+        margin: 0;
+        @include media('<=879px') {
+            font-size: 16px;
+        }
+        @include media('<=880px', '>=960px') {
+            font-size: 14px;
+        }
+        @include media('>=961px') {
+            font-size: 16px;
+        }
+    }
+    .student-card-location {
+        color: #576366;
+        display: block;
+        font-size: 12px;
+        width: 80%;
+    }
+    .student-card-avatar {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        width: 64px;
+        height: 64px;
+        border-radius: 128px;
+        margin-top: -32px;
+    }
+}

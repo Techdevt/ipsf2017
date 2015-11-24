@@ -1,47 +1,41 @@
-<section ng-if="!isDashView()" data-ng-controller="Shell as vm"  ng-cloak>
+<section ng-if="!isDashView()" data-ng-controller="Shell as vm" ng-cloak>
     <app-header ng-cloak></app-header>
-    
-    <section ui-view class="page-container ng-scope" layout-fill></section>              
-
+    <section ui-view class="page-container ng-scope" layout-fill></section>
 </section>
-
 <section ng-if="isDashView()" ng-cloak>
     <div ui-view layout-fill></div>
 </section>
-
-
 <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
     <md-toolbar>
-		<div class="md-toolbar-tools" layout="column" layout-align="center center" style="padding-top: 80px;">
-		  	<span>
-		  		<h1 style="color: #fff;">Navigation</h1>
-		  	</span>
-		</div>    	
+        <div class="md-toolbar-tools" layout="column" layout-align="center center" style="padding-top: 30px;">
+            <span>
+          <h1 style="color: #fff;">Navigation</h1>
+        </span>
+        </div>
     </md-toolbar>
-
     <ul layout="column" ng-cloak>
-      <li>
-        <a ui-sref="landing.home" ui-sref-active="active">
+        <li>
+            <a ui-sref="landing.home" ui-sref-active="active">
           Home
         </a>
-      </li>
-      <li>
-        <a ui-sref="landing.about" ui-sref-active="active">
+        </li>
+        <li>
+            <a ui-sref="landing.about" ui-sref-active="active">
           About
         </a>
-      </li>
-      <li>
-        <a ui-sref="landing.contact" ui-sref-active="active">Contact</a>
-      </li>
-      <li>
-        <a ui-sref="landing.blog" ui-sref-active="active">
+        </li>
+        <li>
+            <a ui-sref="landing.contact" ui-sref-active="active">Contact</a>
+        </li>
+        <li>
+            <a ui-sref="landing.blog" ui-sref-active="active">
           Blog
         </a>
-      </li>
-      <li>
-        <a ui-sref="landing.gallery" ui-sref-active="active">
-          Gallery
+        </li>
+        <li>
+            <a ui-sref="landing.media" ui-sref-active="active">
+          Media
         </a>
-      </li>
+        </li>
     </ul>
 </md-sidenav>

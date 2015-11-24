@@ -29,7 +29,7 @@
             authenticate: authenticate,
             oauth_data: oauth_data,
             login: login,
-            registerClient: register,
+            registerUser: register,
             logout: logout,
             user: getUser
         };
@@ -143,34 +143,26 @@
                 });
         }
 
-        function register(data, userType) {
-            var url = '/api/account/register/' + userType;
+        function register(data) {
+            var wwwEncodedURL = '/wp-json/wp/v2/users/?birthdate=' + data.birthdate + '&title=' + data.title +
+                '&phone=' + data.phone + '&institution=' + data.institution + '&church=' +
+                data.church + '&country=' + data.country + '&position=' + data.position +
+                '&sex=' + data.sex + '&alumni=' + data.alumni + '&email=' + data.email +
+                '&username=' + data.username + '&first_name=' + data.firstName + '&last_name=' + data.lastName +
+                '&role=' + 'contributor' + '&password=' + data.password;
+
             var successMsg = 'You Have Successfully Registered, You will be redirected to Login Page in 3 Seconds...';
             var errorMsg = 'Registration Failed';
 
-            XHR.post(url, data)
+            XHR.postwww(wwwEncodedURL)
                 .then(function(result) {
                     logger.success(successMsg, null, 'Congratulations!');
                     $timeout(function() {
                         $state.go('login');
                     }, 3000);
-                }, function(response) {
-                    if (response.modelState) {
-                        var errors = [];
-                        for (var key in response.modelState) {
-                            if (response.modelState.length) {
-                                for (var i = 0; i < response.modelState[key].length; i++) {
-                                    errors.push(response.modelState[key][i]);
-                                }
-                            }
-                        }
-
-                        angular.forEach(errors, function(error) {
-                            logger.error(error, null, response.message);
-                        });
-                    } else {
-                        logger.error(response.exceptionMessage, null, response.message);
-                    }
+                }, function(error) {
+                    console.log(error);
+                    logger.error(error, null, errorMsg);
                 });
         }
 

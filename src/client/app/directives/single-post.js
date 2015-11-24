@@ -11,7 +11,7 @@
         var eventTemplate = '<div class="single-view single-view-event"> \n' +
             '<div class="single-view-content"> \n' +
             '<div class="single-hero"> \n' +
-            '<a target="_blank" href="{{post.featured_image}}" class="the-image"> \n' +
+            '<a target="_blank" href="{{post.featured_image || defaults.event}}" class="the-image"> \n' +
             '<img src="{{post.featured_image}}" alt="post image"> \n' +
             '</a> \n' +
             '</div> \n' +
@@ -58,7 +58,7 @@
             '<h3 class="small-title">Share This Post</h3> \n' +
             '<div class="social-buttons"> \n' +
             '<a facebook-feed-share class="facebookShare" data-url=\'http://gnaas.org\' data-picture="{{post.featured_image}}" \n' +
-            'data-shares=\'shares\' data-caption="{{post.title.rendered | htmlToPlaintext}}" data-description="{{post.excerpt.rendered | htmlToPlaintext}}" \n' +
+            'data-shares=\'shares\' data-caption="{{post.title.rendered | htmlToPlaintext}}" data-description="{{post.content.rendered | htmlToPlaintext}}" \n' +
             ' data-properties="{\'text\': {{post.content.rendered | htmlToPlaintext}}, \'href\': {{location}}}">{{ shares }} \n' +
             '</a> \n' +
             '<a twitter  data-lang="en" data-count="horizontal" data-url={{location}} \n' +
@@ -109,7 +109,7 @@
             '<h3 class="small-title">Share This Post</h3> \n' +
             '<div class="social-buttons"> \n' +
             '<a facebook-feed-share class="facebookShare" data-url=\'http://gnaas.org\' data-picture="{{post.featured_image}}" \n' +
-            'data-shares=\'shares\' data-caption="{{post.title.rendered | htmlToPlaintext}}" data-description="{{post.excerpt.rendered | htmlToPlaintext}}" \n' +
+            'data-shares=\'shares\' data-caption="{{post.title.rendered | htmlToPlaintext}}" data-description="{{post.content.rendered | htmlToPlaintext}}" \n' +
             ' data-properties="{\'text\': {{post.content.rendered | htmlToPlaintext}}, \'href\': {{location}}}">{{ shares }} \n' +
             '</a> \n' +
             '<a twitter  data-lang="en" data-count="horizontal" data-url={{location}} \n' +
@@ -129,7 +129,7 @@
         var articleTemplate = '<div class="single-view single-view-event"> \n' +
             '<div class="single-view-content"> \n' +
             '<div class="single-hero"> \n' +
-            '<a target="_blank" href="{{post.featured_image}}" class="the-image"> \n' +
+            '<a target="_blank" href="{{post.featured_image || defaults.article}}" class="the-image"> \n' +
             '<img src="{{post.featured_image}}" alt="post image"> \n' +
             '</a> \n' +
             '</div> \n' +
@@ -160,7 +160,7 @@
             '<h3 class="small-title">Share This Post</h3> \n' +
             '<div class="social-buttons"> \n' +
             '<a facebook-feed-share class="facebookShare" data-url=\'http://gnaas.org\' data-picture="{{post.featured_image}}" \n' +
-            'data-shares=\'shares\' data-caption="{{post.title.rendered | htmlToPlaintext}}" data-description="{{post.excerpt.rendered | htmlToPlaintext}}" \n' +
+            'data-shares=\'shares\' data-caption="{{post.title.rendered | htmlToPlaintext}}" data-description="{{post.content.rendered | htmlToPlaintext}}" \n' +
             ' data-properties="{\'text\': {{post.content.rendered | htmlToPlaintext}}, \'href\': {{location}}}">{{ shares }} \n' +
             '</a> \n' +
             '<a twitter  data-lang="en" data-count="horizontal" data-url={{location}} \n' +

@@ -15,10 +15,10 @@
 <div class="header low">
     <h1>Code coverage report for <span class="entity">./src/client/app/landing/blog.js</span></h1>
     <h2>
-        Statements: <span class="metric">28.57% <small>(4 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">25% <small>(4 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Branches: <span class="metric">0% <small>(0 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Functions: <span class="metric">50% <small>(1 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">28.57% <small>(4 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">25% <small>(4 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">./src/client/app/landing/</a> &#187; blog.js</div>
@@ -62,7 +62,10 @@
 35
 36
 37
-38</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+38
+39
+40
+41</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
@@ -74,29 +77,32 @@
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function() {
@@ -111,12 +117,17 @@
 <span class="fstat-no" title="function not covered" >    function Blog($scope, $mdDialog, BlogService, _, all, featured, $filter) {</span>
 <span class="cstat-no" title="statement not covered" >        var vm = this;</span>
 <span class="cstat-no" title="statement not covered" >        vm.Blog = {};</span>
+<span class="cstat-no" title="statement not covered" >        vm.defaults = {</span>
+            article: '/images/article.jpg',
+            event: '/images/event.jpg'
+        };
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        if (all.length) {</span>
 <span class="cstat-no" title="statement not covered" >            vm.Blog.All = all;</span>
 <span class="cstat-no" title="statement not covered" >            vm.Blog.News = $filter('filter')(all, {</span>
                 'type': 'news'
             });
+<span class="cstat-no" title="statement not covered" >            console.log(vm.Blog.News);</span>
 <span class="cstat-no" title="statement not covered" >            vm.Blog.Articles = $filter('filter')(all, {</span>
                 'type': 'article'
             });
@@ -131,9 +142,7 @@
             });
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        vm.Blog.Featured = $filter('filter')(all, {</span>
-            'featured': true
-        })[0];
+<span class="cstat-no" title="statement not covered" >        vm.Blog.Featured = featured;</span>
     }
 })();
 &nbsp;</pre></td></tr>
@@ -141,7 +150,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Nov 15 2015 13:12:07 GMT+0000 (GMT Standard Time)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Nov 23 2015 14:24:27 GMT+0000 (GMT Standard Time)</div>
 </div>
 <script src="../../../../prettify.js"></script>
 <script>

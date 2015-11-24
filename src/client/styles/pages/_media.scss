@@ -1,0 +1,167 @@
+.media {
+    header {
+        .main-nav {
+            a {
+                text-transform: capitalize;
+                cursor: pointer;
+            }
+        }
+    }
+    .media-main {
+        padding: 30px;
+    }
+    .audio-item,
+    .document-item {
+        background-repeat: no-repeat;
+        background-clip: padding-box;
+        background-color: #eee;
+        background-size: 100px;
+        border: 15px solid #eee;
+        position: relative;
+        margin: 0 0 20px 0;
+        padding: 10px 10px 20px 120px;
+        .audio-item-inner,
+        document-item-inner {
+            h2 {
+                font-size: 1.5rem;
+                margin: 0;
+            }
+        }
+        &:hover {
+            background-color: #fafafa;
+            border-color: #fafafa;
+            transition: background .1s ease-in, border .1s ease-in;
+            -webkit-transition: background .1s ease-in, border .1s ease-in;
+            cursor: pointer;
+        }
+    }
+    .md-media-player {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        div:first-child>img {
+            webkit-flex: 0 0 auto;
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            width: 100%;
+        }
+        div:first-child>.now-playing-toolbar {
+            -webkit-flex: 0 0 auto;
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+            md-progress-linear {
+                position: absolute;
+                height: 3px;
+                top: -6px;
+                .md-container {
+                    height: 3px;
+                    top: 3px;
+                    .md-dashed {
+                        &:before {
+                            height: 3px;
+                        }
+                    }
+                    .md-bar {
+                        height: 3px;
+                    }
+                }
+            }
+            div:first-of-type {
+                padding: 16px 16px 0;
+                .md-subhead {
+                    font-weight: 500;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+                .track-duration {
+                    margin-left: 16px;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: rgba(255, 255, 255, .7);
+                }
+            }
+        }
+        div:nth-of-type(2) {
+            padding: 2px;
+            div>.md-button.md-icon-button {
+                margin: 0;
+            }
+            div>.md-button.md-icon-button[disabled]>md-icon {
+                fill: rgba(255, 255, 255, .3);
+            }
+            div>.md-button.md-icon-button>md-icon {
+                transition: fill .25s;
+            }
+        }
+        div:nth-child(2) {
+            md-toolbar {
+                transition: box-shadow .25s;
+                background-color: #fff;
+            }
+            md-toolbar>.md-toolbar-tools {
+                background-color: #fff;
+                color: rgba(0, 0, 0, .87);
+                div:first-child {
+                    -webkit-flex: 0 1 auto;
+                    -ms-flex: 0 1 auto;
+                    flex: 0 1 auto;
+                    .md-title,
+                    .md-subhead {
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+                }
+                .md-button:last-child {
+                    margin-right: -12px;
+                }
+            }
+            md-content {
+                -webkit-flex: 1 1 auto;
+                -ms-flex: 1 1 auto;
+                flex: 1 1 auto;
+                background-color: #fff;
+                &.ng-hide:not(.ng-hide-animate) {
+                    display: block!important;
+                }
+                .track-list {
+                    width: 100%;
+                    padding: 8px 0;
+                    position: absolute;
+                    .md-track {
+                        position: relative;
+                        height: 48px;
+                        padding: 0 16px;
+                        .track-number {
+                            margin-right: 16px;
+                        }
+                        .track-title {
+                            margin-right: 16px;
+                            -webkit-flex: 1 1 auto;
+                            -ms-flex: 1 1 auto;
+                            flex: 1 1 auto;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                        }
+                        md-icon {
+                            margin-right: 16px;
+                            height: 18px;
+                            width: 18px;
+                        }
+                        .track-duration {
+                            font-size: 14px;
+                            color: rgba(0, 0, 0, .54);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

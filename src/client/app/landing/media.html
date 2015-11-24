@@ -1,5 +1,5 @@
 <section class="main" layout="column">
-    <section class="main-page gallery">
+    <section class="main-page media">
         <div class="grid__col--2 sidenav" id="nav-1">
             <header>
                 <ul class="title-area">
@@ -14,19 +14,16 @@
                     </li>-->
                 </ul>
                 <nav class="main-nav">
-                    <a ng-class="{active: $index== vm.active}" ng-click="vm.setActive($index)" ng-repeat="(albumName, albumContent) in vm.albums">{{albumName}}</a>
+                    <a ng-repeat="(mediaName, mediaContent) in vm.media" ui-sref="landing.media.{{mediaName}}" ui-sref-active="active">{{mediaName}}</a>
                 </nav>
             </header>
         </div>
         <div class="grid__col--10 ">
-            <div class="gallery-main">
+            <div class="media-main">
                 <md-button ng-click="openNav(1)" class="md-icon-button material-icons drawer-about">
                     <ng-md-icon icon="keyboard_backspace" aria-label="search" size="24"></ng-md-icon>
                 </md-button>
-                <div>
-                    <ng-gallery images="vm.activeAlbum">
-                    </ng-gallery>
-                </div>
+                <div ui-view class="shuffle-animation"></div>
             </div>
         </div>
     </section>
