@@ -1,12 +1,12 @@
 (function() {
     'use strict';
     angular
-        .module('gnaas.widgets')
+        .module('ipsf.widgets')
         .directive('appHeader', appHeader);
 
-    appHeader.$inject = ['$compile', '$templateRequest', '$timeout', '$location', '$mdMedia', '$mdSidenav', '$window', '$state', 'auth'];
+    appHeader.$inject = ['$compile', '$templateRequest', '$timeout', '$location', '$mdMedia', '$mdSidenav', '$window', '$state'];
     /* @ngInject */
-    function appHeader($compile, $templateRequest, $timeout, $location, $mdMedia, $mdSidenav, $window, $state, auth) {
+    function appHeader($compile, $templateRequest, $timeout, $location, $mdMedia, $mdSidenav, $window, $state) {
         return {
             restrict: 'E',
             replace: true,
@@ -29,8 +29,6 @@
             vm.toggleSidenav = function(menuId) {
                 $mdSidenav(menuId).toggle();
             };
-
-            vm.authenticate = auth.authenticate;
 
             function updateShrink() {
                 vm.shrink = $mdMedia('(min-width: 850px)');

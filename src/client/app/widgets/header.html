@@ -62,41 +62,6 @@
 	          Media
 	        </a>
 	      </li>
-	      <li class="m-up-blog">
-	        <md-menu md-position-mode="target-right target">
-	          <md-button ng-click="$mdOpenMenu()" class="md-icon-button material-icons">
-	            <ng-md-icon icon="account_circle" aria-label="Accounts" size="24"></ng-md-icon> 
-	          </md-button>
-
-	          <md-menu-content width="3">
-	            <md-menu-item ng-show="!isAuthenticated()">
-	              <md-button ng-click="vm.goToUrl('login')">
-	                <ng-md-icon icon="forward" aria-label="login" size="24"></ng-md-icon> 
-	                Login
-	              </md-button>
-	            </md-menu-item>
-	            <md-menu-item ng-show="!isAuthenticated()">
-	              <md-button ng-click="vm.goToUrl('signup')">
-	                 <ng-md-icon icon="person_add" aria-label="signup" size="24"></ng-md-icon> 
-	                Register
-	              </md-button>
-	            </md-menu-item>
-	            <md-menu-item ng-show="isAuthenticated()">
-	              <md-button ng-click="vm.goToUrl('dashboard')">
-	                <ng-md-icon icon="dashboard" aria-label="dashboard" size="24"></ng-md-icon> 
-	                Dashboard
-	              </md-button>
-	            </md-menu-item>
-	            <md-menu-item ng-show="isAuthenticated()">
-	              <md-button ng-click="logout()">
-	                <ng-md-icon icon="arrow_back" aria-label="logout" size="24"></ng-md-icon> 
-	                Logout
-	              </md-button>
-	            </md-menu-item>
-	          </md-menu-content>
-
-	        </md-menu>
-	      </li>
 	    </ul>
 	</div>
 </md-toolbar>

@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('gnaas.widgets')
+    angular.module('ipsf.widgets')
         .directive('ccDate', ccDate);
 
     ccDate.$inject = ['moment'];

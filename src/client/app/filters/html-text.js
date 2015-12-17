@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('gnaas.filters')
+        .module('ipsf.filters')
         .filter('htmlToPlaintext', htmlToPlaintext);
 
     function htmlToPlaintext() {

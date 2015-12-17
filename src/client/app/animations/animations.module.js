@@ -2,5 +2,5 @@
     'use strict';
 
     angular
-        .module('gnaas.animations', []);
+        .module('ipsf.animations', []);
 })();

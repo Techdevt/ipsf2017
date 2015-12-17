@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('gnaas.directives')
+        .module('ipsf.directives')
         .directive('stickyNav', stickyNav);
 
     stickyNav.$inject = ['$'];

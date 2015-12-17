@@ -1,12 +1,12 @@
 (function() {
     'use strict';
 
-    angular.module('gnaas.layout')
+    angular.module('ipsf.layout')
         .controller('Shell', Shell);
 
-    Shell.$inject = ['$scope', '$location', 'auth', '$mdSidenav', '$mdMedia', 'morlock', '$window', '$state'];
+    Shell.$inject = ['$scope', '$location', '$mdSidenav', '$mdMedia', 'morlock', '$window', '$state'];
 
-    function Shell($scope, $location, auth, $mdSidenav, $mdMedia, morlock, $window, $state) {
+    function Shell($scope, $location, $mdSidenav, $mdMedia, morlock, $window, $state) {
         $scope.$location = $location.path();
         $scope.shrink = $mdMedia('(min-width: 850px)');
 

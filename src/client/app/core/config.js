@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    var core = angular.module('gnaas.core');
+    var core = angular.module('ipsf.core');
 
     core.config(toastrConfig);
     core.run(run);
@@ -14,9 +14,9 @@
     }
 
     var config = {
-        appErrorPrefix: 'GNAAS Error - ',
-        appTitle: 'GNAAS',
-        backend: 'http://localhost/gnaas',
+        appErrorPrefix: 'IPSF Error - ',
+        appTitle: 'IPSF',
+        backend: 'http://localhost/ipsf2017',
         frontEnd: 'http://localhost:3000',
         consumerId: 29,
         consumerKey: 'WIAvrQRSeIDS',

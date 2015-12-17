@@ -94,7 +94,7 @@ module.exports = function() {
         templateCache: {
             file: 'templates.js',
             options: {
-                module: 'gnaas.core',
+                module: 'ipsf.core',
                 root: 'app/',
                 standalone: false
             }

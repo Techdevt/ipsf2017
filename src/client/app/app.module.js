@@ -1,22 +1,21 @@
 (function() {
     'use strict';
 
-    angular.module('gnaas', [
+    angular.module('ipsf', [
         /*
          core modules provided...order is unimportant
         */
-        'gnaas.core',
-        'gnaas.data', //needs core
-        'gnaas.widgets', //needs core
+        'ipsf.core',
+        'ipsf.widgets', //needs core
 
         /*
          feature modules
         */
-        'gnaas.layout',
-        'gnaas.landing',
-        'gnaas.services',
-        'gnaas.directives',
-        'gnaas.animations',
-        'gnaas.filters'
+        'ipsf.layout',
+        'ipsf.landing',
+        'ipsf.services',
+        'ipsf.directives',
+        'ipsf.animations',
+        'ipsf.filters'
     ]);
 })();

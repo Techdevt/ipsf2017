@@ -1,5 +1,5 @@
 (function() {
     'use strict';
 
-    angular.module('gnaas.widgets', []);
+    angular.module('ipsf.widgets', []);
 })();

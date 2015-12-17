@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    angular.module('gnaas.core')
+    angular.module('ipsf.core')
         .factory('common', common);
 
     common.$inject = ['$location', '$http', '$q', '$rootScope', '$timeout', 'logger'];

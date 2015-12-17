@@ -3,7 +3,7 @@
     // jscs:disable requireCamelCaseOrUpperCaseIdentifiers
 
     angular
-        .module('gnaas.directives')
+        .module('ipsf.directives')
         .directive('allPost', allPost);
 
     allPost.$inject = ['common', '$compile'];

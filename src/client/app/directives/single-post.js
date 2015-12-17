@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('gnaas.directives')
+        .module('ipsf.directives')
         .directive('singlePost', singlePost);
 
     singlePost.$inject = ['$compile', 'common', '$location', 'config'];
@@ -52,23 +52,23 @@
             '</div> \n' +
             '<p class="posted-on">Posted on {{post.modified | date: \'medium\'}}</p> \n' +
             '<p class="name-title"><a href="#" title="Posts by {{post.author.name}}" rel="author"> \n' +
-            '{{post.author.name}}</a>, <span class="title" style="text-transform: capitalize;">{{post.author.role}} at GNAAS</span></p> \n' +
+            '{{post.author.name}}</a>, <span class="title" style="text-transform: capitalize;">{{post.author.role}} at IPSF</span></p> \n' +
             '</aside> \n' +
             '<aside class="single-shares"> \n' +
             '<h3 class="small-title">Share This Post</h3> \n' +
             '<div class="social-buttons"> \n' +
-            '<a facebook-feed-share class="facebookShare" data-url=\'http://gnaas.org\' data-picture="{{post.featured_image}}" \n' +
+            '<a facebook-feed-share class="facebookShare" data-url=\'http://ipsf2017.org\' data-picture="{{post.featured_image}}" \n' +
             'data-shares=\'shares\' data-caption="{{post.title.rendered | htmlToPlaintext}}" data-description="{{post.content.rendered | htmlToPlaintext}}" \n' +
             ' data-properties="{\'text\': {{post.content.rendered | htmlToPlaintext}}, \'href\': {{location}}}">{{ shares }} \n' +
             '</a> \n' +
             '<a twitter  data-lang="en" data-count="horizontal" data-url={{location}} \n' +
-            'data-via="GNAAS" data-size="medium" data-text="{{post.title.rendered | htmlToPlaintext | limitTo: 80 }}" ></a> \n' +
+            'data-via="ipsf" data-size="medium" data-text="{{post.title.rendered | htmlToPlaintext | limitTo: 80 }}" ></a> \n' +
             '</div> \n' +
             '</aside> \n' +
             '</section> \n' +
             '<aside class="single-disqus"> \n' +
             '<h3 class="small-title">Comment on this {{post.type}}</h3> \n' +
-            '<dir-disqus disqus-shortname="gnaas" disqus-identifier="{{ post.id }}" disqus-title="{{ post.title.rendered | htmlToPlaintext }}" \n' +
+            '<dir-disqus disqus-shortname="ipsf" disqus-identifier="{{ post.id }}" disqus-title="{{ post.title.rendered | htmlToPlaintext }}" \n' +
             'disqus-url="{{ location }}" disqus-disable-mobile="false" disqus-config-language="en" ready-to-bind="{{ loaded }}"> \n' +
             '</dir-disqus> \n' +
             '</aside> \n' +
@@ -103,23 +103,23 @@
             '</div> \n' +
             '<p class="posted-on">Posted on {{post.modified | date: \'medium\'}}</p> \n' +
             '<p class="name-title"><a href="#" title="Posts by {{post.author.name}}" rel="author"> \n' +
-            '{{post.author.name}}</a>, <span class="title" style="text-transform: capitalize;">{{post.author.role}} at GNAAS</span></p> \n' +
+            '{{post.author.name}}</a>, <span class="title" style="text-transform: capitalize;">{{post.author.role}} at ipsf</span></p> \n' +
             '</aside> \n' +
             '<aside class="single-shares"> \n' +
             '<h3 class="small-title">Share This Post</h3> \n' +
             '<div class="social-buttons"> \n' +
-            '<a facebook-feed-share class="facebookShare" data-url=\'http://gnaas.org\' data-picture="{{post.featured_image}}" \n' +
+            '<a facebook-feed-share class="facebookShare" data-url=\'http://ipsf.org\' data-picture="{{post.featured_image}}" \n' +
             'data-shares=\'shares\' data-caption="{{post.title.rendered | htmlToPlaintext}}" data-description="{{post.content.rendered | htmlToPlaintext}}" \n' +
             ' data-properties="{\'text\': {{post.content.rendered | htmlToPlaintext}}, \'href\': {{location}}}">{{ shares }} \n' +
             '</a> \n' +
             '<a twitter  data-lang="en" data-count="horizontal" data-url={{location}} \n' +
-            'data-via="GNAAS" data-size="medium" data-text="{{post.title.rendered | htmlToPlaintext | limitTo: 80 }}" ></a> \n' +
+            'data-via="ipsf" data-size="medium" data-text="{{post.title.rendered | htmlToPlaintext | limitTo: 80 }}" ></a> \n' +
             '</div> \n' +
             '</aside> \n' +
             '</section> \n' +
             '<aside class="single-disqus"> \n' +
             '<h3 class="small-title">Comment on this {{post.type}}</h3> \n' +
-            '<dir-disqus disqus-shortname="gnaas" disqus-identifier="{{ post.id }}" disqus-title="{{ post.title.rendered | htmlToPlaintext }}" \n' +
+            '<dir-disqus disqus-shortname="ipsf" disqus-identifier="{{ post.id }}" disqus-title="{{ post.title.rendered | htmlToPlaintext }}" \n' +
             'disqus-url="{{ location }}" disqus-disable-mobile="false" disqus-config-language="en" ready-to-bind="{{ loaded }}"> \n' +
             '</dir-disqus> \n' +
             '</aside> \n' +
@@ -154,23 +154,23 @@
             '</div> \n' +
             '<p class="posted-on">Posted on {{post.modified | date: \'medium\'}}</p> \n' +
             '<p class="name-title"><a href="#" title="Posts by {{post.author.name}}" rel="author"> \n' +
-            '{{post.author.name}}</a>, <span class="title" style="text-transform: capitalize;">{{post.author.role}} at GNAAS</span></p> \n' +
+            '{{post.author.name}}</a>, <span class="title" style="text-transform: capitalize;">{{post.author.role}} at ipsf</span></p> \n' +
             '</aside> \n' +
             '<aside class="single-shares"> \n' +
             '<h3 class="small-title">Share This Post</h3> \n' +
             '<div class="social-buttons"> \n' +
-            '<a facebook-feed-share class="facebookShare" data-url=\'http://gnaas.org\' data-picture="{{post.featured_image}}" \n' +
+            '<a facebook-feed-share class="facebookShare" data-url=\'http://ipsf.org\' data-picture="{{post.featured_image}}" \n' +
             'data-shares=\'shares\' data-caption="{{post.title.rendered | htmlToPlaintext}}" data-description="{{post.content.rendered | htmlToPlaintext}}" \n' +
             ' data-properties="{\'text\': {{post.content.rendered | htmlToPlaintext}}, \'href\': {{location}}}">{{ shares }} \n' +
             '</a> \n' +
             '<a twitter  data-lang="en" data-count="horizontal" data-url={{location}} \n' +
-            'data-via="GNAAS" data-size="medium" data-text="{{post.title.rendered | htmlToPlaintext | limitTo: 80 }}" ></a> \n' +
+            'data-via="ipsf" data-size="medium" data-text="{{post.title.rendered | htmlToPlaintext | limitTo: 80 }}" ></a> \n' +
             '</div> \n' +
             '</aside> \n' +
             '</section> \n' +
             '<aside class="single-disqus"> \n' +
             '<h3 class="small-title">Comment on this {{post.type}}</h3> \n' +
-            '<dir-disqus disqus-shortname="gnaas" disqus-identifier="{{ post.id }}" disqus-title="{{ post.title.rendered | htmlToPlaintext }}" \n' +
+            '<dir-disqus disqus-shortname="ipsf" disqus-identifier="{{ post.id }}" disqus-title="{{ post.title.rendered | htmlToPlaintext }}" \n' +
             'disqus-url="{{ location }}" disqus-disable-mobile="false" disqus-config-language="en" ready-to-bind="{{ loaded }}"> \n' +
             '</dir-disqus> \n' +
             '</aside> \n' +

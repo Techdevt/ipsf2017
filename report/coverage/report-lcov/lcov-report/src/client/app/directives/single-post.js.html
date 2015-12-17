@@ -455,7 +455,7 @@
     'use strict';
 &nbsp;
     angular
-        .module('gnaas.directives')
+        .module('ipsf.directives')
         .directive('singlePost', singlePost);
 &nbsp;
     singlePost.$inject = ['$compile', 'common', '$location', 'config'];
@@ -505,23 +505,23 @@
             '&lt;/div&gt; \n' +
             '&lt;p class="posted-on"&gt;Posted on {{post.modified | date: \'medium\'}}&lt;/p&gt; \n' +
             '&lt;p class="name-title"&gt;&lt;a href="#" title="Posts by {{post.author.name}}" rel="author"&gt; \n' +
-            '{{post.author.name}}&lt;/a&gt;, &lt;span class="title" style="text-transform: capitalize;"&gt;{{post.author.role}} at GNAAS&lt;/span&gt;&lt;/p&gt; \n' +
+            '{{post.author.name}}&lt;/a&gt;, &lt;span class="title" style="text-transform: capitalize;"&gt;{{post.author.role}} at IPSF&lt;/span&gt;&lt;/p&gt; \n' +
             '&lt;/aside&gt; \n' +
             '&lt;aside class="single-shares"&gt; \n' +
             '&lt;h3 class="small-title"&gt;Share This Post&lt;/h3&gt; \n' +
             '&lt;div class="social-buttons"&gt; \n' +
-            '&lt;a facebook-feed-share class="facebookShare" data-url=\'http://gnaas.org\' data-picture="{{post.featured_image}}" \n' +
+            '&lt;a facebook-feed-share class="facebookShare" data-url=\'http://ipsf2017.org\' data-picture="{{post.featured_image}}" \n' +
             'data-shares=\'shares\' data-caption="{{post.title.rendered | htmlToPlaintext}}" data-description="{{post.content.rendered | htmlToPlaintext}}" \n' +
             ' data-properties="{\'text\': {{post.content.rendered | htmlToPlaintext}}, \'href\': {{location}}}"&gt;{{ shares }} \n' +
             '&lt;/a&gt; \n' +
             '&lt;a twitter  data-lang="en" data-count="horizontal" data-url={{location}} \n' +
-            'data-via="GNAAS" data-size="medium" data-text="{{post.title.rendered | htmlToPlaintext | limitTo: 80 }}" &gt;&lt;/a&gt; \n' +
+            'data-via="ipsf" data-size="medium" data-text="{{post.title.rendered | htmlToPlaintext | limitTo: 80 }}" &gt;&lt;/a&gt; \n' +
             '&lt;/div&gt; \n' +
             '&lt;/aside&gt; \n' +
             '&lt;/section&gt; \n' +
             '&lt;aside class="single-disqus"&gt; \n' +
             '&lt;h3 class="small-title"&gt;Comment on this {{post.type}}&lt;/h3&gt; \n' +
-            '&lt;dir-disqus disqus-shortname="gnaas" disqus-identifier="{{ post.id }}" disqus-title="{{ post.title.rendered | htmlToPlaintext }}" \n' +
+            '&lt;dir-disqus disqus-shortname="ipsf" disqus-identifier="{{ post.id }}" disqus-title="{{ post.title.rendered | htmlToPlaintext }}" \n' +
             'disqus-url="{{ location }}" disqus-disable-mobile="false" disqus-config-language="en" ready-to-bind="{{ loaded }}"&gt; \n' +
             '&lt;/dir-disqus&gt; \n' +
             '&lt;/aside&gt; \n' +
@@ -556,23 +556,23 @@
             '&lt;/div&gt; \n' +
             '&lt;p class="posted-on"&gt;Posted on {{post.modified | date: \'medium\'}}&lt;/p&gt; \n' +
             '&lt;p class="name-title"&gt;&lt;a href="#" title="Posts by {{post.author.name}}" rel="author"&gt; \n' +
-            '{{post.author.name}}&lt;/a&gt;, &lt;span class="title" style="text-transform: capitalize;"&gt;{{post.author.role}} at GNAAS&lt;/span&gt;&lt;/p&gt; \n' +
+            '{{post.author.name}}&lt;/a&gt;, &lt;span class="title" style="text-transform: capitalize;"&gt;{{post.author.role}} at ipsf&lt;/span&gt;&lt;/p&gt; \n' +
             '&lt;/aside&gt; \n' +
             '&lt;aside class="single-shares"&gt; \n' +
             '&lt;h3 class="small-title"&gt;Share This Post&lt;/h3&gt; \n' +
             '&lt;div class="social-buttons"&gt; \n' +
-            '&lt;a facebook-feed-share class="facebookShare" data-url=\'http://gnaas.org\' data-picture="{{post.featured_image}}" \n' +
+            '&lt;a facebook-feed-share class="facebookShare" data-url=\'http://ipsf.org\' data-picture="{{post.featured_image}}" \n' +
             'data-shares=\'shares\' data-caption="{{post.title.rendered | htmlToPlaintext}}" data-description="{{post.content.rendered | htmlToPlaintext}}" \n' +
             ' data-properties="{\'text\': {{post.content.rendered | htmlToPlaintext}}, \'href\': {{location}}}"&gt;{{ shares }} \n' +
             '&lt;/a&gt; \n' +
             '&lt;a twitter  data-lang="en" data-count="horizontal" data-url={{location}} \n' +
-            'data-via="GNAAS" data-size="medium" data-text="{{post.title.rendered | htmlToPlaintext | limitTo: 80 }}" &gt;&lt;/a&gt; \n' +
+            'data-via="ipsf" data-size="medium" data-text="{{post.title.rendered | htmlToPlaintext | limitTo: 80 }}" &gt;&lt;/a&gt; \n' +
             '&lt;/div&gt; \n' +
             '&lt;/aside&gt; \n' +
             '&lt;/section&gt; \n' +
             '&lt;aside class="single-disqus"&gt; \n' +
             '&lt;h3 class="small-title"&gt;Comment on this {{post.type}}&lt;/h3&gt; \n' +
-            '&lt;dir-disqus disqus-shortname="gnaas" disqus-identifier="{{ post.id }}" disqus-title="{{ post.title.rendered | htmlToPlaintext }}" \n' +
+            '&lt;dir-disqus disqus-shortname="ipsf" disqus-identifier="{{ post.id }}" disqus-title="{{ post.title.rendered | htmlToPlaintext }}" \n' +
             'disqus-url="{{ location }}" disqus-disable-mobile="false" disqus-config-language="en" ready-to-bind="{{ loaded }}"&gt; \n' +
             '&lt;/dir-disqus&gt; \n' +
             '&lt;/aside&gt; \n' +
@@ -607,23 +607,23 @@
             '&lt;/div&gt; \n' +
             '&lt;p class="posted-on"&gt;Posted on {{post.modified | date: \'medium\'}}&lt;/p&gt; \n' +
             '&lt;p class="name-title"&gt;&lt;a href="#" title="Posts by {{post.author.name}}" rel="author"&gt; \n' +
-            '{{post.author.name}}&lt;/a&gt;, &lt;span class="title" style="text-transform: capitalize;"&gt;{{post.author.role}} at GNAAS&lt;/span&gt;&lt;/p&gt; \n' +
+            '{{post.author.name}}&lt;/a&gt;, &lt;span class="title" style="text-transform: capitalize;"&gt;{{post.author.role}} at ipsf&lt;/span&gt;&lt;/p&gt; \n' +
             '&lt;/aside&gt; \n' +
             '&lt;aside class="single-shares"&gt; \n' +
             '&lt;h3 class="small-title"&gt;Share This Post&lt;/h3&gt; \n' +
             '&lt;div class="social-buttons"&gt; \n' +
-            '&lt;a facebook-feed-share class="facebookShare" data-url=\'http://gnaas.org\' data-picture="{{post.featured_image}}" \n' +
+            '&lt;a facebook-feed-share class="facebookShare" data-url=\'http://ipsf.org\' data-picture="{{post.featured_image}}" \n' +
             'data-shares=\'shares\' data-caption="{{post.title.rendered | htmlToPlaintext}}" data-description="{{post.content.rendered | htmlToPlaintext}}" \n' +
             ' data-properties="{\'text\': {{post.content.rendered | htmlToPlaintext}}, \'href\': {{location}}}"&gt;{{ shares }} \n' +
             '&lt;/a&gt; \n' +
             '&lt;a twitter  data-lang="en" data-count="horizontal" data-url={{location}} \n' +
-            'data-via="GNAAS" data-size="medium" data-text="{{post.title.rendered | htmlToPlaintext | limitTo: 80 }}" &gt;&lt;/a&gt; \n' +
+            'data-via="ipsf" data-size="medium" data-text="{{post.title.rendered | htmlToPlaintext | limitTo: 80 }}" &gt;&lt;/a&gt; \n' +
             '&lt;/div&gt; \n' +
             '&lt;/aside&gt; \n' +
             '&lt;/section&gt; \n' +
             '&lt;aside class="single-disqus"&gt; \n' +
             '&lt;h3 class="small-title"&gt;Comment on this {{post.type}}&lt;/h3&gt; \n' +
-            '&lt;dir-disqus disqus-shortname="gnaas" disqus-identifier="{{ post.id }}" disqus-title="{{ post.title.rendered | htmlToPlaintext }}" \n' +
+            '&lt;dir-disqus disqus-shortname="ipsf" disqus-identifier="{{ post.id }}" disqus-title="{{ post.title.rendered | htmlToPlaintext }}" \n' +
             'disqus-url="{{ location }}" disqus-disable-mobile="false" disqus-config-language="en" ready-to-bind="{{ loaded }}"&gt; \n' +
             '&lt;/dir-disqus&gt; \n' +
             '&lt;/aside&gt; \n' +
@@ -669,7 +669,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Nov 23 2015 14:24:27 GMT+0000 (GMT Standard Time)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Dec 17 2015 20:57:37 GMT+0000 (Greenwich Standard Time)</div>
 </div>
 <script src="../../../../prettify.js"></script>
 <script>

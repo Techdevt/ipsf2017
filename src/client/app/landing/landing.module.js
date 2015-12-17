@@ -2,5 +2,5 @@
     'use strict';
 
     angular
-        .module('gnaas.landing', []);
+        .module('ipsf.landing', []);
 })();

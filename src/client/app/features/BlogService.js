@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('gnaas.services')
+        .module('ipsf.services')
         .factory('BlogService', BlogService);
 
     BlogService.$inject = ['XHR', '$q', 'logger', '$filter'];

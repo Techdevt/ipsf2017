@@ -1,6 +1,6 @@
 {
-  "name": "gnaas",
-  "description": "gnaas Project Generated from HotTowel Angular",
+  "name": "ipsf",
+  "description": "IPSF conference 2017",
   "version": "0.0.0",
   "scripts": {
     "init": "npm install",

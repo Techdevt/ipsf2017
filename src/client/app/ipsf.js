@@ -2,14 +2,13 @@
     'use strict';
 
     angular
-        .module('gnaas')
-        .controller('Gnaas', Gnaas);
+        .module('ipsf')
+        .controller('ipsf', ipsf);
 
-    Gnaas.$inject = ['$scope', '$location', 'AuthToken', 'auth', '$state', '$'];
+    ipsf.$inject = ['$scope', '$location', '$state', '$'];
 
-    function Gnaas($scope, $location, AuthToken, auth, $state, $) {
+    function ipsf($scope, $location, $state, $) {
         $scope.Date = new Date();
-        $scope.isAuthenticated = AuthToken.isAuthenticated;
 
         $scope.isDashView = function() {
             var current = $state.current.name;
@@ -18,10 +17,6 @@
                 sub = current.substr(0, 4);
             }
             return sub === 'home';
-        };
-
-        $scope.logout = function() {
-            auth.logout();
         };
 
         $scope.goToUrl = function(url, params) {

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('gnaas.filters')
+        .module('ipsf.filters')
         .filter('unique', Unique);
 
     function Unique() {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="gnaas">
+<html ng-app="ipsf">
 
 <head>
     <style>
@@ -10,7 +10,7 @@
         display: none!important;
     }
     </style>
-    <title ng-bind="title">GNAAS</title>
+    <title ng-bind="title">IPSF</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
@@ -35,7 +35,7 @@
 </head>
 
 <body>
-    <div layout="column" ng-controller="Gnaas" id="page">
+    <div layout="column" ng-controller="ipsf" id="page">
         <div ng-include="'app/layout/shell.html'"></div>
         <div ngplus-overlay ngplus-overlay-delay-in="50" ngplus-overlay-delay-out="700" ngplus-overlay-animation="dissolve-animation">
             <md-progress-circular md-mode="indeterminate" style="margin:0 auto; text-align:center;"></md-progress-circular>
@@ -75,54 +75,36 @@
     <!-- inject:js -->
     <script src="/src/client/app/app.module.js"></script>
     <script src="/src/client/app/animations/animations.module.js"></script>
-    <script src="/src/client/app/blocks/Auth/auth.module.js"></script>
     <script src="/src/client/app/blocks/exception/exception.module.js"></script>
     <script src="/src/client/app/blocks/logger/logger.module.js"></script>
     <script src="/src/client/app/blocks/router/404/404.module.js"></script>
     <script src="/src/client/app/blocks/router/router.module.js"></script>
-    <script src="/src/client/app/blocks/users/users.module.js"></script>
-    <script src="/src/client/app/Chat/chat.module.js"></script>
     <script src="/src/client/app/core/core.module.js"></script>
-    <script src="/src/client/app/data/data.module.js"></script>
     <script src="/src/client/app/directives/directives.module.js"></script>
     <script src="/src/client/app/features/services.module.js"></script>
     <script src="/src/client/app/filters/filters.module.js"></script>
     <script src="/src/client/app/landing/landing.module.js"></script>
     <script src="/src/client/app/layout/layout.module.js"></script>
     <script src="/src/client/app/widgets/widgets.module.js"></script>
-    <script src="/src/client/app/blocks/Auth/auth-interceptor.js"></script>
-    <script src="/src/client/app/blocks/Auth/auth.js"></script>
-    <script src="/src/client/app/blocks/Auth/authorization.js"></script>
-    <script src="/src/client/app/blocks/Auth/authToken.js"></script>
-    <script src="/src/client/app/blocks/Auth/roleManager.js"></script>
     <script src="/src/client/app/blocks/exception/exception-handler.provider.js"></script>
     <script src="/src/client/app/blocks/exception/exception.js"></script>
     <script src="/src/client/app/blocks/logger/logger.js"></script>
     <script src="/src/client/app/blocks/router/404/config.route.js"></script>
     <script src="/src/client/app/blocks/router/router-helper.provider.js"></script>
-    <script src="/src/client/app/blocks/users/login/config.route.js"></script>
-    <script src="/src/client/app/blocks/users/login/login.js"></script>
-    <script src="/src/client/app/blocks/users/signup/config.route.js"></script>
-    <script src="/src/client/app/blocks/users/signup/matchpass.js"></script>
-    <script src="/src/client/app/blocks/users/signup/signup.js"></script>
-    <script src="/src/client/app/Chat/chat.js"></script>
     <script src="/src/client/app/core/common.js"></script>
     <script src="/src/client/app/core/config.js"></script>
     <script src="/src/client/app/core/constants.js"></script>
     <script src="/src/client/app/core/xhr.js"></script>
-    <script src="/src/client/app/data/datacontext.js"></script>
     <script src="/src/client/app/directives/all-post.js"></script>
-    <script src="/src/client/app/directives/phone-input.js"></script>
     <script src="/src/client/app/directives/single-post.js"></script>
     <script src="/src/client/app/directives/sticky-nav.js"></script>
     <script src="/src/client/app/features/BlogService.js"></script>
     <script src="/src/client/app/filters/html-text.js"></script>
     <script src="/src/client/app/filters/tel.js"></script>
     <script src="/src/client/app/filters/unique.js"></script>
-    <script src="/src/client/app/gnaas.js"></script>
+    <script src="/src/client/app/ipsf.js"></script>
     <script src="/src/client/app/landing/blog.js"></script>
     <script src="/src/client/app/landing/config.routes.js"></script>
-    <script src="/src/client/app/landing/executives.js"></script>
     <script src="/src/client/app/landing/landing.js"></script>
     <script src="/src/client/app/landing/media.js"></script>
     <script src="/src/client/app/landing/single.js"></script>

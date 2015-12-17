@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('gnaas.core')
+        .module('ipsf.core')
         .constant('toastr', toastr)
         .constant('moment', moment)
         .constant('_', _)

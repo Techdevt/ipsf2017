@@ -51,45 +51,7 @@
 24
 25
 26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+27</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
@@ -98,44 +60,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -157,55 +81,17 @@
     'use strict';
 &nbsp;
     angular
-        .module('gnaas.widgets')
+        .module('ipsf.widgets')
         .directive('footerTemplate', Footer);
 &nbsp;
 <span class="fstat-no" title="function not covered" >    function Footer() {</span>
 <span class="cstat-no" title="statement not covered" >        var templateString = [</span>
             '&lt;footer class="footer"&gt;',
             '&lt;div class="footer-container" layout="column"&gt;',
-            '&lt;div layout="row"&gt;',
-            '&lt;div flex="45" class="social-links" layout="row" layout-align="center center"&gt;',
-            '&lt;div class="social-link"&gt;',
-            '&lt;a href="https://www.facebook.com/gnaas2015" target="_blank"&gt;',
-            '&lt;i class="fa fa-facebook"&gt;&lt;/i&gt;',
-            '&lt;/a&gt;',
-            '&lt;/div&gt;',
-            '&lt;div class="social-link"&gt;',
-            '&lt;a href="https://twitter.com/gnaasgh" target="_blank"&gt;',
-            '&lt;i class="fa fa-twitter"&gt;&lt;/i&gt;',
-            '&lt;/a&gt;',
-            '&lt;/div&gt;',
-            '&lt;div class="social-link"&gt;',
-            '&lt;a href="https://www.youtube.com/channel/UCgH3ShIjeuBTTopQeg6aXAA" target="_blank"&gt;',
-            '&lt;i class="fa fa-youtube-play"&gt;&lt;/i&gt;',
-            '&lt;/a&gt;',
-            '&lt;/div&gt;',
-            '&lt;div class="social-link"&gt;',
-            '&lt;a href="https://plus.google.com/u/0/107903844483698496222" target="_blank"&gt;',
-            '&lt;i class="fa fa-google-plus"&gt;&lt;/i&gt;',
-            '&lt;/a&gt;',
-            '&lt;/div&gt;',
-&nbsp;
-            '&lt;/div&gt;',
-&nbsp;
-            '&lt;div class="links" flex="55" layout="column" layout-align="center"&gt;',
-            '&lt;ul&gt;',
-            '&lt;li&gt;',
-            '&lt;a target="_blank" href="http://ug.gnaas.org/"&gt;University of Ghana&lt;/a&gt;',
-            '&lt;/li&gt;',
-            '&lt;li&gt;',
-            '&lt;a target="_blank" href="http://udsnav.gnaas.org/"&gt;University of Development Studies, Navrongo Campus&lt;/a&gt;',
-            '&lt;/li&gt;',
-            '&lt;li&gt;',
-            '&lt;a target="_blank" href="http://knust.gnaas.org/"&gt;University of Science and Technology&lt;/a&gt;',
-            '&lt;/li&gt;',
-            '&lt;/ul&gt;',
-            '&lt;/div&gt;',
 &nbsp;
             '&lt;/div&gt;',
             '&lt;div layout="row" class="copyright" layout-fill&gt;',
-            '&lt;p&gt;&amp;copy;{{Date | date : "yyyy"}} GNAAS&lt;/p&gt;',
+            '&lt;p&gt;&amp;copy;{{Date | date : "yyyy"}} IPSF2017&lt;/p&gt;',
             '&lt;/div&gt;',
             '&lt;/div&gt;',
             '&lt;/footer&gt;'
@@ -222,7 +108,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Nov 23 2015 14:24:27 GMT+0000 (GMT Standard Time)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Dec 17 2015 20:57:37 GMT+0000 (Greenwich Standard Time)</div>
 </div>
 <script src="../../../../prettify.js"></script>
 <script>

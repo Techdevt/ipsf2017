@@ -2,5 +2,5 @@
     'use strict';
 
     angular
-        .module('gnaas.directives', []);
+        .module('ipsf.directives', []);
 })();

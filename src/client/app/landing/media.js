@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('gnaas.landing')
+        .module('ipsf.landing')
         .controller('Media', Media);
 
     Media.$inject = ['$scope', 'albums', '_', 'config', 'angularPlayer', '$mdDialog', '$timeout'];

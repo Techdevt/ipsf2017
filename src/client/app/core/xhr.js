@@ -1,12 +1,12 @@
 (function() {
     'use strict';
 
-    angular.module('gnaas.core')
+    angular.module('ipsf.core')
         .factory('XHR', XHR);
 
-    XHR.inject = ['$http', '$q', '$rootScope', 'logger', 'AuthToken', 'config'];
+    XHR.inject = ['$http', '$q', '$rootScope', 'logger', 'config'];
     /* @ngInject */
-    function XHR($http, $q, $rootScope, logger, AuthToken, config) {
+    function XHR($http, $q, $rootScope, logger, config) {
         var service = {
             get: get,
             post: post,

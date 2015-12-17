@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('gnaas.landing')
+        .module('ipsf.landing')
         .controller('Blog', Blog);
 
     Blog.$inject = ['$scope', '$mdDialog', 'BlogService', '_', 'all', 'featured', '$filter', 'smoothScroll'];
@@ -48,6 +48,6 @@
             if (pageNum !== 1) {
                 smoothScroll(element, options);
             }
-        }
+        };
     }
 })();

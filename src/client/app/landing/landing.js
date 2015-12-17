@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('gnaas.landing')
+        .module('ipsf.landing')
         .controller('Landing', Landing);
 
     Landing.$inject = ['$scope', '$timeout', 'XHR', 'logger'];

@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('gnaas.core', [
+    angular.module('ipsf.core', [
         /*
         angular modules
         */
@@ -17,8 +17,6 @@
         'blocks.logger',
         'blocks.router',
         'blocks.router.404',
-        'blocks.users',
-        'blocks.auth',
 
         /*
         third party modules

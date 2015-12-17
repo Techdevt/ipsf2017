@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('gnaas.landing')
+        .module('ipsf.landing')
         .run(routeConfig);
 
     routeConfig.$inject = ['routerHelper'];
@@ -130,94 +130,6 @@
                 url: '^/about/theme',
                 title: 'Theme',
                 templateUrl: 'app/landing/about/theme.html'
-            }
-        }, {
-            state: 'landing.about.executives',
-            config: {
-                url: '^/about/executives',
-                title: 'Executives',
-                templateUrl: 'app/landing/about/executives.html',
-                controller: 'Executives',
-                controllerAs: 'vm',
-                resolve: {
-                    executives: ['XHR', '$q', '_', '$filter', function(XHR, $q, _, $filter) {
-                        var deferred = $q.defer();
-
-                        XHR.get('/wp-json/wp/v2/executives?filter[posts_per_page]=-1').then(function(result) {
-                            var executives = {};
-                            executives.president = $filter('filter')(result.data, {
-                                'acf': {
-                                    'position': 'president'
-                                }
-                            }, true)[0];
-                            executives.vice = $filter('filter')(result.data, {
-                                'acf': {
-                                    'position': 'vice-president'
-                                }
-                            }, true)[0];
-                            executives.secretary = $filter('filter')(result.data, {
-                                'acf': {
-                                    'position': 'secretary'
-                                }
-                            })[0];
-                            executives.treasurer = $filter('filter')(result.data, {
-                                'acf': {
-                                    'position': 'treasurer'
-                                }
-                            })[0];
-                            executives['financial_secretary'] = $filter('filter')(result.data, {
-                                'acf': {
-                                    'position': 'financial-secretary'
-                                }
-                            })[0];
-                            executives['coordinating_secretary'] = $filter('filter')(result.data, {
-                                'acf': {
-                                    'position': 'coordinating-secretary'
-                                }
-                            })[0];
-                            executives['asst_coordinating_secretary'] = $filter('filter')(result.data, {
-                                'acf': {
-                                    'position': 'asst-coordinating-secretary'
-                                }
-                            })[0];
-                            executives['web_admin'] = $filter('filter')(result.data, {
-                                'acf': {
-                                    'position': 'web-admin'
-                                }
-                            })[0];
-                            executives['vice_web_admin'] = $filter('filter')(result.data, {
-                                'acf': {
-                                    'position': 'vice-web-admin'
-                                }
-                            })[0];
-                            executives['auditor'] = $filter('filter')(result.data, {
-                                'acf': {
-                                    'position': 'auditor'
-                                }
-                            })[0];
-                            executives['coordinator_southern'] = $filter('filter')(result.data, {
-                                'acf': {
-                                    'position': 'coordinator-southern-sector'
-                                }
-                            })[0];
-                            executives['coordinator_northern'] = $filter('filter')(result.data, {
-                                'acf': {
-                                    'position': 'coordinator-northern-sector'
-                                }
-                            })[0];
-                            executives['coordinator_middle'] = $filter('filter')(result.data, {
-                                'acf': {
-                                    'position': 'coordinator-middle-sector'
-                                }
-                            })[0];
-
-                            deferred.resolve(executives);
-                        }, function(error) {
-                            deferred.reject(error);
-                        });
-                        return deferred.promise;
-                    }]
-                }
             }
         }, {
             state: 'landing.about.nec',

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('gnaas.landing')
+        .module('ipsf.landing')
         .controller('Single', Single);
 
     Single.$inject = ['post'];
